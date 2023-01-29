@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", // 👌
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В каком стандарте будут выходные файлы в js
+    "target": "es5", //👌
+    "jsx": "react", // 👌
+    "allowJs": true, //👌
+    "moduleResolution": "node", // 👌
+
+    "allowSyntheticDefaultImports": true, // 👌
+    "esModuleInterop": true // 👌
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
