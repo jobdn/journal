@@ -2,12 +2,11 @@ import path from "path";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-import { WebpackConfigPaths } from "./types/config";
+import { WebpackConfigOptions } from "./types/config";
 
-// TODO: check webpack types
-export function webpackPlugins(
-  paths: WebpackConfigPaths
-): webpack.WebpackPluginInstance[] {
+export function webpackPlugins({
+  paths,
+}: WebpackConfigOptions): webpack.WebpackPluginInstance[] {
   return [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({

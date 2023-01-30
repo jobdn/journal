@@ -1,5 +1,4 @@
-// TODO: У Ulbi нет типа string в конце, это я уже определил, чтобы использовать переменную окружения в файле конфига. Если будут ошибки, то удалить
-type WebpackConfigMode = "production" | "development" | string;
+type WebpackConfigMode = "production" | "development";
 
 export interface WebpackConfigPaths {
   entry: string;
@@ -7,8 +6,14 @@ export interface WebpackConfigPaths {
   html: string;
 }
 
+export interface WebpackEnv {
+  mode: WebpackConfigMode;
+  port: number;
+}
+
 export interface WebpackConfigOptions {
   mode: WebpackConfigMode;
   paths: WebpackConfigPaths;
   isDev: boolean;
+  port: number;
 }
