@@ -15,12 +15,12 @@ export function createWebpackConfig(
     mode,
     entry: paths.entry,
     output: {
-      filename: "[name].[contenthash].js",
+      filename: "[name].[contenthash:8].js",
       path: paths.build,
       clean: true,
     },
     module: {
-      rules: webpackLoaders(),
+      rules: webpackLoaders(options),
     },
     resolve: webpackResolve(),
     plugins: webpackPlugins(options),

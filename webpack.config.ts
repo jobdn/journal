@@ -11,7 +11,7 @@ export default (env: WebpackEnv) => {
   return createWebpackConfig({
     mode,
     paths: {
-      entry: path.join(__dirname, "src", "index.ts"),
+      entry: path.join(__dirname, "src", "index.tsx"),
       build: path.join(__dirname, "dist"),
       html: path.join(__dirname, "public", "index.html"),
     },
