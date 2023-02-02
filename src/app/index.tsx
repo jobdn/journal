@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import { useTheme } from "../shared/lib/theme";
 
 const About = React.lazy(
   () =>
@@ -18,8 +19,10 @@ const Home = React.lazy(
 );
 
 export const App = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <div className="app light">
+    <div className={`app ${theme}`}>
+      <button onClick={toggleTheme}>TOGGLE THEME</button>
       <nav>
         <NavLink to={"/home"}>Home</NavLink>
         <NavLink to={"/about"}>About</NavLink>

@@ -2,12 +2,16 @@ import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import { App } from "./app";
+import { ThemeProvider } from "./shared/lib/theme";
 
 import "./shared/styles/index.scss";
 
 render(
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      {/* 👈 Это можно будет вынести в инициализующую логину приложения в папку */}
+      <App />
+    </ThemeProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
