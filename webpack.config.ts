@@ -14,6 +14,7 @@ export default (env: WebpackEnv) => {
       entry: path.join(__dirname, "src", "index.tsx"),
       build: path.join(__dirname, "dist"),
       html: path.join(__dirname, "public", "index.html"),
+      src: path.join(__dirname, "src"),
     },
     isDev,
     port,
