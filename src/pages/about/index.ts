@@ -1,2 +1,1 @@
-import { About } from "./ui/About";
-export default About;
+export { AboutPage } from "./ui/About.async";

@@ -1,7 +1,7 @@
-export const Home = () => {
+const HomePage = () => {
   return (
     <div>
-      <h1>HOME Shuffle Mid</h1>
+      <h1>HOMEPage Shuffle Mid</h1>
       <h2>One8 Better V2</h2>
       <p>
         Elevate, intensify the Style drills, out run those goals, here are the
@@ -10,3 +10,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default HomePage;

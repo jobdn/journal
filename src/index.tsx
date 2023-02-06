@@ -9,7 +9,6 @@ import "./shared/styles/index.scss";
 render(
   <BrowserRouter>
     <ThemeProvider>
-      {/* 👈 Это можно будет вынести в инициализующую логину приложения в папку */}
       <App />
     </ThemeProvider>
   </BrowserRouter>,

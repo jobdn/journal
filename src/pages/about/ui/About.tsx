@@ -1,4 +1,4 @@
-export const About = () => {
+const AboutPage = () => {
   return (
     <div>
       <h1>ABOUT Shuffle Mid</h1>
@@ -10,3 +10,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default AboutPage;
