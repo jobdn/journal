@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Theme, useTheme } from "shared/config/theme";
-import { Button } from "shared/ui/Button";
+import { Button, ButtonThemes } from "shared/ui/Button";
 
 import DarkThemeSwitcher from "../assets/dark-theme-switcher.svg";
 import LightThemeSwitcher from "../assets/light-theme-switcher.svg";
@@ -20,6 +20,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
       className={classes.ThemeSwitcher}
       onClick={toggleTheme}
       type="button"
+      theme={ButtonThemes.CLEAR}
     >
       {theme === Theme.DARK ? <LightThemeSwitcher /> : <DarkThemeSwitcher />}
     </Button>
