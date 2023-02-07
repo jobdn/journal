@@ -1,0 +1,15 @@
+.AppLink {
+  text-decoration: none;
+}
+
+.primary {
+  color: var(--inverted-primary-color);
+}
+
+.secondary {
+  color: var(--inverted-secondary-color);
+}
+
+.outlined {
+  border: 1px solid var(--primary-color);
+}
