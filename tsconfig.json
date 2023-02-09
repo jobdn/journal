@@ -16,6 +16,7 @@
       "*": ["src/*"]
     }
   },
+  "include": ["src/**/*", ".eslintrc.js", "webpack.config.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

@@ -1,12 +1,10 @@
+import { useTranslation } from "react-i18next";
+
 const HomePage = () => {
+  const { t } = useTranslation("home");
   return (
     <div>
-      <h2>One8 Better V2</h2>
-      {/* <h1>HOMEPage Shuffle Mid</h1>
-      <p>
-        Elevate, intensify the Style drills, out run those goals, here are the
-        perfect PUMA Shoes an all season favorite , perfect for leisure.
-      </p> */}
+      <h1>{t("title")}</h1>
     </div>
   );
 };

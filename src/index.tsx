@@ -6,6 +6,8 @@ import { ThemeProvider } from "./shared/config/theme";
 
 import "./shared/styles/index.scss";
 
+import "app/config/i18n";
+
 render(
   <BrowserRouter>
     <ThemeProvider>

@@ -8,7 +8,7 @@ export const cn = (
   return [
     base,
     Object.entries(mods)
-      .filter(([className, includeToResult]) => Boolean(includeToResult))
+      .filter(([_, includeToResult]) => Boolean(includeToResult))
       .map(([className]) => className),
     ...additional.filter(Boolean),
   ].join(" ");

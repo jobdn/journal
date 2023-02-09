@@ -12,14 +12,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav className={classes.Navbar}>
       <div className={classes.links}>
-        <AppLink className={classes.link} to={"/home"}>
+        <AppLink className={classes.link} to={"/"}>
           Home
         </AppLink>
         <AppLink className={classes.link} to={"/about"}>
           About
-        </AppLink>
-        <AppLink className={classes.link} to={"/"}>
-          MAIN
         </AppLink>
       </div>
     </nav>

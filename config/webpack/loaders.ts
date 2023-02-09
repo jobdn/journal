@@ -44,5 +44,17 @@ export function webpackLoaders({
     ],
   };
 
-  return [typescriptLoader, scssLoader, svgLoader, fileLoader];
+  const babelLoader = {
+    test: /\.[jt]sx?$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        // presets: ["@babel/preset-env"],
+        // plugins: [["i18next-extract", { locales: ["en", "ru"] }]],
+      },
+    },
+  };
+
+  return [babelLoader, typescriptLoader, scssLoader, svgLoader, fileLoader];
 }

@@ -2,10 +2,23 @@
   cursor: pointer;
 }
 
-.clear {
-  padding: 0;
-  margin: 0;
+@mixin without-border {
   border: none;
   outline: none;
+  margin: 0;
+}
+
+.clear {
+  @include without-border;
+
+  padding: 0;
+  margin: 0;
   background: transparent;
+}
+
+.filled {
+  @include withoutBorder;
+
+  background: var(--bg-color);
+  border-radius: 16px;
 }
