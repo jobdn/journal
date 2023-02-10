@@ -7,7 +7,7 @@ export const cn = (
 ): string => {
   return [
     base,
-    Object.entries(mods)
+    ...Object.entries(mods)
       .filter(([_, includeToResult]) => Boolean(includeToResult))
       .map(([className]) => className),
     ...additional.filter(Boolean),
