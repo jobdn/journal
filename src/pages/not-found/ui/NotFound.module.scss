@@ -1,0 +1,23 @@
+.NotFoundPage {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.notFoundImg {
+  transition: all 0.5s ease-in-out;
+  @media screen and (min-width: 300px) {
+    max-width: 300px;
+  }
+
+  @media screen and (min-width: 600px) {
+    min-width: 550px;
+  }
+}

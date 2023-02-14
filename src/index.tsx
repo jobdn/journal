@@ -7,12 +7,15 @@ import { ThemeProvider } from "./shared/config/theme";
 import "./shared/styles/index.scss";
 
 import "app/config/i18n";
+import { ErrorBoundary } from "app/config/ErrorBoundary";
 
 render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>,
   document.getElementById("root")
 );

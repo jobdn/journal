@@ -1,6 +1,14 @@
 {
+  "": "",
   "loading": "",
+  "navbar": {
+    "about": "",
+    "home": ""
+  },
+  "not-found": "",
+  "page-error": "",
   "subtitle": "",
   "text": "",
-  "title": ""
+  "title": "",
+  "toggle": ""
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { AppLink } from "shared/ui/AppLink";
 
@@ -9,14 +10,15 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = () => {
+  const { t } = useTranslation();
   return (
     <nav className={classes.Navbar}>
       <div className={classes.links}>
         <AppLink className={classes.link} to={"/"}>
-          Home
+          {t("navbar.home")}
         </AppLink>
         <AppLink className={classes.link} to={"/about"}>
-          About
+          {t("navbar.about")}
         </AppLink>
       </div>
     </nav>
