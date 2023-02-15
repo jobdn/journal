@@ -48,7 +48,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   };
 
   return (
-    <div
+    <aside
+      data-testid="sidebar"
       className={cn(classes.Sidebar, { [classes.collapsed]: collapsed }, [
         className,
       ])}
@@ -66,6 +67,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
-    </div>
+    </aside>
   );
 };

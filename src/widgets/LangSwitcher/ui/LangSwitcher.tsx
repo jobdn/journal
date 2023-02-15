@@ -14,7 +14,7 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
-  const handleLangToggle = () =>
+  const handleLangToggle = async () =>
     i18next.changeLanguage(i18next.language === "ru" ? "en" : "ru");
   const { theme } = useTheme();
   const buttonTheme = React.useMemo(
