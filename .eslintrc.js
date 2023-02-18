@@ -25,10 +25,18 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
+    "react/display-name": "off",
     "no-comments/disallowComments": [
       "error",
       {
-        allow: ["TODO", "FIXME", "NOTE", "DEBUG"],
+        allow: [
+          "TODO",
+          "FIXME",
+          "NOTE",
+          "DEBUG",
+          "@ts-ignore",
+          "eslint-disable-next-line",
+        ],
       },
     ],
   },

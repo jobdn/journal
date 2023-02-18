@@ -1,4 +1,3 @@
-// import { Story } from "@storybook/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { Theme } from "shared/config/theme";

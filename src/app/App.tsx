@@ -12,7 +12,6 @@ export const App = () => {
   return (
     <div className={cn("app", {}, [theme])}>
       <React.Suspense fallback="">
-        {/* 👆 Suspence for i18n */}
         <Navbar />
         <div className="page-content">
           <Sidebar />

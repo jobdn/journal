@@ -4,15 +4,13 @@ import { resources } from "./resources";
 
 export { resources } from "./resources";
 
-i18n
-  .use(LanguageDetector) // detect user language
-  .init({
-    fallbackLng: "ru",
-    debug: true,
-    interpolation: {
-      escapeValue: false,
-    },
-    resources: resources,
-  });
+i18n.use(LanguageDetector).init({
+  fallbackLng: "ru",
+  debug: true,
+  interpolation: {
+    escapeValue: false,
+  },
+  resources: resources,
+});
 
 export default i18n;
