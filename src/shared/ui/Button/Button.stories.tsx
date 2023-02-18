@@ -1,3 +1,4 @@
+// import { Story } from "@storybook/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { Theme } from "shared/config/theme";
@@ -38,18 +39,18 @@ ClearDark.args = {
   theme: ButtonThemes.CLEAR,
   children: "BUTTON TEXT",
 };
-ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
+ClearDark.decorators = [ThemeDecorator(Theme.DARK, true)];
 
 export const FilledDark = ButtonTemplate.bind({});
 FilledDark.args = {
   theme: ButtonThemes.FILLED,
   children: "FILLED BUTTON TEXT",
 };
-FilledDark.decorators = [ThemeDecorator(Theme.DARK)];
+FilledDark.decorators = [ThemeDecorator(Theme.DARK, true)];
 
 export const OutlinedDark = ButtonTemplate.bind({});
 OutlinedDark.args = {
   theme: ButtonThemes.OUTLINED,
   children: "OUTLINED BUTTON TEXT",
 };
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK, true)];

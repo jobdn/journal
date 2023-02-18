@@ -8,6 +8,11 @@ import { PageError } from "./PageError";
 export default {
   title: "widgets/PageError",
   component: PageError,
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 } as ComponentMeta<typeof PageError>;
 
 const PageErrorTemplate: ComponentStory<typeof PageError> = (args) => (
@@ -15,7 +20,10 @@ const PageErrorTemplate: ComponentStory<typeof PageError> = (args) => (
 );
 
 export const DarkPageError = PageErrorTemplate.bind({});
-DarkPageError.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK)];
+DarkPageError.decorators = [
+  CenteredDecorator,
+  ThemeDecorator(Theme.DARK, true),
+];
 
 export const LightPageError = PageErrorTemplate.bind({});
 LightPageError.decorators = [CenteredDecorator];

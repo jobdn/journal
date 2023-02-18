@@ -14,6 +14,7 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
   const { theme, toggleTheme } = useTheme();
+  console.log("THEME IN SWITHER: ", theme);
 
   return (
     <Button

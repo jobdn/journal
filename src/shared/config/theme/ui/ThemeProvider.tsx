@@ -8,6 +8,8 @@ const defaultTheme: Theme =
 export const ThemeProvider: React.FC = ({ children }) => {
   const [theme, setTheme] = React.useState<Theme>(defaultTheme);
 
+  console.log("***********", theme);
+
   const defaultThemeContextValue = React.useMemo(
     () => ({ theme, setTheme }),
     [theme]

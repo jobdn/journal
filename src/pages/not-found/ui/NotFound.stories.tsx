@@ -8,6 +8,11 @@ import NotFound from "./NotFound";
 export default {
   title: "pages/NotFound",
   component: NotFound,
+  parameters: {
+    loki: {
+      skip: true,
+    },
+  },
 } as ComponentMeta<typeof NotFound>;
 
 const NotFoundTemplate: ComponentStory<typeof NotFound> = (args) => (
@@ -15,7 +20,7 @@ const NotFoundTemplate: ComponentStory<typeof NotFound> = (args) => (
 );
 
 export const DarkNotFound = NotFoundTemplate.bind({});
-DarkNotFound.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK)];
+DarkNotFound.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK, true)];
 
 export const LightNotFound = NotFoundTemplate.bind({});
-DarkNotFound.decorators = [CenteredDecorator];
+LightNotFound.decorators = [CenteredDecorator];

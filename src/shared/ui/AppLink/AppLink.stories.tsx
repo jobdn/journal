@@ -43,18 +43,18 @@ PrimaryDark.args = {
   children: "Primary",
   theme: AppLinkThemes.PRIMARY,
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK, true)];
 
 export const SecondaryDark = AppLinkTemplate.bind({});
 SecondaryDark.args = {
   children: "Secondary",
   theme: AppLinkThemes.SECONDARY,
 };
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK, true)];
 
 export const OutlinedDark = AppLinkTemplate.bind({});
 OutlinedDark.args = {
   children: "Outlined",
   theme: AppLinkThemes.OUTLINED,
 };
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK, true)];

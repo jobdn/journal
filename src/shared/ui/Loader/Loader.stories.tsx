@@ -22,4 +22,4 @@ const LoaderTemplate: ComponentStory<typeof Loader> = (args) => (
 export const LightLoader = LoaderTemplate.bind({});
 
 export const DarkLoader = LoaderTemplate.bind({});
-DarkLoader.decorators = [ThemeDecorator(Theme.DARK)];
+DarkLoader.decorators = [ThemeDecorator(Theme.DARK, true)];

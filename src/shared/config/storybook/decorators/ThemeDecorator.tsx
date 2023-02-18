@@ -1,12 +1,27 @@
 import "../../../styles/index.scss";
 
 import { Story } from "@storybook/react";
-import { Theme } from "shared/config/theme";
+import { Theme, useTheme } from "shared/config/theme";
 
-// eslint-disable-next-line react/display-name
-export const ThemeDecorator = (theme: Theme) => (Story: Story) =>
-  (
-    <div className={`app ${theme}`}>
-      <Story />
-    </div>
-  );
+export const ThemeDecorator =
+  (defaultTheme: Theme, useDefaultTheme?: boolean) =>
+  // eslint-disable-next-line react/display-name
+  (StoryComponent: Story) => {
+    const { theme: themeFromContext } = useTheme();
+
+    return (
+      <div
+        className={`app ${useDefaultTheme ? defaultTheme : themeFromContext}`}
+      >
+        <StoryComponent />
+      </div>
+    );
+  };
+
+// <Context></Context>
+
+// <div className={`app ${useDefaultTheme(true) ? defaultTheme : themeFromContext}`}> - которым нужна только светлая тема
+
+// <div className={`app ${useDefaultTheme(false) ? defaultTheme : themeFromContext}`}> - которым нужно переключение темы
+
+// <div className={`app dark`}> - кому нужна только темная тема

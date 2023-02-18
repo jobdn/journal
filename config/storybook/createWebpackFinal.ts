@@ -5,6 +5,7 @@ import { createCssLoader } from "../webpack/loaders/createCssLoader";
 
 export const createWebpackFinal = async (config: webpack.Configuration) => {
   config.resolve.modules.push(path.join(__dirname, "..", "..", "src"));
+  config.mode = "development";
 
   config.module.rules.push(createCssLoader(true));
 
