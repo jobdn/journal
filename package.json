@@ -59,6 +59,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.33.0",
     "eslint-plugin-i18next": "^6.0.0-2",
+    "eslint-plugin-no-comments": "^1.1.10",
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
@@ -84,7 +85,7 @@
   "lint-staged": {
     "src/**/*.{tsx,ts}": [
       "eslint",
-      "jest --findRelatedTests"
+      "jest -c config/jest/jest.config.ts --findRelatedTests"
     ],
     "src/**/*.{scss,css}": "stylelint"
   },

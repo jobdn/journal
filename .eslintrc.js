@@ -21,10 +21,16 @@ module.exports = {
     "plugin:i18next/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "i18next", "no-comments"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
+    "no-comments/disallowComments": [
+      "error",
+      {
+        allow: ["TODO", "FIXME", "NOTE", "DEBUG"],
+      },
+    ],
   },
   overrides: [
     {
