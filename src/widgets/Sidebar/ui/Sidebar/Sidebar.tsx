@@ -10,10 +10,12 @@ import classes from "./Sidebar.module.scss";
 interface SidebarProps {
   className?: string;
 }
+
 enum SidebarVariants {
   COLLAPSED = "collapsed",
   EXPANDED = "expanded",
 }
+
 const SIDEBAR_STATE = "sidebar-state";
 const sidebarIsCollapsed =
   localStorage.getItem(SIDEBAR_STATE) === SidebarVariants.COLLAPSED
@@ -37,15 +39,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
 
   const switchersRef = React.useRef<HTMLDivElement>(null);
 
-  const handleTransitionEnd: React.TransitionEventHandler<
-    HTMLDivElement
-  > = () => {
-    if (collapsed) {
-      switchersRef.current.style.flexDirection = "column";
-    } else {
-      switchersRef.current.style.flexDirection = "row";
-    }
-  };
+  const handleTransitionEnd: React.TransitionEventHandler<HTMLDivElement> =
+    () => {
+      if (collapsed) {
+        switchersRef.current.style.flexDirection = "column";
+      } else {
+        switchersRef.current.style.flexDirection = "row";
+      }
+    };
 
   return (
     <aside

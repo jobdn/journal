@@ -1,5 +1,4 @@
 import path from "path";
-import webpack from "webpack";
 
 import { createWebpackConfig, WebpackEnv } from "./config/webpack";
 
