@@ -15,6 +15,6 @@ const AboutTemplate: ComponentStory<typeof About> = (args) => (
 );
 
 export const DarkAbout = AboutTemplate.bind({});
-DarkAbout.decorators = [ThemeDecorator(Theme.DARK, true)];
+DarkAbout.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightAbout = AboutTemplate.bind({});

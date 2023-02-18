@@ -8,7 +8,6 @@ import { Theme } from "shared/config/theme";
 export default {
   title: "widgets/Sidebar",
   component: Sidebar,
-  decorators: [ThemeDecorator(Theme.DARK, false)],
 } as ComponentMeta<typeof Sidebar>;
 
 const SidebarTemplate: ComponentStory<typeof Sidebar> = (args) => (
@@ -16,5 +15,6 @@ const SidebarTemplate: ComponentStory<typeof Sidebar> = (args) => (
 );
 
 export const Dark = SidebarTemplate.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Light = SidebarTemplate.bind({});

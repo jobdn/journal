@@ -13,6 +13,6 @@ export default {
 const HomeTemplate: ComponentStory<typeof Home> = (args) => <Home {...args} />;
 
 export const DarkHome = HomeTemplate.bind({});
-DarkHome.decorators = [ThemeDecorator(Theme.DARK, true)];
+DarkHome.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightHome = HomeTemplate.bind({});

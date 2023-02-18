@@ -18,4 +18,4 @@ const NavbarTemplate: ComponentStory<typeof Navbar> = (args) => (
 
 export const LightThemeNavbar = NavbarTemplate.bind({});
 export const DarkThemeNavbar = NavbarTemplate.bind({});
-DarkThemeNavbar.decorators = [ThemeDecorator(Theme.DARK, true)];
+DarkThemeNavbar.decorators = [ThemeDecorator(Theme.DARK)];

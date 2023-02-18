@@ -20,10 +20,7 @@ const PageErrorTemplate: ComponentStory<typeof PageError> = (args) => (
 );
 
 export const DarkPageError = PageErrorTemplate.bind({});
-DarkPageError.decorators = [
-  CenteredDecorator,
-  ThemeDecorator(Theme.DARK, true),
-];
+DarkPageError.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK)];
 
 export const LightPageError = PageErrorTemplate.bind({});
 LightPageError.decorators = [CenteredDecorator];

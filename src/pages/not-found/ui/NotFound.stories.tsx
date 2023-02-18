@@ -20,7 +20,7 @@ const NotFoundTemplate: ComponentStory<typeof NotFound> = (args) => (
 );
 
 export const DarkNotFound = NotFoundTemplate.bind({});
-DarkNotFound.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK, true)];
+DarkNotFound.decorators = [CenteredDecorator, ThemeDecorator(Theme.DARK)];
 
 export const LightNotFound = NotFoundTemplate.bind({});
 LightNotFound.decorators = [CenteredDecorator];

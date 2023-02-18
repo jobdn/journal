@@ -23,7 +23,7 @@ export default {
   rootDir: "../..",
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: ["<rootDir>/src/**/*.test.{ts,tsx}"],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: ["\\\\node_modules\\\\"],
@@ -144,7 +144,7 @@ export default {
   // testLocationInResults: false,
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
-  // testRegex: [],
+  // testRegex: ["<rootDir>/src/**/*.test.{ts,tsx}"],
 
   // This option allows the use of a custom results processor
   // testResultsProcessor: undefined,

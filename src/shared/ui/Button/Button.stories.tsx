@@ -39,18 +39,18 @@ ClearDark.args = {
   theme: ButtonThemes.CLEAR,
   children: "BUTTON TEXT",
 };
-ClearDark.decorators = [ThemeDecorator(Theme.DARK, true)];
+ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const FilledDark = ButtonTemplate.bind({});
 FilledDark.args = {
   theme: ButtonThemes.FILLED,
   children: "FILLED BUTTON TEXT",
 };
-FilledDark.decorators = [ThemeDecorator(Theme.DARK, true)];
+FilledDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OutlinedDark = ButtonTemplate.bind({});
 OutlinedDark.args = {
   theme: ButtonThemes.OUTLINED,
   children: "OUTLINED BUTTON TEXT",
 };
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK, true)];
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
