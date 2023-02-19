@@ -12,8 +12,8 @@
     "lint:scss": "stylelint src/**/*.{scss,css}",
     "lint:scss:fix": "stylelint src/**/*.{scss,css} --fix",
     "unit:test": "jest -c config/jest/jest.config.ts",
-    "loki:test": "loki test --port=\"6006\"",
-    "loki:ci": "loki update --port=\"6006\" --reactUri=\"file:./storybook-static\"",
+    "loki:test": "loki test",
+    "loki:ci": "loki --requireReference --reactUri=\"file:./storybook-static\"",
     "sb": "start-storybook -p 6006 -c ./config/storybook",
     "sb:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install"
