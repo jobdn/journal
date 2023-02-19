@@ -12,8 +12,8 @@
     "lint:scss": "stylelint src/**/*.{scss,css}",
     "lint:scss:fix": "stylelint src/**/*.{scss,css} --fix",
     "unit:test": "jest -c config/jest/jest.config.ts",
-    "loki:test": "loki test",
-    "loki:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "loki:test": "loki test --port 6006",
+    "loki:ci": "loki --port 6006 --requireReference --reactUri file:./storybook-static",
     "sb": "start-storybook -p 6006 -c ./config/storybook",
     "sb:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install"
@@ -62,6 +62,7 @@
     "eslint-plugin-no-comments": "^1.1.10",
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
+    "gm": "^1.25.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",

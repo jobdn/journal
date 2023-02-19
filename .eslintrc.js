@@ -36,6 +36,7 @@ module.exports = {
           "DEBUG",
           "@ts-ignore",
           "eslint-disable-next-line",
+          "eslint-disable",
         ],
       },
     ],
