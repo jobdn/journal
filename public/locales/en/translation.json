@@ -3,8 +3,16 @@
   "not-found": "There is not such page",
   "page-error": "Something went wrong. Try to reload the page 🔃",
 
-  "navbar": {
+  "navbar": {},
+
+  "sidebar": {
+    "expandIcon": "Expand",
+    "collapseIcon": "Collapse",
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "titles": {
+      "theme": "Change color theme",
+      "lang": "Сменить язык"
+    }
   }
 }

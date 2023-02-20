@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "shared/lib/classNames";
+import { cn } from "shared/lib";
 import { Loader } from "shared/ui/Loader";
 
 import classes from "./AppLoader.module.scss";

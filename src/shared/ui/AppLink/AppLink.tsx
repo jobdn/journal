@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import { cn } from "shared/lib/classNames";
+import { cn } from "shared/lib";
 
 import classes from "./AppLink.module.scss";
 import { AppLinkProps, AppLinkThemes } from "./types";

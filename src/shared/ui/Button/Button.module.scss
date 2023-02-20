@@ -1,5 +1,6 @@
 .Button {
   cursor: pointer;
+  padding: 10px 15px;
 }
 
 @mixin clear-button {
@@ -19,7 +20,16 @@
 .filled {
   @include clear-button;
 
+  background-color: var(--bg-color);
+  color: var(--primary-color);
   border-radius: 16px;
+}
+
+.filled-inverted {
+  @include clear-button;
+
+  background-color: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
 }
 
 .outlined {

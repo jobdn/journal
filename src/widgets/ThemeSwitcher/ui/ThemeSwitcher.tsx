@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { Theme, useTheme } from "shared/config/theme";
 import { Button, ButtonThemes } from "shared/ui/Button";
@@ -14,7 +15,7 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
   const { theme, toggleTheme } = useTheme();
-  console.log("THEME IN SWITHER: ", theme);
+  const { t } = useTranslation();
 
   return (
     <Button
@@ -22,6 +23,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
       onClick={toggleTheme}
       type="button"
       theme={ButtonThemes.CLEAR}
+      title={t("sidebar.titles.theme")}
     >
       {theme === Theme.DARK ? <LightThemeSwitcher /> : <DarkThemeSwitcher />}
     </Button>

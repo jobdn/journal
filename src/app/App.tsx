@@ -4,7 +4,7 @@ import { AppRouter } from "./config/router";
 import { useTheme } from "shared/config/theme";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { cn } from "shared/lib/classNames";
+import { cn } from "shared/lib";
 
 export const App = () => {
   const { theme } = useTheme();

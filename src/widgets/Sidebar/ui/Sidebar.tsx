@@ -1,11 +1,19 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { cn } from "shared/lib/classNames";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { Button, ButtonThemes } from "shared/ui/Button";
+import { AppLink } from "shared/ui/AppLink";
+import { cn } from "shared/lib";
 
 import classes from "./Sidebar.module.scss";
+
+import ExpandIcon from "../assets/expand.svg";
+import CollapseIcon from "../assets/collapse.svg";
+import AboutIcon from "../assets/about.svg";
+import HomeIcon from "../assets/home.svg";
+import { RoutePaths } from "shared/config/router";
 
 interface SidebarProps {
   className?: string;
@@ -37,33 +45,43 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
     });
   };
 
-  const switchersRef = React.useRef<HTMLDivElement>(null);
-
-  const handleTransitionEnd: React.TransitionEventHandler<HTMLDivElement> =
-    () => {
-      if (collapsed) {
-        switchersRef.current.style.flexDirection = "column";
-      } else {
-        switchersRef.current.style.flexDirection = "row";
-      }
-    };
-
   return (
     <aside
       data-testid="sidebar"
       className={cn(classes.Sidebar, { [classes.collapsed]: collapsed }, [
         className,
       ])}
-      onTransitionEnd={handleTransitionEnd}
     >
-      <button onClick={handleToggle}>{t("toggle")}</button>
+      <div className={classes.menu}>
+        <Button
+          onClick={handleToggle}
+          theme={ButtonThemes.CLEAR}
+          className={cn(classes.menuItem, {}, [classes.hiddenOnTablet])}
+        >
+          {collapsed ? (
+            <ExpandIcon className={classes.menuItemIcon} />
+          ) : (
+            <CollapseIcon className={classes.menuItemIcon} />
+          )}
+          <span className={classes.menuItemText}>
+            {collapsed ? t("sidebar.expandIcon") : t("sidebar.collapseIcon")}
+          </span>
+        </Button>
+        <AppLink className={classes.menuItem} to={RoutePaths.home}>
+          <HomeIcon className={classes.menuItemIcon} />
+          <span className={classes.menuItemText}>{t("sidebar.home")}</span>
+        </AppLink>
+        <AppLink to={RoutePaths.about} className={classes.menuItem}>
+          <AboutIcon className={classes.menuItemIcon} />
+          <span className={classes.menuItemText}>{t("sidebar.about")}</span>
+        </AppLink>
+      </div>
       <div
         className={cn(
           classes.switchers,
           { [classes.switchers_vertical]: collapsed },
           []
         )}
-        ref={switchersRef}
       >
         <ThemeSwitcher />
         <LangSwitcher />

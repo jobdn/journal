@@ -1,8 +1,9 @@
 import { ButtonHTMLAttributes } from "react";
 export enum ButtonThemes {
   CLEAR = "clear",
-  FILLED = "filled",
   OUTLINED = "outlined",
+  FILLED = "filled",
+  FILLED_INVERTED = "filled-inverted",
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
