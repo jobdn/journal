@@ -17,7 +17,13 @@
     },
     "strictBindCallApply": true
   },
-  "include": ["src/**/*", ".eslintrc.js", "webpack.config.ts", "config/**/*"],
+  "include": [
+    "src/**/*",
+    ".eslintrc.js",
+    "webpack.config.ts",
+    "config/**/*",
+    "scripts/**/*"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

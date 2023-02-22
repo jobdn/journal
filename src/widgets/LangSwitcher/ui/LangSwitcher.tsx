@@ -24,6 +24,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
     [theme]
   );
   return (
+    // TODO: Почему кнопка черна в темной теме сторибука?
     <Button
       theme={buttonTheme}
       className={cn(classes.LangSwitcher, {}, [className])}
