@@ -18,16 +18,24 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:i18next/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint", "i18next", "no-comments"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "no-comments",
+    "jsx-a11y",
+  ],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
     "react/display-name": "off",
     "no-comments/disallowComments": [
-      "error",
+      "warn",
       {
         allow: [
           "TODO",
@@ -40,6 +48,10 @@ module.exports = {
         ],
       },
     ],
+    "jsx-a11y/click-events-have-key-events": "off", // TODO: вернуться к этому правилу
+    "jsx-a11y/no-static-element-interactions": "off", // TODO: вернуться к этому правилу
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
   overrides: [
     {

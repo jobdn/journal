@@ -7,6 +7,7 @@ export const I18nDecorator =
   (i18n: i18n) => (Story: Story, context: StoryContext) => {
     const { locale } = context.globals;
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       i18n.changeLanguage(locale);
     }, [locale]);

@@ -3,7 +3,9 @@
   "not-found": "There is not such page",
   "page-error": "Something went wrong. Try to reload the page 🔃",
 
-  "navbar": {},
+  "navbar": {
+    "signIn": "Sign in"
+  },
 
   "sidebar": {
     "expandIcon": "Expand",

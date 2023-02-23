@@ -59,20 +59,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
           className={cn(classes.menuItem, {}, [classes.hiddenOnTablet])}
         >
           {collapsed ? (
-            <ExpandIcon className={classes.menuItemIcon} />
+            <ExpandIcon className={cn(classes.menuItemIcon, {}, ["icon"])} />
           ) : (
-            <CollapseIcon className={classes.menuItemIcon} />
+            <CollapseIcon className={cn(classes.menuItemIcon, {}, ["icon"])} />
           )}
           <span className={classes.menuItemText}>
             {collapsed ? t("sidebar.expandIcon") : t("sidebar.collapseIcon")}
           </span>
         </Button>
-        <AppLink className={classes.menuItem} to={RoutePaths.home}>
-          <HomeIcon className={classes.menuItemIcon} />
+        <AppLink to={RoutePaths.home} className={classes.menuItem}>
+          <HomeIcon className={cn(classes.menuItemIcon, {}, ["icon"])} />
           <span className={classes.menuItemText}>{t("sidebar.home")}</span>
         </AppLink>
         <AppLink to={RoutePaths.about} className={classes.menuItem}>
-          <AboutIcon className={classes.menuItemIcon} />
+          <AboutIcon className={cn(classes.menuItemIcon, {}, ["icon"])} />
           <span className={classes.menuItemText}>{t("sidebar.about")}</span>
         </AppLink>
       </div>

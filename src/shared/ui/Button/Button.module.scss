@@ -9,12 +9,17 @@
   margin: 0;
 }
 
-.clear {
+.clear,
+.clearInverted {
   @include clear-button;
 
   padding: 0;
   color: var(--primary-color);
   background: transparent;
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
 }
 
 .filled {

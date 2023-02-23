@@ -5,19 +5,19 @@ import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "../types/ThemeContext";
 const defaultTheme: Theme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = React.useState<Theme>(defaultTheme);
+interface ThemeProviderProps {
+  initialTheme?: Theme;
+}
 
-  console.log("***********", theme);
+export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
+  const { children, initialTheme } = props;
+  const [theme, setTheme] = React.useState<Theme>(initialTheme || defaultTheme);
 
-  const defaultThemeContextValue = React.useMemo(
-    () => ({ theme, setTheme }),
-    [theme]
-  );
+  const themeValue = React.useMemo(() => ({ theme, setTheme }), [theme]);
+
+  document.body.className = theme;
 
   return (
-    <ThemeContext.Provider value={defaultThemeContextValue}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={themeValue}>{children}</ThemeContext.Provider>
   );
 };

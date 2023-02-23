@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 export enum ButtonThemes {
   CLEAR = "clear",
+  CLEAR_INVERTED = "clearInverted",
   OUTLINED = "outlined",
   FILLED = "filled",
   FILLED_INVERTED = "filled-inverted",

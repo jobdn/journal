@@ -3,10 +3,13 @@
 @import "./themes/light";
 @import "./variables/global";
 
-.app {
+body {
   font: var(--font-m);
-  background-color: var(--bg-color);
   color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.app {
   min-height: 100vh;
 }
 
@@ -18,6 +21,10 @@
   // Нужно в совершенстве понимать как расположить элементы на странице и сделать любое расположение элементов.
   padding: 20px;
   width: 100%;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
 }
 
 h2 {

@@ -21,6 +21,20 @@ Clear.args = {
   children: "BUTTON TEXT",
 };
 
+export const DarkClearInverted = ButtonTemplate.bind({});
+DarkClearInverted.args = {
+  theme: ButtonThemes.CLEAR_INVERTED,
+  children: "BUTTON TEXT",
+};
+
+DarkClearInverted.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const ClearInverted = ButtonTemplate.bind({});
+ClearInverted.args = {
+  theme: ButtonThemes.CLEAR_INVERTED,
+  children: "BUTTON TEXT",
+};
+
 export const Filled = ButtonTemplate.bind({});
 Filled.args = {
   theme: ButtonThemes.FILLED,
