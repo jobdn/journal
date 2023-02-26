@@ -22,7 +22,8 @@
     ".eslintrc.js",
     "webpack.config.ts",
     "config/**/*",
-    "scripts/**/*"
+    "scripts/**/*",
+    "json-server/**/*"
   ],
   "ts-node": {
     "compilerOptions": {
