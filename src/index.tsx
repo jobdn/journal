@@ -8,14 +8,17 @@ import "./shared/styles/index.scss";
 
 import "app/config/i18n";
 import { ErrorBoundary } from "app/config/ErrorBoundary";
+import { StoreProvider } from "app/config/StoreProvider";
 
 render(
-  <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
   document.getElementById("root")
 );

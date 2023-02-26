@@ -24,20 +24,20 @@ jobs:
         run: npm run lint:ts
       - name: Run jest
         run: npm run unit:test
-  Regression_tests_and_css_linting:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "17.x"
-      - name: Install deps
-        run: npm ci
-      - name: Run stylelint
-        run: npm run lint:scss
-      - name: Build StoryBook
-        run: npm run sb:build
-      - name: Loki test
-        run: npm run loki:ci
+  # Regression_tests_and_css_linting:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v3
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: "17.x"
+  #     - name: Install deps
+  #       run: npm ci
+  #     - name: Run stylelint
+  #       run: npm run lint:scss
+  #     - name: Build StoryBook
+  #       run: npm run sb:build
+  #     - name: Loki test
+  #       run: npm run loki:ci

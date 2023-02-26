@@ -12,7 +12,6 @@ describe("Sidebar", () => {
 
   it("should collapse and expand sidebar", async () => {
     renderWithProviders(<Sidebar />);
-    screen.debug();
     const toggleButton = screen.getByRole("button", { name: /collapse/i });
     await userEvent.click(toggleButton);
 
