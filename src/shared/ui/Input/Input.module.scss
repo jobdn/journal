@@ -1,0 +1,29 @@
+.InputContainer {
+  position: relative;
+}
+
+.inputLabel {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.showPasswordBtn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.input {
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  border: none;
+  padding: 0 40px 0 15px;
+}
+
+.fullWidth {
+  width: 100%;
+}

@@ -22,7 +22,8 @@
   color: var(--inverted-primary-color);
 }
 
-.filled {
+.filled,
+.filled-inverted {
   @include clear-button;
 
   background-color: var(--bg-color);
@@ -31,8 +32,6 @@
 }
 
 .filled-inverted {
-  @include clear-button;
-
   background-color: var(--inverted-bg-color);
   color: var(--inverted-primary-color);
 }

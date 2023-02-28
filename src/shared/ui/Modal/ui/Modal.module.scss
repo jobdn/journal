@@ -26,6 +26,7 @@
 .header {
   display: flex;
   flex-direction: row-reverse;
+  margin-bottom: 32px;
 }
 
 .opened {
@@ -40,6 +41,16 @@
     max-width: 70%;
     transform: scale(1);
   }
+}
+
+.isOpening {
+  .content {
+    transform: scale(0.2);
+  }
+}
+
+.closeIcon {
+  fill: var(--inverted-bg-color);
 }
 
 .isClosing {

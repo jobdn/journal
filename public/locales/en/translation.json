@@ -2,11 +2,9 @@
   "loading": "LOADING...",
   "not-found": "There is not such page",
   "page-error": "Something went wrong. Try to reload the page 🔃",
-
-  "navbar": {
-    "signIn": "Sign in"
-  },
-
+  "signIn": "Sign in",
+  "username": "Username",
+  "password": "Password",
   "sidebar": {
     "expandIcon": "Expand",
     "collapseIcon": "Collapse",

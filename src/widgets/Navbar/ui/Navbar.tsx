@@ -1,8 +1,8 @@
+import { AuthModal } from "features/AuthByUsername";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, ButtonThemes } from "shared/ui/Button";
-import { Modal } from "shared/ui/Modal";
 
 import classes from "./Navbar.module.scss";
 
@@ -14,9 +14,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const { t } = useTranslation();
   const [modalIsOpen, setOpenModal] = React.useState(false);
 
-  const handleOpenModal = () => {
+  const handleOpenModal = React.useCallback(() => {
     setOpenModal(true);
-  };
+  }, []);
 
   const handleCloseModal = React.useCallback(() => {
     setOpenModal(false);
@@ -25,13 +25,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav className={classes.Navbar}>
       <Button theme={ButtonThemes.CLEAR_INVERTED} onClick={handleOpenModal}>
-        {t("navbar.signIn")}
+        {t("signIn")}
       </Button>
-      <Modal isOpen={modalIsOpen} onClose={handleCloseModal}>
-        <input type="text" />
-        <br />
-        <input type="text" />
-      </Modal>
+
+      <AuthModal onClose={handleCloseModal} isOpen={modalIsOpen} />
     </nav>
   );
 };
