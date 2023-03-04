@@ -52,6 +52,7 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": "off", // TODO: вернуться к этому правилу
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "react/prop-types": "off",
   },
   overrides: [
     {

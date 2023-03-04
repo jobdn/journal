@@ -1,6 +1,10 @@
 .Button {
   cursor: pointer;
   padding: 10px 15px;
+
+  &[disabled] {
+    opacity: 0.5;
+  }
 }
 
 @mixin clear-button {

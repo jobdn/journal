@@ -1,3 +1,3 @@
-import { StoreSchema } from "app/config/StoreProvider";
+import { StateSchema } from "app/config/StoreProvider";
 
-export const selectCounter = (state: StoreSchema) => state.counter;
+export const selectCounter = (state: StateSchema) => state.counter;

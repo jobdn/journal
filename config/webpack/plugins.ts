@@ -22,7 +22,7 @@ export function webpackPlugins(
     }),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false,
+      openAnalyzer: true,
     }),
   ];
 }

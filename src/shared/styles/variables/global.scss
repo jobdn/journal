@@ -9,6 +9,10 @@
   --font-size-xl: 32px;
   --line-height-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--line-height-xl) var(--font-family-main);
+
+  // Colors
+  --error-dark: rgb(170 0 0);
+  --error-light: rgb(255 0 0);
   --primary-color-gold: #c79f5c;
 
   // Sizes

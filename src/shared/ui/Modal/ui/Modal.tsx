@@ -76,8 +76,6 @@ export const Modal: React.FC<ModalProps> = (props) => {
     [classes.isOpening]: isOpening,
   };
 
-  console.log("isOpening: ", isOpening);
-
   if (lazy && !isMounted) {
     return null;
   }

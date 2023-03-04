@@ -19,10 +19,12 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
   const handleLangToggle = async () =>
     i18next.changeLanguage(i18next.language === "ru" ? "en" : "ru");
   const { theme } = useTheme();
+
   const buttonTheme = React.useMemo(
     () => (theme === Theme.DARK ? ButtonThemes.CLEAR : ButtonThemes.FILLED),
     [theme]
   );
+
   return (
     // TODO: Почему кнопка черна в темной теме сторибука?
     <Button

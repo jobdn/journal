@@ -36,7 +36,10 @@ export default {
   testEnvironment: "jsdom",
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+  setupFilesAfterEnv: [
+    "<rootDir>/config/jest/setupTests.ts",
+    "<rootDir>/src/shared/config/i18n/i18nForTests.ts",
+  ],
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ["node_modules", "<rootDir>/src"],
@@ -51,6 +54,9 @@ export default {
   globals: {
     __IS_DEV__: true,
   },
+
+  // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
+  transformIgnorePatterns: ["node_modules/(?!axios)"],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -132,7 +138,7 @@ export default {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  // setupFiles: ["<rootDir>/src/shared/config/i18n/i18nForTests.ts"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -163,12 +169,6 @@ export default {
 
   // A map from regular expressions to paths to transformers
   // transform: undefined,
-
-  // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "\\\\node_modules\\\\",
-  //   "\\.pnp\\.[^\\\\]+$"
-  // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

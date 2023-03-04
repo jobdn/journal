@@ -1,22 +1,12 @@
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
 import { cn } from "shared/lib";
 
 import classes from "./Input.module.scss";
 import EyeIcon from "./assets/eye.svg";
 import { Button, ButtonThemes } from "../Button";
+import { InputProps } from "./types";
 
-export type InputVariants = "fullWidth";
-
-interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange"> {
-  className?: string;
-  value: string;
-  onChange?: (value: string) => void;
-  autoFocused?: boolean;
-  variant?: InputVariants;
-}
-
-export const Input: React.FC<InputProps> = (props) => {
+export const Input: React.FC<InputProps> = React.memo((props) => {
   const {
     className,
     id = "",
@@ -100,4 +90,4 @@ export const Input: React.FC<InputProps> = (props) => {
       </div>
     </div>
   );
-};
+});

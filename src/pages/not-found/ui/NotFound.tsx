@@ -14,7 +14,7 @@ const NotFoundPage: React.FC<NotFoundProps> = ({ className }) => {
   const { t } = useTranslation("not-found");
   return (
     <div className={cn(classes.NotFoundPage, {}, [className])}>
-      <h1 className={classes.title}>{t("not-found")}</h1>
+      <h1 className={classes.title}>{t("not_found")}</h1>
       <img
         src={NotFoundGif}
         className={classes.notFoundImg}

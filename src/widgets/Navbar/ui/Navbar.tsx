@@ -1,6 +1,10 @@
+import { selectUserData, userActions } from "entities/User";
 import { AuthModal } from "features/AuthByUsername";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "shared/config/store";
+import { USER_DATA } from "shared/constants";
 
 import { Button, ButtonThemes } from "shared/ui/Button";
 
@@ -13,6 +17,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = () => {
   const { t } = useTranslation();
   const [modalIsOpen, setOpenModal] = React.useState(false);
+  const userData = useSelector(selectUserData);
+  const dispatch = useAppDispatch();
 
   const handleOpenModal = React.useCallback(() => {
     setOpenModal(true);
@@ -22,11 +28,22 @@ export const Navbar: React.FC<NavbarProps> = () => {
     setOpenModal(false);
   }, []);
 
+  const handleLogout = React.useCallback(() => {
+    localStorage.removeItem(USER_DATA);
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
   return (
     <nav className={classes.Navbar}>
-      <Button theme={ButtonThemes.CLEAR_INVERTED} onClick={handleOpenModal}>
-        {t("signIn")}
-      </Button>
+      {userData ? (
+        <Button theme={ButtonThemes.CLEAR_INVERTED} onClick={handleLogout}>
+          {t("sign_out")}
+        </Button>
+      ) : (
+        <Button theme={ButtonThemes.CLEAR_INVERTED} onClick={handleOpenModal}>
+          {t("sign_in")}
+        </Button>
+      )}
 
       <AuthModal onClose={handleCloseModal} isOpen={modalIsOpen} />
     </nav>

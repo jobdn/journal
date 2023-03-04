@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, ModalProps } from "shared/ui/Modal";
-import { AuthForm } from "../AuthForm/AuthForm";
+import AuthForm from "../AuthForm/AuthForm";
 
 interface AuthModalProps extends ModalProps {
   className?: string;
@@ -8,9 +8,10 @@ interface AuthModalProps extends ModalProps {
 
 export const AuthModal: React.FC<AuthModalProps> = (props) => {
   const { isOpen, onClose } = props;
+
   return (
     <Modal onClose={onClose} isOpen={isOpen} lazy>
-      <AuthForm />
+      <AuthForm closeModal={onClose} />
     </Modal>
   );
 };
