@@ -10,8 +10,11 @@ interface StoreProviderProps {
 }
 
 export const StoreProvider: React.FC<StoreProviderProps> = (props) => {
-  const { children, initialState } = props;
-  const store = setupStore(initialState as StateSchema);
+  const { children, initialState, asyncReducers } = props;
+  const store = setupStore(
+    initialState as StateSchema,
+    asyncReducers as ReducersMapObject<StateSchema>
+  );
 
   return <Provider store={store}>{children}</Provider>;
 };

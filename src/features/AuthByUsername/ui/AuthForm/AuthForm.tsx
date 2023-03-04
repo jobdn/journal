@@ -1,9 +1,11 @@
+import { authReducer } from "features/AuthByUsername/model/authSlice";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/config/store";
 
-import { cn } from "shared/lib";
+import { cn, DynamicLoadingReducer } from "shared/lib";
+import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
 import { Button, ButtonThemes } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
 import { Text } from "shared/ui/Text";
@@ -21,6 +23,8 @@ export interface AuthFormProps {
   className?: string;
   closeModal: () => void;
 }
+
+const asyncAuthReducer: AsyncReducers = { auth: authReducer };
 
 const AuthForm: React.FC<AuthFormProps> = React.memo((props) => {
   const { className, closeModal } = props;
@@ -56,39 +60,41 @@ const AuthForm: React.FC<AuthFormProps> = React.memo((props) => {
   };
 
   return (
-    <form className={cn(classes.AuthForm, {}, [className])}>
-      <Text title={t("login_form_title")} className={classes.title} />
-      <Input
-        value={username}
-        onChange={handleUsernameChange}
-        id="login"
-        placeholder={t("username")}
-        className={classes.input}
-        autoFocused
-        variant="fullWidth"
-      />
+    <DynamicLoadingReducer reducers={asyncAuthReducer}>
+      <form className={cn(classes.AuthForm, {}, [className])}>
+        <Text title={t("login_form_title")} className={classes.title} />
+        <Input
+          value={username}
+          onChange={handleUsernameChange}
+          id="login"
+          placeholder={t("username")}
+          className={classes.input}
+          autoFocused
+          variant="fullWidth"
+        />
 
-      <Input
-        value={password}
-        onChange={handlePasswordChange}
-        id="password"
-        placeholder={t("password")}
-        className={classes.input}
-        type="password"
-        variant="fullWidth"
-      />
+        <Input
+          value={password}
+          onChange={handlePasswordChange}
+          id="password"
+          placeholder={t("password")}
+          className={classes.input}
+          type="password"
+          variant="fullWidth"
+        />
 
-      {error && <Text text={error} variant="error" />}
+        {error && <Text text={error} variant="error" />}
 
-      <Button
-        theme={ButtonThemes.FILLED_INVERTED}
-        className={classes.authBtn}
-        onClick={handleLogin}
-        disabled={isLoading}
-      >
-        {t("sign_in")}
-      </Button>
-    </form>
+        <Button
+          theme={ButtonThemes.FILLED_INVERTED}
+          className={classes.authBtn}
+          onClick={handleLogin}
+          disabled={isLoading}
+        >
+          {t("sign_in")}
+        </Button>
+      </form>
+    </DynamicLoadingReducer>
   );
 });
 
