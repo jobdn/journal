@@ -5,7 +5,7 @@ import {
 } from "app/config/StoreProvider/config/StateSchema";
 import React from "react";
 import { useStore } from "react-redux";
-import { useAppDispatch } from "shared/config/store";
+import { useAppDispatch } from "shared/lib";
 
 export type AsyncReducers = {
   [key in ReducerKey]?: Reducer;

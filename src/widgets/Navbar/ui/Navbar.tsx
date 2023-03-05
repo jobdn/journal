@@ -3,7 +3,7 @@ import { AuthModal } from "features/AuthByUsername";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/config/store";
+import { useAppDispatch } from "shared/lib";
 import { USER_DATA } from "shared/constants";
 
 import { Button, ButtonThemes } from "shared/ui/Button";

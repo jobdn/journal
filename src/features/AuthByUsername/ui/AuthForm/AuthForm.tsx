@@ -1,8 +1,7 @@
-import { authReducer } from "features/AuthByUsername/model/authSlice";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/config/store";
+import { useAppDispatch } from "shared/lib";
 
 import { cn, DynamicLoadingReducer } from "shared/lib";
 import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
@@ -10,7 +9,7 @@ import { Button, ButtonThemes } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
 import { Text } from "shared/ui/Text";
 
-import { authActions } from "../../model/authSlice";
+import { authActions, authReducer } from "../../model/slice/authSlice";
 import { selectError } from "../../model/selectors/selectError/selectError";
 import { selectIsLoading } from "../../model/selectors/selectIsLoading/selectIsLoading";
 import { selectPassword } from "../../model/selectors/selectPassword/selectPassword";

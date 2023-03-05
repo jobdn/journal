@@ -3,7 +3,7 @@ import React from "react";
 import { AppRouter } from "./config/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { useAppDispatch } from "shared/config/store";
+import { useAppDispatch } from "shared/lib";
 import { userActions } from "entities/User";
 
 export const App = () => {

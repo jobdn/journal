@@ -1,20 +1,12 @@
-import { StateSchema } from "app/config/StoreProvider";
 import axios, { AxiosResponse } from "axios";
 import { User, userActions } from "entities/User";
+import { TestAsyncThunk } from "shared/lib/tests";
 import { authByUsername } from "./authByUsername";
 
 jest.mock("axios");
 const mockedAxios = jest.mocked(axios, true);
 
 describe("authByUsername.test", () => {
-  let dispatch: AppDispatch;
-  let getState: () => StateSchema;
-
-  beforeEach(() => {
-    dispatch = jest.fn();
-    getState = jest.fn();
-  });
-
   it("Should return existent user", async () => {
     const existentUser: User = { id: "1", username: "Dan" };
     mockedAxios.post.mockReturnValue(
@@ -22,18 +14,19 @@ describe("authByUsername.test", () => {
         data: existentUser,
       })
     );
-    const authByUsernameAction = authByUsername({
+
+    const thunk = new TestAsyncThunk(authByUsername);
+    const result = await thunk.callThunk({
       password: "123",
       username: "Dan",
     });
-    const result = await authByUsernameAction(dispatch, getState, undefined);
 
-    expect(dispatch).toBeCalledWith(
+    expect(thunk.dispatch).toBeCalledWith(
       userActions.setUserAuthData({ userAuthData: existentUser })
     );
 
     expect(mockedAxios.post).toBeCalledTimes(1);
-    expect(dispatch).toBeCalledTimes(3);
+    expect(thunk.dispatch).toBeCalledTimes(3);
     expect(result.meta.requestStatus).toBe("fulfilled");
   });
 
@@ -43,16 +36,16 @@ describe("authByUsername.test", () => {
         status: 403,
       },
     });
-    const authByUsernameAction = authByUsername({
+    const thunk = new TestAsyncThunk(authByUsername);
+
+    const result = await thunk.callThunk({
       password: "123",
       username: "Dan",
     });
 
-    const result = await authByUsernameAction(dispatch, getState, undefined);
-
     expect(mockedAxios.post).toBeCalledTimes(1);
     expect(result.payload).toBe("Incorrect login or password");
-    expect(dispatch).toBeCalledTimes(2);
+    expect(thunk.dispatch).toBeCalledTimes(2);
     expect(result.meta.requestStatus).toBe("rejected");
   });
 });

@@ -12,7 +12,8 @@ import {
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
-  // В нижнем поле используется ?: потому что в будущем этот редьюсер будет ленивым
+
+  // 👇 async reducers
   auth?: AuthSchema;
 }
 

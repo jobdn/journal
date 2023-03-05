@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { AuthSchema } from "../types/AuthSchema";
-import { authByUsername } from "./thunks/authByUsername/authByUsername";
+import { AuthSchema } from "../../types/AuthSchema";
+import { authByUsername } from "../thunks/authByUsername/authByUsername";
 
 const initialState: AuthSchema = {
   isLoading: false,

@@ -27,7 +27,7 @@ export const Counter: React.FC<CounterProps> = () => {
   return (
     <div>
       <h1>
-        value: <span data-testId="counter-value">{value}</span>
+        value: <span data-testid="counter-value">{value}</span>
       </h1>
       {}
       <Button onClick={handleDecrement}>Decrement</Button>

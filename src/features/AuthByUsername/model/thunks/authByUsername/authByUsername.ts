@@ -5,7 +5,15 @@ import i18next from "i18next";
 import { USER_DATA } from "shared/constants";
 
 import { AuthByUsernameArgs } from "../../../types/AuthByUsernameArgs";
-
+/**
+ * Уже из этого создания authByUsername понятно, что createAsyncThunk возвращает функцию
+ * и у нее есть тип AsyncThunk это тоже самое, что и AsyncThunkActionCreator ну а это, в свою очередь,
+ * ровняется типу IsAny<T, True, False>, который возвращает , True
+ *
+ * Если проследовать по цепочке присваивания типов, по будет понятно, что createAsyncThunk возвращает фукнцию типа
+ *
+ * (arg: ThunkArg) => AsyncThunkAction<Returned, ThunkArg, ThunkApiConfig>
+ */
 export const authByUsername = createAsyncThunk<
   User,
   AuthByUsernameArgs,
@@ -31,6 +39,7 @@ export const authByUsername = createAsyncThunk<
       return response.data;
     } catch (error) {
       const typedError = error as AxiosError;
+
       if (typedError?.response?.status === 403) {
         return rejectWithValue(i18next.t("incorrect_login"));
       }
