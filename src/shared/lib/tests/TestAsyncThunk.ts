@@ -1,5 +1,4 @@
 import { AsyncThunkAction } from "@reduxjs/toolkit";
-import { StateSchema } from "app/config/StoreProvider";
 
 export type ThunkActionCreator<Returned, ThunkArg, RejectedValue> = (
   arg: ThunkArg

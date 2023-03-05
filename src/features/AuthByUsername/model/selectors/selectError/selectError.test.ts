@@ -1,5 +1,4 @@
 import { DeepPartial } from "@reduxjs/toolkit";
-import { StateSchema } from "app/config/StoreProvider";
 import { selectError } from "./selectError";
 
 describe("selectError.test", () => {

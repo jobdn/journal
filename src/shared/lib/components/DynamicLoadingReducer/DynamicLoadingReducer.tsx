@@ -1,10 +1,8 @@
-import { Reducer } from "@reduxjs/toolkit";
-import {
-  ReducerKey,
-  ReduxStoreWithManager,
-} from "app/config/StoreProvider/config/StateSchema";
 import React from "react";
 import { useStore } from "react-redux";
+
+import { Reducer } from "@reduxjs/toolkit";
+import { ReducerKey, ReduxStoreWithManager } from "app/config/StoreProvider";
 import { useAppDispatch } from "shared/lib";
 
 export type AsyncReducers = {

@@ -8,14 +8,7 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-
-export interface StateSchema {
-  counter: CounterSchema;
-  user: UserSchema;
-
-  // 👇 async reducers
-  auth?: AuthSchema;
-}
+import { setupStore } from "./setupStore";
 
 export interface CreateReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
@@ -29,3 +22,15 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 }
 
 export type ReducerKey = keyof StateSchema;
+
+declare global {
+  export type AppStore = ReturnType<typeof setupStore>;
+  export type AppDispatch = AppStore["dispatch"];
+  interface StateSchema {
+    counter: CounterSchema;
+    user: UserSchema;
+
+    // 👇 async reducers
+    auth?: AuthSchema;
+  }
+}

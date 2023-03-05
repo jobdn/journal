@@ -1,5 +1,4 @@
 import { DeepPartial } from "@reduxjs/toolkit";
-import { StateSchema } from "app/config/StoreProvider";
 import { selectUserData } from "./selectUserData";
 
 describe("selectUserData.test", () => {
