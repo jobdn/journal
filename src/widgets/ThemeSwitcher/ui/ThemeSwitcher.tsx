@@ -13,19 +13,21 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = () => {
-  const { theme, toggleTheme } = useTheme();
-  const { t } = useTranslation();
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = React.memo(
+  function ThemeSwitcher() {
+    const { theme, toggleTheme } = useTheme();
+    const { t } = useTranslation();
 
-  return (
-    <Button
-      className={classes.ThemeSwitcher}
-      onClick={toggleTheme}
-      type="button"
-      theme={ButtonThemes.CLEAR}
-      title={t("sidebar.titles.theme")}
-    >
-      {theme === Theme.DARK ? <LightThemeSwitcher /> : <DarkThemeSwitcher />}
-    </Button>
-  );
-};
+    return (
+      <Button
+        className={classes.ThemeSwitcher}
+        onClick={toggleTheme}
+        type="button"
+        theme={ButtonThemes.CLEAR}
+        title={t("sidebar.titles.theme")}
+      >
+        {theme === Theme.DARK ? <LightThemeSwitcher /> : <DarkThemeSwitcher />}
+      </Button>
+    );
+  }
+);

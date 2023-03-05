@@ -14,26 +14,28 @@ interface LangSwitcherProps {
   className?: string;
 }
 
-export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
-  const { t } = useTranslation();
-  const handleLangToggle = async () =>
-    i18next.changeLanguage(i18next.language === "ru" ? "en" : "ru");
-  const { theme } = useTheme();
+export const LangSwitcher: React.FC<LangSwitcherProps> = React.memo(
+  function LangSwitcher({ className }) {
+    const { t } = useTranslation();
+    const handleLangToggle = async () =>
+      i18next.changeLanguage(i18next.language === "ru" ? "en" : "ru");
+    const { theme } = useTheme();
 
-  const buttonTheme = React.useMemo(
-    () => (theme === Theme.DARK ? ButtonThemes.CLEAR : ButtonThemes.FILLED),
-    [theme]
-  );
+    const buttonTheme = React.useMemo(
+      () => (theme === Theme.DARK ? ButtonThemes.CLEAR : ButtonThemes.FILLED),
+      [theme]
+    );
 
-  return (
-    // TODO: Почему кнопка черна в темной теме сторибука?
-    <Button
-      theme={buttonTheme}
-      className={cn(classes.LangSwitcher, {}, [className])}
-      onClick={handleLangToggle}
-      title={t("sidebar.titles.lang")}
-    >
-      <ChangeLang />
-    </Button>
-  );
-};
+    return (
+      // TODO: Почему кнопка черна в темной теме сторибука?
+      <Button
+        theme={buttonTheme}
+        className={cn(classes.LangSwitcher, {}, [className])}
+        onClick={handleLangToggle}
+        title={t("sidebar.titles.lang")}
+      >
+        <ChangeLang />
+      </Button>
+    );
+  }
+);

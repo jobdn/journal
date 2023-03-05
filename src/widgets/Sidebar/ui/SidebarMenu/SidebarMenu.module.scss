@@ -1,0 +1,61 @@
+@mixin collapse-menu-item {
+  flex-direction: column;
+  gap: 2px;
+}
+
+@mixin collapse-menu-item-text {
+  font-size: var(--font-size-m);
+}
+
+@media screen and (max-width: 768px) {
+  .hiddenOnTablet {
+    display: none !important;
+  }
+}
+
+.SidebarMenu {
+  padding: 0 20px;
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+      @include collapse-menu-item;
+    }
+
+    &Icon {
+      display: inline-block;
+      width: 30px;
+    }
+
+    &Text {
+      color: var(--inverted-primary-color);
+      transition: all 0.5s ease-in-out;
+      font-size: var(--font-size-l);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inline-block;
+      font-weight: 600;
+
+      @media screen and (max-width: 768px) {
+        @include collapse-menu-item-text;
+      }
+    }
+  }
+}
+
+.collapsed {
+  padding: 0;
+
+  .SidebarMenuItem {
+    @include collapse-menu-item;
+
+    &Text {
+      @include collapse-menu-item-text;
+    }
+  }
+}

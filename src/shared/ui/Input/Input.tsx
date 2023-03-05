@@ -6,7 +6,7 @@ import EyeIcon from "./assets/eye.svg";
 import { Button, ButtonThemes } from "../Button";
 import { InputProps } from "./types";
 
-export const Input: React.FC<InputProps> = React.memo((props) => {
+export const Input: React.FC<InputProps> = React.memo(function Input(props) {
   const {
     className,
     id = "",

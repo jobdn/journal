@@ -9,6 +9,7 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { setupStore } from "./setupStore";
+import { ProfileSchema } from "entities/Profile";
 
 export interface CreateReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
@@ -32,5 +33,6 @@ declare global {
 
     // 👇 async reducers
     auth?: AuthSchema;
+    profile?: ProfileSchema;
   }
 }

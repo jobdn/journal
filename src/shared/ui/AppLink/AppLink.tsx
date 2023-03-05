@@ -6,7 +6,9 @@ import { cn } from "shared/lib";
 import classes from "./AppLink.module.scss";
 import { AppLinkProps, AppLinkThemes } from "./types";
 
-export const AppLink: React.FC<AppLinkProps> = (props) => {
+export const AppLink: React.FC<AppLinkProps> = React.memo(function AppLink(
+  props
+) {
   const {
     className,
     to,
@@ -24,4 +26,4 @@ export const AppLink: React.FC<AppLinkProps> = (props) => {
       {children}
     </NavLink>
   );
-};
+});

@@ -25,7 +25,7 @@ export interface AuthFormProps {
 
 const asyncAuthReducer: AsyncReducers = { auth: authReducer };
 
-const AuthForm: React.FC<AuthFormProps> = React.memo((props) => {
+const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
   const { className, closeModal } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -48,15 +48,18 @@ const AuthForm: React.FC<AuthFormProps> = React.memo((props) => {
     [dispatch]
   );
 
-  const handleLogin = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleLogin = React.useCallback(
+    (e: React.FormEvent<HTMLButtonElement>) => {
+      e.preventDefault();
 
-    dispatch(authByUsername({ password, username }))
-      .unwrap()
-      .then(() => {
-        closeModal();
-      });
-  };
+      dispatch(authByUsername({ password, username }))
+        .unwrap()
+        .then(() => {
+          closeModal();
+        });
+    },
+    [closeModal, dispatch, password, username]
+  );
 
   return (
     <DynamicLoadingReducer reducers={asyncAuthReducer}>

@@ -1,6 +1,6 @@
 import { Resource } from "i18next";
 
-const ns = ["translation", "home", "about"];
+const ns = ["translation", "home", "about", "profile"];
 const supportedLngs = ["en", "ru"];
 
 export const resources: Resource = ns.reduce(

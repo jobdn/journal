@@ -1,0 +1,34 @@
+.Sidebar {
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
+  width: var(--sidebar-width);
+  position: relative;
+  transition: width 0.5s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    width: var(--sidebar-collapsed-width);
+  }
+}
+
+.switchers {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+
+  &_vertical {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
