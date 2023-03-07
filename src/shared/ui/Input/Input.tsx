@@ -15,10 +15,10 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
     value,
     onChange,
     autoFocused,
-    variant,
+    variant = "default",
     ...restProps
   } = props;
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = React.useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const toggleFieldToText = () => {
     inputRef.current.type = "text";

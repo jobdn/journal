@@ -10,6 +10,7 @@ export interface WebpackConfigPaths {
 export interface WebpackEnv {
   mode: WebpackConfigMode;
   port: number;
+  api: string;
 }
 
 export interface WebpackConfigOptions {
@@ -17,4 +18,5 @@ export interface WebpackConfigOptions {
   paths: WebpackConfigPaths;
   isDev: boolean;
   port: number;
+  api: string;
 }

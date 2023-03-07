@@ -1,9 +1,10 @@
-import { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
+import { ReducersMapObject } from "@reduxjs/toolkit";
 import { Story } from "@storybook/react";
 import { StoreProvider } from "app/config/StoreProvider";
 import { authReducer } from "features/AuthByUsername";
+import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
 
-const defaultAsyncReducers: ReducersMapObject<DeepPartial<StateSchema>> = {
+const defaultAsyncReducers: AsyncReducers = {
   auth: authReducer,
 };
 

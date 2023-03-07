@@ -7,7 +7,7 @@ const initialState: AuthSchema = {
   isLoading: false,
   password: "",
   username: "",
-  error: "",
+  error: null,
 };
 
 export const authSlice = createSlice({
@@ -23,7 +23,7 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(authByUsername.pending, (state) => {
-      state.error = undefined;
+      state.error = null;
       state.isLoading = true;
     });
     builder.addCase(authByUsername.fulfilled, (state) => {
@@ -31,7 +31,7 @@ export const authSlice = createSlice({
     });
     builder.addCase(authByUsername.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.error = action.payload || "Default Error";
     });
   },
 });

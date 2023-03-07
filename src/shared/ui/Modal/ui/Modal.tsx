@@ -8,6 +8,7 @@ import { Button, ButtonThemes } from "../../Button";
 import { Portal } from "../../Portal";
 import CloseIcon from "../assets/close-icon.svg";
 import { ModalProps } from "../types/ModalProps";
+import { Mods } from "shared/lib/classNames/classNames";
 
 const ANIMATION_TIMEOUT = 300;
 
@@ -17,8 +18,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [isOpening, setIsOpening] = React.useState(false);
   const [isClosing, setClosing] = React.useState(false);
-  const closingTimeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
-  const openingTimeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
+  const closingTimeoutRef =
+    React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openingTimeoutRef =
+    React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleClose = React.useCallback(() => {
     setClosing(true);
@@ -48,7 +51,9 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
     return () => {
       window.removeEventListener("keydown", handleKeyboardClose);
-      clearTimeout(closingTimeoutRef.current);
+      if (closingTimeoutRef.current) {
+        clearTimeout(closingTimeoutRef.current);
+      }
     };
   }, [handleKeyboardClose, isOpen]);
 
@@ -64,13 +69,15 @@ export const Modal: React.FC<ModalProps> = (props) => {
     });
 
     return () => {
-      clearTimeout(openingTimeoutRef.current);
+      if (openingTimeoutRef.current) {
+        clearTimeout(openingTimeoutRef.current);
+      }
     };
   }, [isOpen, isMounted, lazy]);
 
   const preventPropagation = (e: React.MouseEvent) => e.stopPropagation();
 
-  const mods = {
+  const mods: Mods = {
     [classes.opened]: isOpen,
     [classes.isClosing]: isClosing,
     [classes.isOpening]: isOpening,

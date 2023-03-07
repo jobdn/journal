@@ -19,6 +19,7 @@ export function webpackPlugins(
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: options.isDev,
+      __API__: JSON.stringify(options.api),
     }),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({

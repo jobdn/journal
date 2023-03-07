@@ -4,24 +4,30 @@ import webpack from "webpack";
 import { createCssLoader } from "../webpack/loaders/createCssLoader";
 
 export const createWebpackFinal = async (config: webpack.Configuration) => {
-  config.resolve.modules.push(path.join(__dirname, "..", "..", "src"));
+  config!.resolve!.modules!.push(path.join(__dirname, "..", "..", "src"));
   config.mode = "development";
 
-  config.module.rules.push(createCssLoader(true));
+  config!.module!.rules!.push(createCssLoader(true));
 
-  const fileLoaderRule = config.module.rules.find(
+  const fileLoaderRule = config!.module!.rules!.find(
+    // @ts-ignore
     (rule: webpack.RuleSetRule) =>
       rule.test && (rule.test as RegExp).test(".svg")
   ) as webpack.RuleSetRule;
 
   fileLoaderRule.exclude = /\.svg$/;
 
-  config.module.rules.push({
+  config!.module!.rules!.push({
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
 
-  config.plugins.push(new webpack.DefinePlugin({ __IS_DEV__: true }));
+  config!.plugins!.push(
+    new webpack.DefinePlugin({
+      __IS_DEV__: true,
+      __API__: true,
+    })
+  );
 
   return config;
 };

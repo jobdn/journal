@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { selectPassword } from "./selectPassword";
 
 describe("selectPassword.test", () => {

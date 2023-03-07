@@ -10,9 +10,7 @@ export default {
   component: About,
 } as ComponentMeta<typeof About>;
 
-const AboutTemplate: ComponentStory<typeof About> = (args) => (
-  <About {...args} />
-);
+const AboutTemplate: ComponentStory<typeof About> = () => <About />;
 
 export const DarkAbout = AboutTemplate.bind({});
 DarkAbout.decorators = [ThemeDecorator(Theme.DARK)];

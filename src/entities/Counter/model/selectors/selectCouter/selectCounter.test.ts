@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { selectCounter } from "./selectCounter";
 
 describe("selectCounter.test", () => {

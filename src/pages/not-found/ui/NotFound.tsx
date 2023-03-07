@@ -11,7 +11,7 @@ interface NotFoundProps {
 }
 
 const NotFoundPage: React.FC<NotFoundProps> = ({ className }) => {
-  const { t } = useTranslation("not-found");
+  const { t } = useTranslation();
   return (
     <div className={cn(classes.NotFoundPage, {}, [className])}>
       <h1 className={classes.title}>{t("not_found")}</h1>

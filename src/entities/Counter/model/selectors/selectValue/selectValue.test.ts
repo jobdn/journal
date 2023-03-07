@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { selectValue } from "./selectValue";
 
 describe("selectValue.test", () => {

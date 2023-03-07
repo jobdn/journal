@@ -11,6 +11,7 @@ export function createWebpackConfig(
   options: WebpackConfigOptions
 ): webpack.Configuration {
   const { mode, paths, isDev } = options;
+
   return {
     mode,
     entry: paths.entry,

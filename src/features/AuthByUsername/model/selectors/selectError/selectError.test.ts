@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { selectError } from "./selectError";
 
 describe("selectError.test", () => {

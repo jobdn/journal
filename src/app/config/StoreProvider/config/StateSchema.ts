@@ -10,7 +10,20 @@ import {
 } from "@reduxjs/toolkit";
 import { setupStore } from "./setupStore";
 import { ProfileSchema } from "entities/Profile";
+import { AxiosInstance } from "axios";
 
+declare global {
+  export type AppStore = ReturnType<typeof setupStore>;
+  export type AppDispatch = AppStore["dispatch"];
+  interface StateSchema {
+    counter: CounterSchema;
+    user: UserSchema;
+
+    // 👇 async reducers
+    auth?: AuthSchema;
+    profile?: ProfileSchema;
+  }
+}
 export interface CreateReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
@@ -24,15 +37,10 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export type ReducerKey = keyof StateSchema;
 
-declare global {
-  export type AppStore = ReturnType<typeof setupStore>;
-  export type AppDispatch = AppStore["dispatch"];
-  interface StateSchema {
-    counter: CounterSchema;
-    user: UserSchema;
-
-    // 👇 async reducers
-    auth?: AuthSchema;
-    profile?: ProfileSchema;
-  }
+export interface ThunkExtraArg {
+  api: AxiosInstance;
+}
+export interface ThunkOptions<T> {
+  rejectValue: T;
+  extra: ThunkExtraArg;
 }

@@ -1,8 +1,8 @@
 import { Profile } from "./Profile";
 
 export interface ProfileSchema {
-  profileData: Profile;
+  profileData: Profile | null;
   isLoading: boolean;
-  error: string;
+  error: string | null;
   readonly: boolean;
 }

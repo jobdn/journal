@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { selectIsLoading } from "./selectIsLoading";
 
 describe("selectIsLoading.test", () => {

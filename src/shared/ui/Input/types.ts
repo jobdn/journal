@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
 
-export type InputVariants = "fullWidth";
+export type InputVariants = "fullWidth" | "default";
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange"> {

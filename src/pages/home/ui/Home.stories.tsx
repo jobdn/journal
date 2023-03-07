@@ -10,7 +10,7 @@ export default {
   component: Home,
 } as ComponentMeta<typeof Home>;
 
-const HomeTemplate: ComponentStory<typeof Home> = (args) => <Home {...args} />;
+const HomeTemplate: ComponentStory<typeof Home> = () => <Home />;
 
 export const DarkHome = HomeTemplate.bind({});
 DarkHome.decorators = [ThemeDecorator(Theme.DARK)];

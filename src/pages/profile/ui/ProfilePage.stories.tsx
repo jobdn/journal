@@ -10,8 +10,8 @@ export default {
   component: ProfilePage,
 } as ComponentMeta<typeof ProfilePage>;
 
-const ProfilePageTemplate: ComponentStory<typeof ProfilePage> = (args) => (
-  <ProfilePage {...args} />
+const ProfilePageTemplate: ComponentStory<typeof ProfilePage> = () => (
+  <ProfilePage />
 );
 
 export const DarkProfilePage = ProfilePageTemplate.bind({});

@@ -6,6 +6,7 @@ export default (env: WebpackEnv) => {
   const mode = env.mode || "development";
   const port = env.port || 3000;
   const isDev = mode === "development";
+  const api = env.api || "http://localhost:8000";
 
   return createWebpackConfig({
     mode,
@@ -17,5 +18,6 @@ export default (env: WebpackEnv) => {
     },
     isDev,
     port,
+    api,
   });
 };
