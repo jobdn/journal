@@ -1,6 +1,6 @@
 import { USER_DATA } from "shared/constants";
-import { User, userActions, userReducer } from "..";
-import { UserSchema } from "../types/UserSchema";
+import { User, userActions, userReducer } from "../..";
+import { UserSchema } from "../../types/UserSchema";
 
 describe("userSlice.test", () => {
   it("Should set user data", () => {
