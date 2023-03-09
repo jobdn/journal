@@ -1,6 +1,16 @@
 {
   "title": "Your profile",
   "edit": "Edit",
+  "clean": "Clean",
+  "save": "Save",
   "name": "Name",
-  "lastname": "Lastname"
+  "lastname": "Lastname",
+  "age": "Age: ",
+  "city": "City: ",
+  "avatar": "Avatar link: ",
+  "username": "Username: : ",
+  "choose_country": "Choose country: ",
+  "choose_currency": "Choose currency: ",
+  "profile_loading_text": "Data about profile is loading...",
+  "error": "Profile loading failed"
 }

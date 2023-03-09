@@ -31,9 +31,9 @@ export const authByUsername = createAsyncThunk<
     const typedError = error as AxiosError;
 
     if (typedError?.response?.status === 403) {
-      return rejectWithValue(i18next.t("incorrect_login"));
+      return rejectWithValue(i18next.t("error.incorrect_login"));
     }
 
-    return rejectWithValue(i18next.t("server_down"));
+    return rejectWithValue(i18next.t("error.server_down"));
   }
 });

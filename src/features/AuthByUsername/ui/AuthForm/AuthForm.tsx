@@ -5,7 +5,7 @@ import { useAppDispatch } from "shared/lib";
 
 import { cn, DynamicLoadingReducer } from "shared/lib";
 import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
-import { Button, ButtonThemes } from "shared/ui/Button";
+import { Button, ButtonVariant } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
 import { Text } from "shared/ui/Text";
 
@@ -88,7 +88,7 @@ const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
         {error && <Text text={error} variant="error" />}
 
         <Button
-          theme={ButtonThemes.FILLED_INVERTED}
+          variant={ButtonVariant.FILLED_INVERTED}
           className={classes.authBtn}
           onClick={handleLogin}
           disabled={isLoading}

@@ -2,7 +2,7 @@ import React from "react";
 import i18next from "i18next";
 
 import { cn } from "shared/lib";
-import { Button, ButtonThemes } from "shared/ui/Button";
+import { Button, ButtonVariant } from "shared/ui/Button";
 import { useTranslation } from "react-i18next";
 
 import classes from "./LangSwitcher.module.scss";
@@ -21,15 +21,15 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = React.memo(
       i18next.changeLanguage(i18next.language === "ru" ? "en" : "ru");
     const { theme } = useTheme();
 
-    const buttonTheme = React.useMemo(
-      () => (theme === Theme.DARK ? ButtonThemes.CLEAR : ButtonThemes.FILLED),
+    const buttonVariant = React.useMemo(
+      () => (theme === Theme.DARK ? ButtonVariant.CLEAR : ButtonVariant.FILLED),
       [theme]
     );
 
     return (
       // TODO: Почему кнопка черна в темной теме сторибука?
       <Button
-        theme={buttonTheme}
+        variant={buttonVariant}
         className={cn(classes.LangSwitcher, {}, [className])}
         onClick={handleLangToggle}
         title={t("sidebar.titles.lang")}

@@ -4,7 +4,7 @@ import { cn } from "shared/lib";
 import classes from "./PageError.module.scss";
 
 import ErrorBoundaryGif from "../assets/error.gif";
-import { Button } from "shared/ui/Button";
+import { Button, ButtonVariant } from "shared/ui/Button";
 import { useTranslation } from "react-i18next";
 
 interface PageErrorProps {
@@ -20,7 +20,9 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
   return (
     <div className={cn(classes.PageError, {}, [className])}>
       <img src={ErrorBoundaryGif} alt="Error placeholder" />
-      <Button onClick={handleReload}>{t("page-error")} </Button>
+      <Button onClick={handleReload} variant={ButtonVariant.FILLED_INVERTED}>
+        {t("error.page-error")}
+      </Button>
     </div>
   );
 };

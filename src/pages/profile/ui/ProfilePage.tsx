@@ -1,9 +1,13 @@
 import React from "react";
-import { ProfileCard, profileReducer } from "entities/Profile";
-import { fetchProfileData } from "entities/Profile";
 import { useTranslation } from "react-i18next";
+
 import { DynamicLoadingReducer, useAppDispatch } from "shared/lib";
 import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
+import {
+  profileReducer,
+  fetchProfileData,
+  EditableProfileCard,
+} from "features/EditableProfileCard";
 
 const lazyReducers: AsyncReducers = { profile: profileReducer };
 
@@ -17,7 +21,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicLoadingReducer reducers={lazyReducers}>
-      <ProfileCard />
+      <EditableProfileCard />
     </DynamicLoadingReducer>
   );
 };

@@ -4,7 +4,7 @@ import classes from "./Modal.module.scss";
 
 import { cn } from "shared/lib";
 
-import { Button, ButtonThemes } from "../../Button";
+import { Button, ButtonVariant } from "../../Button";
 import { Portal } from "../../Portal";
 import CloseIcon from "../assets/close-icon.svg";
 import { ModalProps } from "../types/ModalProps";
@@ -93,7 +93,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
         <div className={classes.overlay} onClick={handleClose}>
           <div className={classes.content} onClick={preventPropagation}>
             <div className={classes.header}>
-              <Button theme={ButtonThemes.CLEAR} onClick={handleClose}>
+              <Button variant={ButtonVariant.CLEAR} onClick={handleClose}>
                 <CloseIcon className={classes.closeIcon} />
               </Button>
             </div>

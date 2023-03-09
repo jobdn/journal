@@ -18,8 +18,9 @@ export const AuthModal: React.FC<AuthModalProps> = (props) => {
       <React.Suspense
         fallback={
           <CircleLoader
+            align="center"
             className={classes.fallback}
-            text={t("loading_form_text")}
+            text={t("form_loading_text")}
           />
         }
       >

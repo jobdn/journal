@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "shared/lib";
 
-import { Button, ButtonThemes } from "shared/ui/Button";
+import { Button, ButtonVariant } from "shared/ui/Button";
 
 import ExpandIcon from "../../assets/expand.svg";
 import CollapseIcon from "../../assets/collapse.svg";
@@ -43,7 +43,7 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = React.memo(
       >
         <Button
           onClick={onToggle}
-          theme={ButtonThemes.CLEAR}
+          variant={ButtonVariant.CLEAR}
           className={cn(classes.SidebarMenuItem, {}, [classes.hiddenOnTablet])}
         >
           {collapsed ? (

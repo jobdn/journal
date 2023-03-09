@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Theme, useTheme } from "shared/config/theme";
-import { Button, ButtonThemes } from "shared/ui/Button";
+import { Button, ButtonVariant } from "shared/ui/Button";
 
 import DarkThemeSwitcher from "../assets/dark-theme-switcher.svg";
 import LightThemeSwitcher from "../assets/light-theme-switcher.svg";
@@ -23,7 +23,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = React.memo(
         className={classes.ThemeSwitcher}
         onClick={toggleTheme}
         type="button"
-        theme={ButtonThemes.CLEAR}
+        variant={ButtonVariant.CLEAR}
         title={t("sidebar.titles.theme")}
       >
         {theme === Theme.DARK ? <LightThemeSwitcher /> : <DarkThemeSwitcher />}

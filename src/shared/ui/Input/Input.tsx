@@ -3,7 +3,7 @@ import { cn } from "shared/lib";
 
 import classes from "./Input.module.scss";
 import EyeIcon from "./assets/eye.svg";
-import { Button, ButtonThemes } from "../Button";
+import { Button, ButtonVariant } from "../Button";
 import { InputProps } from "./types";
 
 export const Input: React.FC<InputProps> = React.memo(function Input(props) {
@@ -16,6 +16,7 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
     onChange,
     autoFocused,
     variant = "default",
+    readonly,
     ...restProps
   } = props;
   const inputRef = React.useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -58,17 +59,23 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
   }, [autoFocused]);
 
   return (
-    <div className={cn(classes.Input, {}, [className])}>
+    <div className={cn("", {}, [className])}>
       {placeholder && (
         <label className={classes.inputLabel} htmlFor={id}>
           {placeholder}
         </label>
       )}
 
-      <div className={cn(classes.InputContainer, {}, [className])}>
+      <div
+        className={cn(
+          classes.InputContainer,
+          { [classes.readonly]: readonly },
+          [className]
+        )}
+      >
         {inputIsPassword && (
           <Button
-            theme={ButtonThemes.CLEAR}
+            variant={ButtonVariant.CLEAR}
             className={classes.showPasswordBtn}
             onClick={toggleFieldType}
             onMouseDown={toggleFieldToText}
@@ -81,7 +88,11 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
         <input
           id={id}
           type={type}
-          className={cn(classes.input, {}, [classes[variant]])}
+          className={cn(
+            classes.input,
+            { [classes.password]: inputIsPassword },
+            [classes[variant]]
+          )}
           ref={inputRef}
           onChange={handleChange}
           value={value}

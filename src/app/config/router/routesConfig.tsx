@@ -7,7 +7,11 @@ import { HomePage } from "pages/home";
 import { NotFoundPage } from "pages/not-found";
 import { ProfilePage } from "pages/profile";
 
-export const routes: Record<AvailableRoutes, RouteProps> = {
+export type CustomRouteProps = RouteProps & {
+  authOnly?: boolean;
+};
+
+export const routes: Record<AvailableRoutes, CustomRouteProps> = {
   [AvailableRoutes.HOME]: {
     path: RoutePaths[AvailableRoutes.HOME],
     element: <HomePage />,
@@ -19,6 +23,7 @@ export const routes: Record<AvailableRoutes, RouteProps> = {
   [AvailableRoutes.PROFILE]: {
     path: RoutePaths[AvailableRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
   },
   [AvailableRoutes.NOT_FOUND]: {
     path: RoutePaths[AvailableRoutes.NOT_FOUND],

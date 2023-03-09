@@ -21,6 +21,8 @@ body {
   // Нужно в совершенстве понимать как расположить элементы на странице и сделать любое расположение элементов.
   padding: 20px;
   width: 100%;
+  overflow-y: auto;
+  height: calc(100vh - var(--navbar-height));
 }
 
 .icon {

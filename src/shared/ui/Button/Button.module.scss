@@ -27,7 +27,9 @@
 }
 
 .filled,
-.filled-inverted {
+.filled-inverted,
+.filled-danger,
+.filled-success {
   @include clear-button;
 
   background-color: var(--bg-color);
@@ -37,6 +39,16 @@
 
 .filled-inverted {
   background-color: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+}
+
+.filled-danger {
+  background-color: var(--error-dark);
+  color: var(--inverted-primary-color);
+}
+
+.filled-success {
+  background-color: var(--success-light);
   color: var(--inverted-primary-color);
 }
 

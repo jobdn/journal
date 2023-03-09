@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "shared/lib";
-import { ButtonThemes } from ".";
+import { ButtonVariant } from ".";
 
 import classes from "./Button.module.scss";
 import { ButtonProps } from "./types";
@@ -9,11 +9,11 @@ export const Button: React.FC<ButtonProps> = React.memo(function Button(props) {
   const {
     className,
     children,
-    theme = ButtonThemes.CLEAR,
+    variant = ButtonVariant.CLEAR,
     ...restProps
   } = props;
 
-  const additionalClasses = [className, classes[theme]];
+  const additionalClasses = [className, classes[variant]];
 
   return (
     <button

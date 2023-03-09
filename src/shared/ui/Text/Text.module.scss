@@ -8,6 +8,14 @@
   color: var(--secondary-color);
 }
 
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
 .error {
   .title {
     font: var(--font-l);

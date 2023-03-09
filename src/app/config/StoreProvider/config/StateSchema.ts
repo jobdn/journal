@@ -41,6 +41,7 @@ export interface ThunkExtraArg {
   api: AxiosInstance;
 }
 export interface ThunkOptions<T> {
+  state: StateSchema;
   rejectValue: T;
   extra: ThunkExtraArg;
 }

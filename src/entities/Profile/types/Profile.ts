@@ -1,12 +1,5 @@
-export enum Currency {
-  RUB = "RUB",
-  EUR = "EUR",
-  USD = "USD",
-}
-export enum Country {
-  Russia = "Russia",
-  USA = "USA",
-}
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 
 export interface Profile {
   name: string;

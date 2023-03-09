@@ -43,7 +43,7 @@ WithServerError.decorators = [
     auth: {
       password: "Danila",
       username: "Danila",
-      error: i18n.t("server_down"),
+      error: i18n.t("error.server_down"),
     },
   }),
 ];

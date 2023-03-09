@@ -2,6 +2,15 @@
   position: relative;
 }
 
+.readonly {
+  display: inline-block;
+
+  input {
+    background-color: var(--bg-color);
+    color: var(--inverted-bg-color);
+  }
+}
+
 .inputLabel {
   font-size: 15px;
   margin-bottom: 8px;
@@ -21,7 +30,11 @@
   height: 40px;
   outline: none;
   border: none;
-  padding: 0 40px 0 15px;
+  padding: 0 15px;
+}
+
+.password {
+  padding-right: 40px;
 }
 
 .fullWidth {

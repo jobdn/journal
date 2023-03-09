@@ -1,14 +1,17 @@
 {
   "loading": "LOADING...",
-  "not_found": "There is not such page",
-  "page-error": "Something went wrong. Try to reload the page 🔃",
+  "error": {
+    "page-error": "Something went wrong. Try to reload the page 🔃",
+    "not_found": "There is not such page",
+    "incorrect_login": "Incorrect login or password",
+    "server_down": "Server didn't start or down",
+    "profile_loading": "Error was happened while profile loading"
+  },
   "sign_in": "Sign in",
   "sign_out": "Sign out",
   "username": "Username",
   "password": "Password",
-  "incorrect_login": "Incorrect login or password",
-  "server_down": "Server didn't start or down",
-  "loading_form_text": "Your form is loading...",
+  "form_loading_text": "Your form is loading...",
   "login_form_title": "Welcome back!",
   "sidebar": {
     "expandIcon": "Expand",
