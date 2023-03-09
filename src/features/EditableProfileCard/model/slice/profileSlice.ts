@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
+import { Profile } from "entities/Profile/types/Profile";
 
 import { ProfileSchema } from "../../../../entities/Profile/types/ProfileSchema";
 import { fetchProfileData } from "../thunks/fetchProfileData/fetchProfileData";
@@ -18,28 +19,6 @@ export const profileSlice = createSlice({
   name: "profile",
   initialState,
   reducers: {
-    setName: (state, action: PayloadAction<string>) => {
-      if (state.form) {
-        state.form.name = action.payload;
-      }
-    },
-    setLastname: (state, action: PayloadAction<string>) => {
-      if (state.form) {
-        state.form.lastname = action.payload;
-      }
-    },
-    setAge: (state, action: PayloadAction<number>) => {
-      if (state.form) {
-        state.form.age = action.payload;
-      }
-    },
-
-    setCity: (state, action: PayloadAction<string>) => {
-      if (state.form) {
-        state.form.city = action.payload;
-      }
-    },
-
     cleanFormData: (state) => {
       state.form = state.profileData;
     },
@@ -47,24 +26,13 @@ export const profileSlice = createSlice({
     setReadonly: (state, action: PayloadAction<boolean>) => {
       state.readonly = action.payload;
     },
-    setAvatarLink: (state, action: PayloadAction<string>) => {
+
+    updateProfile: (state, action: PayloadAction<DeepPartial<Profile>>) => {
       if (state.form) {
-        state.form.avatar = action.payload;
-      }
-    },
-    setUsername: (state, action: PayloadAction<string>) => {
-      if (state.form) {
-        state.form.username = action.payload;
-      }
-    },
-    setCountry: (state, action: PayloadAction<Country>) => {
-      if (state.form) {
-        state.form.country = action.payload;
-      }
-    },
-    setCurrency: (state, action: PayloadAction<Currency>) => {
-      if (state.form) {
-        state.form.currency = action.payload;
+        state.form = {
+          ...state.form,
+          ...action.payload,
+        };
       }
     },
   },

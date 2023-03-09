@@ -49,14 +49,14 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
 
   const handleNameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.setName(value));
+      dispatch(profileActions.updateProfile({ name: value }));
     },
     [dispatch]
   );
 
   const handleLastnameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.setLastname(value));
+      dispatch(profileActions.updateProfile({ lastname: value }));
     },
     [dispatch]
   );
@@ -64,41 +64,41 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
   const handleAgeChange = React.useCallback(
     (value: string) => {
       const validatedAge = (value.match(/\d+/g) || []).join("");
-      dispatch(profileActions.setAge(+validatedAge));
+      dispatch(profileActions.updateProfile({ age: +validatedAge }));
     },
     [dispatch]
   );
 
   const handleCityChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.setCity(value));
+      dispatch(profileActions.updateProfile({ city: value }));
     },
     [dispatch]
   );
 
   const handleAvatarChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.setAvatarLink(value));
+      dispatch(profileActions.updateProfile({ avatar: value }));
     },
     [dispatch]
   );
 
   const handleUsernameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.setUsername(value));
+      dispatch(profileActions.updateProfile({ username: value }));
     },
     [dispatch]
   );
 
   const handleCountryChange = React.useCallback(
     (value: Country) => {
-      dispatch(profileActions.setCountry(value));
+      dispatch(profileActions.updateProfile({ country: value }));
     },
     [dispatch]
   );
   const handleCurrencyChange = React.useCallback(
     (value: Currency) => {
-      dispatch(profileActions.setCurrency(value));
+      dispatch(profileActions.updateProfile({ currency: value }));
     },
     [dispatch]
   );
