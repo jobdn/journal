@@ -1,11 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
 import { Profile } from "entities/Profile/types/Profile";
+import { ProfileSchema } from "entities/Profile/types/ProfileSchema";
 
-import { ProfileSchema } from "../../../../entities/Profile/types/ProfileSchema";
-import { fetchProfileData } from "../thunks/fetchProfileData/fetchProfileData";
-import { saveProfile } from "../thunks/saveProfile/saveProfile";
+import { fetchProfileData } from "../service/fetchProfileData/fetchProfileData";
+import { saveProfile } from "../service/saveProfile/saveProfile";
 
 const initialState: ProfileSchema = {
   profileData: undefined,

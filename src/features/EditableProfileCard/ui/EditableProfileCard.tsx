@@ -11,7 +11,7 @@ import { selectProfileIsLoading } from "../model/selectors/selectProfileIsLoadin
 import { selectProfileError } from "../model/selectors/selectProfileError/selectProfileError";
 import { selectReadonly } from "../model/selectors/selectReadonly/selectReadonly";
 import { profileActions } from "../model/slice/profileSlice";
-import { saveProfile } from "../model/thunks/saveProfile/saveProfile";
+import { saveProfile } from "../model/service/saveProfile/saveProfile";
 import { selectProfileForm } from "../model/selectors/selectProfileForm/selectProfileForm";
 
 import classes from "./EditableProfileCard.module.scss";

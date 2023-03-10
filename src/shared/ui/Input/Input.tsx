@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "shared/lib";
+import { Mods } from "shared/lib/classNames/classNames";
 
 import classes from "./Input.module.scss";
 import EyeIcon from "./assets/eye.svg";
@@ -58,6 +59,10 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
     }
   }, [autoFocused]);
 
+  const mods: Mods = {
+    [classes.readonly]: readonly,
+  };
+
   return (
     <div className={cn("", {}, [className])}>
       {placeholder && (
@@ -66,13 +71,7 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
         </label>
       )}
 
-      <div
-        className={cn(
-          classes.InputContainer,
-          { [classes.readonly]: readonly },
-          [className]
-        )}
-      >
+      <div className={cn(classes.InputContainer, mods, [className])}>
         {inputIsPassword && (
           <Button
             variant={ButtonVariant.CLEAR}
