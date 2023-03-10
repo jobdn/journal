@@ -19,5 +19,6 @@ export default (env: WebpackEnv) => {
     isDev,
     port,
     api,
+    project: "frontend",
   });
 };

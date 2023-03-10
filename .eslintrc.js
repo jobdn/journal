@@ -23,31 +23,11 @@ module.exports = {
     "plugin:i18next/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: [
-    "react",
-    "@typescript-eslint",
-    "i18next",
-    "no-comments",
-    "jsx-a11y",
-  ],
+  plugins: ["react", "@typescript-eslint", "i18next", "jsx-a11y"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
     "react/display-name": "off",
-    "no-comments/disallowComments": [
-      "warn",
-      {
-        allow: [
-          "TODO",
-          "FIXME",
-          "NOTE",
-          "DEBUG",
-          "@ts-ignore",
-          "eslint-disable-next-line",
-          "eslint-disable",
-        ],
-      },
-    ],
     "jsx-a11y/click-events-have-key-events": "off", // TODO: вернуться к этому правилу
     "jsx-a11y/no-static-element-interactions": "off", // TODO: вернуться к этому правилу
     "react-hooks/rules-of-hooks": "error",

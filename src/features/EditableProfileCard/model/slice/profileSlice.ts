@@ -25,7 +25,7 @@ export const profileSlice = createSlice({
       state.readonly = action.payload;
     },
 
-    updateProfile: (state, action: PayloadAction<DeepPartial<Profile>>) => {
+    updateForm: (state, action: PayloadAction<DeepPartial<Profile>>) => {
       if (state.form) {
         state.form = {
           ...state.form,

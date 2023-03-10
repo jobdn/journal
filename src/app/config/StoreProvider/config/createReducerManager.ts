@@ -1,4 +1,3 @@
-/* eslint-disable no-comments/disallowComments */
 import {
   AnyAction,
   combineReducers,

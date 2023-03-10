@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Sidebar } from "./Sidebar";
 
 import "shared/styles/index.scss";
-import { ThemeDecorator } from "shared/config/storybook";
+import { StoreDecorator, ThemeDecorator } from "shared/config/storybook";
 import { Theme } from "shared/config/theme";
 import { RouterDecorator } from "shared/config/storybook";
 
@@ -20,3 +20,8 @@ export const Dark = SidebarTemplate.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Light = SidebarTemplate.bind({});
+
+export const Auth = SidebarTemplate.bind({});
+Auth.decorators = [StoreDecorator({ user: { userData: {} } })];
+
+export const NoAuth = SidebarTemplate.bind({});

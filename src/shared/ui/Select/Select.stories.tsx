@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ThemeDecorator } from "shared/config/storybook";
+import { Theme } from "shared/config/theme";
 
 import { Select } from "./Select";
 
@@ -21,6 +23,7 @@ Primary.args = {
 };
 
 export const Dark = SelectTemplate.bind({});
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 Dark.args = {
   options: [
     { value: "one", text: "one" },

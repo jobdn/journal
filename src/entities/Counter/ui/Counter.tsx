@@ -22,8 +22,6 @@ export const Counter: React.FC<CounterProps> = () => {
     dispatch(counterActions.increment());
   };
 
-  console.log("render");
-
   return (
     <div>
       <h1>

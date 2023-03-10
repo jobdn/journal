@@ -1,10 +1,8 @@
 import { AxiosResponse } from "axios";
 import { User, userActions } from "entities/User";
+import i18next from "i18next";
 import { TestAsyncThunk } from "shared/lib/tests";
 import { authByUsername } from "./authByUsername";
-
-// jest.mock("axios");
-// const mockedAxios = jest.mocked(axios, true);
 
 describe("authByUsername.test", () => {
   it("Should return existent user", async () => {
@@ -44,7 +42,25 @@ describe("authByUsername.test", () => {
     });
 
     expect(thunk.api.post).toBeCalledTimes(1);
-    expect(result.payload).toBe("Incorrect login or password");
+    expect(result.payload).toBe(i18next.t("error.incorrect_login"));
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(result.meta.requestStatus).toBe("rejected");
+  });
+  it("Should reject if server is down", async () => {
+    const thunk = new TestAsyncThunk(authByUsername);
+    thunk.api.post.mockRejectedValue({
+      response: {
+        status: 500,
+      },
+    });
+
+    const result = await thunk.callThunk({
+      password: "123",
+      username: "Dan",
+    });
+
+    expect(thunk.api.post).toBeCalledTimes(1);
+    expect(result.payload).toBe(i18next.t("error.server_down"));
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(result.meta.requestStatus).toBe("rejected");
   });

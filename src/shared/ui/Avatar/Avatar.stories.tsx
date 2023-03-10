@@ -2,6 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Avatar } from "./Avatar";
 
+import ImgSrc from "../../assets/tests/image.webp";
+
 export default {
   title: "shared/Avatar",
   component: Avatar,
@@ -15,13 +17,13 @@ export const Square = AvatarTemplate.bind({});
 Square.args = {
   alt: "User avatar",
   size: 200,
-  src: "https://images.unsplash.com/photo-1504060765228-f97d1772ff9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  src: ImgSrc,
 };
 
 export const Circle = AvatarTemplate.bind({});
 Circle.args = {
   alt: "User avatar",
   size: 200,
-  src: "https://images.unsplash.com/photo-1504060765228-f97d1772ff9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  src: ImgSrc,
   variant: "circle",
 };

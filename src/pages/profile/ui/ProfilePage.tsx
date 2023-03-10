@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 import { DynamicLoadingReducer, useAppDispatch } from "shared/lib";
 import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
@@ -12,11 +11,12 @@ import {
 const lazyReducers: AsyncReducers = { profile: profileReducer };
 
 const ProfilePage = () => {
-  const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== "storybook") {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   return (

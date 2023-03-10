@@ -1,6 +1,5 @@
 import React from "react";
 
-// eslint-disable-next-line no-comments/disallowComments
 /**
  * И главную вещь, которую нужно запомнить - это
  * то, что делать ассинхронную загрузку страницы,

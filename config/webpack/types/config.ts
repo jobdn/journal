@@ -19,4 +19,5 @@ export interface WebpackConfigOptions {
   isDev: boolean;
   port: number;
   api: string;
+  project: "frontend" | "storybook" | "jest";
 }

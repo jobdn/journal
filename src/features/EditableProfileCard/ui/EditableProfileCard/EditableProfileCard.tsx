@@ -7,12 +7,12 @@ import { Button, ButtonVariant } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
 import { ProfileCard } from "entities/Profile";
 
-import { selectProfileIsLoading } from "../model/selectors/selectProfileIsLoading/selectProfileIsLoading";
-import { selectProfileError } from "../model/selectors/selectProfileError/selectProfileError";
-import { selectReadonly } from "../model/selectors/selectReadonly/selectReadonly";
-import { profileActions } from "../model/slice/profileSlice";
-import { saveProfile } from "../model/service/saveProfile/saveProfile";
-import { selectProfileForm } from "../model/selectors/selectProfileForm/selectProfileForm";
+import { selectProfileIsLoading } from "../../model/selectors/selectProfileIsLoading/selectProfileIsLoading";
+import { selectProfileError } from "../../model/selectors/selectProfileError/selectProfileError";
+import { selectReadonly } from "../../model/selectors/selectReadonly/selectReadonly";
+import { profileActions } from "../../model/slice/profileSlice";
+import { saveProfile } from "../../model/service/saveProfile/saveProfile";
+import { selectProfileForm } from "../../model/selectors/selectProfileForm/selectProfileForm";
 
 import classes from "./EditableProfileCard.module.scss";
 import { Country } from "entities/Country";
@@ -49,14 +49,14 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
 
   const handleNameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.updateProfile({ name: value }));
+      dispatch(profileActions.updateForm({ name: value }));
     },
     [dispatch]
   );
 
   const handleLastnameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.updateProfile({ lastname: value }));
+      dispatch(profileActions.updateForm({ lastname: value }));
     },
     [dispatch]
   );
@@ -64,41 +64,41 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
   const handleAgeChange = React.useCallback(
     (value: string) => {
       const validatedAge = (value.match(/\d+/g) || []).join("");
-      dispatch(profileActions.updateProfile({ age: +validatedAge }));
+      dispatch(profileActions.updateForm({ age: +validatedAge }));
     },
     [dispatch]
   );
 
   const handleCityChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.updateProfile({ city: value }));
+      dispatch(profileActions.updateForm({ city: value }));
     },
     [dispatch]
   );
 
   const handleAvatarChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.updateProfile({ avatar: value }));
+      dispatch(profileActions.updateForm({ avatar: value }));
     },
     [dispatch]
   );
 
   const handleUsernameChange = React.useCallback(
     (value: string) => {
-      dispatch(profileActions.updateProfile({ username: value }));
+      dispatch(profileActions.updateForm({ username: value }));
     },
     [dispatch]
   );
 
   const handleCountryChange = React.useCallback(
     (value: Country) => {
-      dispatch(profileActions.updateProfile({ country: value }));
+      dispatch(profileActions.updateForm({ country: value }));
     },
     [dispatch]
   );
   const handleCurrencyChange = React.useCallback(
     (value: Currency) => {
-      dispatch(profileActions.updateProfile({ currency: value }));
+      dispatch(profileActions.updateForm({ currency: value }));
     },
     [dispatch]
   );
