@@ -1,0 +1,70 @@
+{
+  "folderTemplates.structures": [
+    {
+      "name": "fsd-slice",
+      "structure": [
+        {
+          "fileName": "ui/[FTName%capitalcase].tsx",
+          "template": "comp"
+        },
+        {
+          "fileName": "ui/[FTName%capitalcase].module.scss",
+          "template": "scss"
+        },
+        {
+          "fileName": "ui/[FTName%capitalcase].stories.tsx",
+          "template": "story"
+        },
+        {
+          "fileName": "index.ts"
+        },
+        {
+          "fileName": "model/[FTName%lovercase]Slice.ts"
+        }
+      ]
+    }
+  ],
+  "folderTemplates.fileTemplates": {
+    "comp": [
+      "import React from \"react\";",
+      "import { useTranslation } from \"react-i18next\";",
+      "import { cn } from \"shared/lib\";",
+      "",
+      "import classes from \"./[FTName%capitalcase].module.scss\";",
+      "",
+      "interface [FTName%capitalcase]Props {",
+      "  className?: string;",
+      "}",
+      "",
+      "export const [FTName%capitalcase]: React.FC<[FTName%capitalcase]Props> = ({ className }) => {",
+      "",
+      "const { t } = useTranslation();",
+      "",
+      "  return (",
+      "    <div className={cn(classes.[FTName%capitalcase], {}, [className])}></div>",
+      "  )",
+      "}"
+    ],
+    "scss": [".[FTName%capitalcase] {", "}"],
+    "story": [
+      "import { ComponentMeta, ComponentStory } from \"@storybook/react\";",
+      "",
+      "import { ThemeDecorator } from \"shared/config/storybook\";",
+      "import { Theme } from \"shared/config/theme\";",
+      "",
+      "import {[FTName%capitalcase]} from \"./[FTName%capitalcase]\";",
+      "",
+      "export default {",
+      "title: \"/[FTName%capitalcase]\",",
+      "component: [FTName%capitalcase],",
+      "} as ComponentMeta<typeof [FTName%capitalcase]>;",
+      "",
+      "const [FTName%capitalcase]Template: ComponentStory<typeof [FTName%capitalcase]> = (args) => <[FTName%capitalcase] {...args} />;",
+      "",
+      "export const Dark = [FTName%capitalcase]Template.bind({});",
+      "Dark.decorators = [ThemeDecorator(Theme.DARK)];",
+
+      "export const Light = [FTName%capitalcase]Template.bind({});"
+    ]
+  }
+}

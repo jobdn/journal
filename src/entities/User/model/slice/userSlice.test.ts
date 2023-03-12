@@ -3,18 +3,21 @@ import { User, userActions, userReducer } from "../..";
 import { UserSchema } from "../../types/UserSchema";
 
 describe("userSlice.test", () => {
+  const initialState: UserSchema = { userData: null, isAuth: false };
+
+  const userState: UserSchema = { userData: null };
+
+  const userData: User = {
+    id: "1",
+    username: "Dan",
+  };
+
+  const expectedState: UserSchema = {
+    userData,
+    isAuth: true,
+  };
+
   it("Should set user data", () => {
-    const userState: UserSchema = { userData: null };
-
-    const userData: User = {
-      id: "1",
-      username: "Dan",
-    };
-
-    const expectedState: UserSchema = {
-      userData,
-    };
-
     expect(
       userReducer(
         userState,
@@ -26,15 +29,6 @@ describe("userSlice.test", () => {
   });
 
   it("Should set user data with empty initial state", () => {
-    const userData: User = {
-      id: "1",
-      username: "Dan",
-    };
-
-    const expectedState: UserSchema = {
-      userData,
-    };
-
     expect(
       userReducer(
         undefined,
@@ -46,24 +40,13 @@ describe("userSlice.test", () => {
   });
 
   it("Should set user data if user was logged in", () => {
-    const userData: User = {
-      id: "1",
-      username: "Dan",
-    };
-
     localStorage.setItem(USER_DATA, JSON.stringify(userData));
-
-    const expectedState: UserSchema = {
-      userData,
-    };
-
     expect(userReducer(undefined, userActions.checkAuth())).toEqual(
       expectedState
     );
   });
 
   it("Should not set user data if user was not logged in", () => {
-    const initialState: UserSchema = { userData: null };
     localStorage.clear();
     expect(userReducer(undefined, userActions.checkAuth())).toEqual(
       initialState
@@ -79,6 +62,6 @@ describe("userSlice.test", () => {
     );
 
     const logOutedUser = userReducer(undefined, userActions.logout());
-    expect(logOutedUser).toEqual({ userData: null });
+    expect(logOutedUser).toEqual(initialState);
   });
 });

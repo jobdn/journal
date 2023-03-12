@@ -10,8 +10,8 @@ import { ProfilePage } from "pages/profile";
 export type CustomRouteProps = RouteProps & {
   authOnly?: boolean;
 };
-
-export const routes: Record<AvailableRoutes, CustomRouteProps> = {
+export type RoutesMapElement = Record<AvailableRoutes, CustomRouteProps>;
+export const routes: RoutesMapElement = {
   [AvailableRoutes.HOME]: {
     path: RoutePaths[AvailableRoutes.HOME],
     element: <HomePage />,
