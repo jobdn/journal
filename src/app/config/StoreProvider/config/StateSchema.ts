@@ -1,6 +1,3 @@
-import { CounterSchema } from "entities/Counter";
-import { UserSchema } from "entities/User";
-import { AuthSchema } from "features/AuthByUsername";
 import {
   AnyAction,
   CombinedState,
@@ -8,9 +5,14 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { setupStore } from "./setupStore";
-import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
+import { setupStore } from "./setupStore";
+
+import { CounterSchema } from "entities/Counter";
+import { UserSchema } from "entities/User";
+import { AuthSchema } from "features/AuthByUsername";
+import { ProfileSchema } from "entities/Profile";
+import { DetailedArticleSchema } from "entities/Article";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
@@ -22,6 +24,7 @@ declare global {
     // 👇 async reducers
     auth?: AuthSchema;
     profile?: ProfileSchema;
+    detailedArticle?: DetailedArticleSchema;
   }
 }
 export interface CreateReducerManager {

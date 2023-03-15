@@ -4,15 +4,15 @@
       "name": "fsd-slice",
       "structure": [
         {
-          "fileName": "ui/[FTName%capitalcase].tsx",
+          "fileName": "ui/[FTName%capitalize].tsx",
           "template": "comp"
         },
         {
-          "fileName": "ui/[FTName%capitalcase].module.scss",
+          "fileName": "ui/[FTName%capitalize].module.scss",
           "template": "scss"
         },
         {
-          "fileName": "ui/[FTName%capitalcase].stories.tsx",
+          "fileName": "ui/[FTName%capitalize].stories.tsx",
           "template": "story"
         },
         {
@@ -30,41 +30,41 @@
       "import { useTranslation } from \"react-i18next\";",
       "import { cn } from \"shared/lib\";",
       "",
-      "import classes from \"./[FTName%capitalcase].module.scss\";",
+      "import classes from \"./[FTName%capitalize].module.scss\";",
       "",
-      "interface [FTName%capitalcase]Props {",
+      "interface [FTName%capitalize]Props {",
       "  className?: string;",
       "}",
       "",
-      "export const [FTName%capitalcase]: React.FC<[FTName%capitalcase]Props> = ({ className }) => {",
+      "export const [FTName%capitalize]: React.FC<[FTName%capitalize]Props> = ({ className }) => {",
       "",
       "const { t } = useTranslation();",
       "",
       "  return (",
-      "    <div className={cn(classes.[FTName%capitalcase], {}, [className])}></div>",
+      "    <div className={cn(classes.[FTName%capitalize], {}, [className])}></div>",
       "  )",
       "}"
     ],
-    "scss": [".[FTName%capitalcase] {", "}"],
+    "scss": [".[FTName%capitalize] {", "}"],
     "story": [
       "import { ComponentMeta, ComponentStory } from \"@storybook/react\";",
       "",
       "import { ThemeDecorator } from \"shared/config/storybook\";",
       "import { Theme } from \"shared/config/theme\";",
       "",
-      "import {[FTName%capitalcase]} from \"./[FTName%capitalcase]\";",
+      "import {[FTName%capitalize]} from \"./[FTName%capitalize]\";",
       "",
       "export default {",
-      "title: \"/[FTName%capitalcase]\",",
-      "component: [FTName%capitalcase],",
-      "} as ComponentMeta<typeof [FTName%capitalcase]>;",
+      "title: \"/[FTName%capitalize]\",",
+      "component: [FTName%capitalize],",
+      "} as ComponentMeta<typeof [FTName%capitalize]>;",
       "",
-      "const [FTName%capitalcase]Template: ComponentStory<typeof [FTName%capitalcase]> = (args) => <[FTName%capitalcase] {...args} />;",
+      "const [FTName%capitalize]Template: ComponentStory<typeof [FTName%capitalize]> = (args) => <[FTName%capitalize] {...args} />;",
       "",
-      "export const Dark = [FTName%capitalcase]Template.bind({});",
+      "export const Dark = [FTName%capitalize]Template.bind({});",
       "Dark.decorators = [ThemeDecorator(Theme.DARK)];",
 
-      "export const Light = [FTName%capitalcase]Template.bind({});"
+      "export const Light = [FTName%capitalize]Template.bind({});"
     ]
   }
 }

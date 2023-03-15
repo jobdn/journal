@@ -6,11 +6,15 @@ import { AboutPage } from "pages/about";
 import { HomePage } from "pages/home";
 import { NotFoundPage } from "pages/not-found";
 import { ProfilePage } from "pages/profile";
+import { DetailedArticlePage } from "pages/detailed-article";
+import { ArticlesPage } from "pages/articles";
 
 export type CustomRouteProps = RouteProps & {
   authOnly?: boolean;
 };
+
 export type RoutesMapElement = Record<AvailableRoutes, CustomRouteProps>;
+
 export const routes: RoutesMapElement = {
   [AvailableRoutes.HOME]: {
     path: RoutePaths[AvailableRoutes.HOME],
@@ -23,6 +27,16 @@ export const routes: RoutesMapElement = {
   [AvailableRoutes.PROFILE]: {
     path: RoutePaths[AvailableRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AvailableRoutes.ARTICLES]: {
+    path: RoutePaths[AvailableRoutes.ARTICLES],
+    element: <ArticlesPage />,
+    authOnly: true,
+  },
+  [AvailableRoutes.DETAILED_ARTICLE]: {
+    path: RoutePaths[AvailableRoutes.DETAILED_ARTICLE],
+    element: <DetailedArticlePage />,
     authOnly: true,
   },
   [AvailableRoutes.NOT_FOUND]: {

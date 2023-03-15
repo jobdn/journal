@@ -32,7 +32,18 @@ server.post("/login", (req, res) => {
     );
 
     if (userFromBd) {
-      return res.json(userFromBd);
+      const userWithoutPassword = Object.entries(userFromBd).reduce(
+        (acc, [key, value]) => {
+          if (key === "password") {
+            return acc;
+          }
+
+          return { ...acc, [key]: value };
+        },
+        {}
+      );
+
+      return res.json(userWithoutPassword);
     }
 
     return res.status(403).json({ message: "User not found" });

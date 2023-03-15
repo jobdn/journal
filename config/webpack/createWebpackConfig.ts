@@ -19,6 +19,7 @@ export function createWebpackConfig(
       filename: "[name].[contenthash:8].js",
       path: paths.build,
       clean: true,
+      publicPath: "/",
     },
     module: {
       rules: webpackLoaders(options),
