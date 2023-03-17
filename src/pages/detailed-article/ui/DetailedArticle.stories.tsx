@@ -6,7 +6,7 @@ import { Theme } from "shared/config/theme";
 import DetailedArticle from "./DetailedArticlePage";
 
 export default {
-  title: "/DetailedArticle",
+  title: "pages/DetailedArticle",
   component: DetailedArticle,
 } as ComponentMeta<typeof DetailedArticle>;
 

@@ -6,7 +6,7 @@ import { Theme } from "shared/config/theme";
 import ArticlesPage from "./ArticlesPage";
 
 export default {
-  title: "/ArticlesPage",
+  title: "pages/ArticlesPage",
   component: ArticlesPage,
 } as ComponentMeta<typeof ArticlesPage>;
 

@@ -1,8 +1,20 @@
 .DetailedArticle {
   height: 100%;
-}
+  padding: 0 24px;
 
-.skeleton {
+  .stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .avatarWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .avatar {
     margin: 0 auto;
     margin-bottom: 24px;

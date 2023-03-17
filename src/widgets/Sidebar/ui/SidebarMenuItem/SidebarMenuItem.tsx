@@ -25,7 +25,7 @@ export const SidebarMenuItem: React.FC<SidebarItemProps> = React.memo(
 
     return (
       <AppLink to={item.path} className={cn("", {}, [itemClassName])}>
-        <item.Icon className={cn("", {}, ["icon", iconClassName])} />
+        <item.Icon className={cn("", {}, ["inverted-icon", iconClassName])} />
         <span className={textClassName}>{t(item.translation)}</span>
       </AppLink>
     );

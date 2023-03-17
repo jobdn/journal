@@ -25,8 +25,16 @@ body {
   height: calc(100vh - var(--navbar-height));
 }
 
-.icon {
+.inverted-icon {
   fill: var(--inverted-primary-color);
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.secondary-icon {
+  fill: var(--secondary-color);
 }
 
 h2 {

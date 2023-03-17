@@ -16,6 +16,26 @@
   text-align: right;
 }
 
+.m {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.l {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
 .error {
   .title {
     font: var(--font-l);

@@ -63,3 +63,23 @@ OnlyTextDark.args = {
   text: "lorem",
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL = TextTemplate.bind({});
+SizeL.args = {
+  text: "lorem",
+  title: "lorem",
+  size: "l",
+};
+
+export const SizeM = TextTemplate.bind({});
+SizeM.args = {
+  text: "lorem",
+  title: "lorem",
+  size: "m",
+};
+export const Center = TextTemplate.bind({});
+Center.args = {
+  text: "lorem",
+  title: "lorem",
+  align: "center",
+};

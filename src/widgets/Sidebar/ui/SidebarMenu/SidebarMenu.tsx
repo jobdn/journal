@@ -48,11 +48,11 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = React.memo(
         >
           {collapsed ? (
             <ExpandIcon
-              className={cn(classes.SidebarMenuItemIcon, {}, ["icon"])}
+              className={cn(classes.SidebarMenuItemIcon, {}, ["inverted-icon"])}
             />
           ) : (
             <CollapseIcon
-              className={cn(classes.SidebarMenuItemIcon, {}, ["icon"])}
+              className={cn(classes.SidebarMenuItemIcon, {}, ["inverted-icon"])}
             />
           )}
           <span className={classes.SidebarMenuItemText}>

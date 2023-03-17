@@ -28,6 +28,11 @@ export interface ArticleImageBlock extends BaseArticleBlock {
 
 export type ArticleType = "IT" | "SCIENCE" | "HEALTH";
 
+export type ArticleBlock =
+  | ArticleTextBlock
+  | ArticleCodeBlock
+  | ArticleImageBlock;
+
 export interface Article {
   id: string;
   title: string;
@@ -36,5 +41,5 @@ export interface Article {
   views: number;
   createdAt: string;
   type: ArticleType[]; // ! Unique values
-  blocks: Array<ArticleTextBlock | ArticleCodeBlock | ArticleImageBlock>;
+  blocks: ArticleBlock[];
 }
