@@ -24,5 +24,8 @@
       "theme": "Change color theme",
       "lang": "Сменить язык"
     }
+  },
+  "empty": {
+    "comments": "This article doesn't have comments yet, but you can be first 😊"
   }
 }

@@ -34,7 +34,9 @@ describe("fetchArticleById.test", () => {
     const result = await thunk.callThunk("101111");
 
     expect(thunk.api.get).toBeCalledTimes(1);
-    expect(result.payload).toBe(i18next.t("detailed-article.error.id"));
+    expect(result.payload).toBe(
+      i18next.t("error.id", { ns: "detailed-article" })
+    );
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(result.meta.requestStatus).toBe("rejected");
   });

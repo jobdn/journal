@@ -8,23 +8,23 @@ import {
 import { AxiosInstance } from "axios";
 import { setupStore } from "./setupStore";
 
-import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
 import { AuthSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "entities/Profile";
 import { DetailedArticleSchema } from "entities/Article";
+import { ArticleCommentsSchema } from "pages/detailed-article";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
   export type AppDispatch = AppStore["dispatch"];
   interface StateSchema {
-    counter: CounterSchema;
     user: UserSchema;
 
     // 👇 async reducers
     auth?: AuthSchema;
     profile?: ProfileSchema;
     detailedArticle?: DetailedArticleSchema;
+    articleComments?: ArticleCommentsSchema;
   }
 }
 export interface CreateReducerManager {

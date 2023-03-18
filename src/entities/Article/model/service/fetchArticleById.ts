@@ -24,7 +24,7 @@ export const fetchArticleById = createAsyncThunk<
     const typedError = error as AxiosError;
 
     if (typedError?.response?.status === 404) {
-      return rejectWithValue(i18next.t("detailed-article.error.id"));
+      return rejectWithValue(i18next.t("error.id", { ns: "detailed-article" }));
     }
 
     return rejectWithValue(i18next.t("error.server_down"));

@@ -1,6 +1,8 @@
 {
   "error": {
     "id": "There is not such article",
-    "network": "Something went wrong on the server"
-  }
+    "network": "Something went wrong on the server",
+    "comments": "Error while comments loading"
+  },
+  "comments-title": "Comments"
 }

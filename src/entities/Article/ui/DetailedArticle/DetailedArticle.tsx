@@ -1,17 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { cn, DynamicLoadingReducer, useAppDispatch } from "shared/lib";
+import {
+  cn,
+  DynamicLoadingReducer,
+  useAppDispatch,
+  useInitialEffect,
+} from "shared/lib";
 import { AsyncReducers } from "shared/lib/components/DynamicLoadingReducer/DynamicLoadingReducer";
 import { Text } from "shared/ui/Text";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Avatar } from "shared/ui/Avatar";
 
 import classes from "./DetailedArticle.module.scss";
-
-import { ArticleImgBlockComponent } from "../ArticleImgBlockComponent/ArticleImgBlockComponent";
-import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 import {
   selectDetailedArticleData,
@@ -20,7 +21,7 @@ import {
 } from "../../model/selectors/detailedArticleSelectors/detailedArticleSelectors";
 import { fetchArticleById } from "../../model/service/fetchArticleById";
 import { detailedArticleReducer } from "../../model/slice/detailedArticleSlice";
-import { ArticleBlock, ArticleBlockType } from "../../types/Article";
+import { mapArticleBlockObjToJsx } from "../../model/mappers/mapArticleBlockObjToJsx";
 
 import CalendarIcon from "../../assets/calendar.svg";
 import EyeIcon from "../../assets/eye.svg";
@@ -41,45 +42,9 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
   const isLoading = useSelector(selectDetailedArticleIsLoading);
   const article = useSelector(selectDetailedArticleData);
 
-  React.useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
-
-  const renderArticleBlocks = React.useCallback((block: ArticleBlock) => {
-    switch (block.type) {
-      case ArticleBlockType.IMAGE:
-        return (
-          <ArticleImgBlockComponent
-            className={classes.text}
-            key={block.id}
-            src={block.src}
-            title={block.title}
-          />
-        );
-      case ArticleBlockType.CODE:
-        return (
-          <ArticleCodeBlockComponent
-            className={classes.text}
-            key={block.id}
-            code={block.code}
-          />
-        );
-      case ArticleBlockType.TEXT:
-        return (
-          <ArticleTextBlockComponent
-            className={classes.text}
-            key={block.id}
-            paragraphs={block.paragraphs}
-            title={block.title}
-          />
-        );
-
-      default:
-        null;
-    }
-  }, []);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   let content;
 
@@ -131,7 +96,7 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
           <Text text={article?.createdAt} />
         </div>
 
-        {article?.blocks.map(renderArticleBlocks)}
+        {article?.blocks.map(mapArticleBlockObjToJsx)}
       </>
     );
   }

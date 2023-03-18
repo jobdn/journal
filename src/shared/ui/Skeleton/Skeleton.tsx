@@ -6,8 +6,8 @@ import classes from "./Skeleton.module.scss";
 interface SkeletonProps {
   className?: string;
   variant?: "square" | "circle";
-  width?: string;
-  height: string;
+  width?: string | number;
+  height: string | number;
   borderRadius?: string;
 }
 

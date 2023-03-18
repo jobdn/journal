@@ -4,22 +4,16 @@
       "name": "fsd-slice",
       "structure": [
         {
-          "fileName": "ui/[FTName%capitalize].tsx",
+          "fileName": "[FTName%capitalize].tsx",
           "template": "comp"
         },
         {
-          "fileName": "ui/[FTName%capitalize].module.scss",
+          "fileName": "[FTName%capitalize].module.scss",
           "template": "scss"
         },
         {
-          "fileName": "ui/[FTName%capitalize].stories.tsx",
+          "fileName": "[FTName%capitalize].stories.tsx",
           "template": "story"
-        },
-        {
-          "fileName": "index.ts"
-        },
-        {
-          "fileName": "model/[FTName%lovercase]Slice.ts"
         }
       ]
     }
