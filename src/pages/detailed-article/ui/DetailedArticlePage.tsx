@@ -7,14 +7,13 @@ import {
   cn,
   DynamicLoadingReducer,
   useAppDispatch,
-  useInitialEffect,
   AsyncReducers,
 } from "shared/lib";
 import { Text } from "shared/ui/Text";
 
 import classes from "./DetailedArticle.module.scss";
 import { CommentList } from "entities/Comment";
-import { DetailedArticle } from "entities/Article";
+import { DetailedArticle, selectDetailedArticleData } from "entities/Article";
 
 import {
   articleCommentsReducer,
@@ -30,19 +29,41 @@ interface DetailedArticleProps {
   className?: string;
 }
 
-const asyncReducer: AsyncReducers = { articleComments: articleCommentsReducer };
+const commentListReducer: AsyncReducers = {
+  articleComments: articleCommentsReducer,
+};
 
 const DetailedArticlePage: React.FC<DetailedArticleProps> = ({ className }) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("detailed-article");
   const dispatch = useAppDispatch();
   const comments = useSelector(articleCommentsSelectors.selectAll);
+  const article = useSelector(selectDetailedArticleData);
   const commentsIsLoading = useSelector(selectArticleCommentsIsLoading);
   const commentsRequestError = useSelector(selectArticleCommentsError);
+  const commentsTitleRef = React.useRef<HTMLDivElement>(null);
+  const commentsIsVisible = React.useRef(false);
 
-  useInitialEffect(() => {
-    id && dispatch(fetchArticleComments(id));
-  });
+  React.useEffect(() => {
+    if (!commentsTitleRef.current) return;
+
+    const commentObserver = new IntersectionObserver(
+      ([entry], observer) => {
+        if (entry.isIntersecting) {
+          if (__PROJECT__ !== "storybook") {
+            dispatch(fetchArticleComments(id));
+          }
+          commentsIsVisible.current = true;
+
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "100px 0px" }
+    );
+
+    commentObserver.observe(commentsTitleRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [article]);
 
   if (!id) {
     return (
@@ -55,22 +76,24 @@ const DetailedArticlePage: React.FC<DetailedArticleProps> = ({ className }) => {
   }
 
   return (
-    <DynamicLoadingReducer reducers={asyncReducer}>
-      <div className={cn("", {}, [className])}>
-        <DetailedArticle id={id} />
-        {!commentsRequestError && (
-          <>
-            <Text title={t("comments-title")} className={classes.title} />
-            <CommentList
-              commentList={comments}
-              isLoading={commentsIsLoading}
-              error={commentsRequestError}
-              itemClassName={classes.comment}
-            />
-          </>
-        )}
-      </div>
-    </DynamicLoadingReducer>
+    <div className={cn("", {}, [className])}>
+      <DetailedArticle id={id} />
+      {article ? (
+        <DynamicLoadingReducer reducers={commentListReducer}>
+          <Text
+            title={t("comments-title")}
+            className={classes.title}
+            ref={commentsTitleRef}
+          />
+          <CommentList
+            commentList={comments}
+            isLoading={commentsIsLoading}
+            error={commentsRequestError}
+            itemClassName={classes.comment}
+          />
+        </DynamicLoadingReducer>
+      ) : null}
+    </div>
   );
 };
 
