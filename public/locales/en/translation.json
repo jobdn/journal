@@ -5,7 +5,9 @@
     "not_found": "There is not such page",
     "incorrect_login": "Incorrect login or password",
     "server_down": "Server didn't start or down",
-    "profile_loading": "Error was happened while profile loading"
+    "profile_loading": "Error was happened while profile loading",
+    "profile_id": "This profile doesn't exist",
+    "invalid_data": "Invalid data in request"
   },
   "sign_in": "Sign in",
   "sign_out": "Sign out",

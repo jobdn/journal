@@ -18,6 +18,7 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
     autoFocused,
     variant = "default",
     readonly,
+    label,
     ...restProps
   } = props;
   const inputRef = React.useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -65,9 +66,9 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
 
   return (
     <div className={cn("", {}, [className])}>
-      {placeholder && (
+      {label && (
         <label className={classes.inputLabel} htmlFor={id}>
-          {placeholder}
+          {label}
         </label>
       )}
 
@@ -92,6 +93,7 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
             { [classes.password]: inputIsPassword },
             [classes[variant]]
           )}
+          placeholder={placeholder}
           ref={inputRef}
           onChange={handleChange}
           value={value}

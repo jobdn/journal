@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Profile } from "entities/Profile/types/Profile";
 import { ProfileSchema } from "entities/Profile/types/ProfileSchema";
 
-import { fetchProfileData } from "../service/fetchProfileData/fetchProfileData";
-import { saveProfile } from "../service/saveProfile/saveProfile";
+import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
+import { saveProfile } from "../services/saveProfile/saveProfile";
 
 const initialState: ProfileSchema = {
   profileData: undefined,

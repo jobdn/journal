@@ -5,21 +5,21 @@
       "username": "Dan",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+      "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
     },
     {
       "id": "2",
-      "username": "Andry",
+      "username": "Anton",
       "password": "123",
       "role": "USER",
-      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+      "avatar": "https://images.unsplash.com/photo-1569683236049-bc137196a02a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
     },
     {
       "id": "3",
       "username": "John",
       "password": "222",
       "role": "USER",
-      "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
     }
   ],
   "articles": [
@@ -30,7 +30,9 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -99,7 +101,9 @@
       "img": "https://webingo.in/images/image2/node_bred.png",
       "views": 10022,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -151,7 +155,6 @@
       ]
     }
   ],
-
   "comments": [
     {
       "id": "1",
@@ -169,7 +172,7 @@
       "id": "3",
       "text": "💲💲💲💲💲💲",
       "articleId": "1",
-      "userId": "1"
+      "userId": "3"
     },
     {
       "id": "4",
@@ -188,17 +191,59 @@
       "text": "It safed my life 🤝🤝🤝🤝🤝",
       "articleId": "2",
       "userId": "3"
+    },
+    {
+      "id": "87f8a817-f833-451a-8327-e5af1c0bf940",
+      "text": "asdfasdfadf",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "124df683-b504-496d-b417-19889fc00bb8",
+      "text": "hey hey",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2c5979ce-b161-437c-a377-fa239c5b4bc6",
+      "text": "Nice!!!!!!",
+      "articleId": "1",
+      "userId": "2"
     }
   ],
-
-  "profile": {
-    "name": "Даня111",
-    "lastname": "Peace",
-    "age": 213,
-    "currency": "EUR",
-    "country": "USA",
-    "city": "Moscow3",
-    "username": "MAIN Admin",
-    "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "name": "Даня111",
+      "lastname": "Peace",
+      "age": 213,
+      "currency": "EUR",
+      "country": "USA",
+      "city": "Moscow3",
+      "username": "MAIN Admin",
+      "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+    },
+    {
+      "id": "2",
+      "name": "Anton",
+      "lastname": "Kop",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Sarov",
+      "username": "superAnton1111",
+      "avatar": "https://images.unsplash.com/photo-1569683236049-bc137196a02a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": "3",
+      "name": "John",
+      "lastname": "BBBBB",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Sarov",
+      "username": "Gumny",
+      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+    }
+  ]
 }

@@ -10,19 +10,18 @@ import { CommentRow } from "../CommentRow/CommentRow";
 
 interface CommentListProps {
   className?: string;
-  itemClassName?: string;
   commentList: Comment[];
   isLoading?: boolean;
   error?: string;
 }
 
 export const CommentList: React.FC<CommentListProps> = (props) => {
-  const { className, commentList, isLoading, error, itemClassName } = props;
+  const { className, commentList, isLoading, error } = props;
   const { t } = useTranslation();
 
   if (error) return <Text title={error} variant="error" align="center" />;
 
-  if (!commentList.length) {
+  if (!commentList?.length) {
     return (
       <div className={cn(classes.CommentList, {}, [className])}>
         <Text text={t("empty.comments")} align="center" />
@@ -35,7 +34,7 @@ export const CommentList: React.FC<CommentListProps> = (props) => {
       {commentList.map((comment) => (
         <CommentRow
           key={comment.id}
-          className={cn("", {}, [classes.row, itemClassName])}
+          className={cn("", {}, [classes.row])}
           comment={comment}
           isLoading={isLoading}
         />

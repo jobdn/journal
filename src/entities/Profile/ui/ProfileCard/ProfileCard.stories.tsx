@@ -18,33 +18,27 @@ const ProfileCardTemplate: ComponentStory<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
+const data = {
+  id: "1",
+  age: 21,
+  city: "Moscow",
+  country: Country.Russia,
+  currency: Currency.RUB,
+  name: "Dan",
+  lastname: "Pisarev",
+  avatar: ImgSrc,
+  username: "Admin",
+};
+
 export const Light = ProfileCardTemplate.bind({});
 Light.args = {
-  data: {
-    age: 21,
-    city: "Moscow",
-    country: Country.Russia,
-    currency: Currency.RUB,
-    name: "Dan",
-    lastname: "Pisarev",
-    avatar: ImgSrc,
-    username: "Admin",
-  },
+  data,
 };
 
 export const Dark = ProfileCardTemplate.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 Dark.args = {
-  data: {
-    age: 21,
-    city: "Moscow",
-    country: Country.Russia,
-    currency: Currency.RUB,
-    name: "Dan",
-    lastname: "Pisarev",
-    avatar: ImgSrc,
-    username: "Admin",
-  },
+  data,
 };
 
 export const Error = ProfileCardTemplate.bind({});

@@ -1,2 +1,2 @@
-export { DetailedArticlePage } from "./ui/DetailedArticle.async";
+export { DetailedArticlePage } from "./ui/DetailedArticlePage.async";
 export { ArticleCommentsSchema } from "./types/ArticleCommentsSchema";

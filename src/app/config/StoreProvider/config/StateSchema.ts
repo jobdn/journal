@@ -13,6 +13,7 @@ import { AuthSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "entities/Profile";
 import { DetailedArticleSchema } from "entities/Article";
 import { ArticleCommentsSchema } from "pages/detailed-article";
+import { AddCommentSchema } from "features/AddComment";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
@@ -25,26 +26,29 @@ declare global {
     profile?: ProfileSchema;
     detailedArticle?: DetailedArticleSchema;
     articleComments?: ArticleCommentsSchema;
+    addComment?: AddCommentSchema;
+  }
+
+  export interface ThunkOptions<T> {
+    state: StateSchema;
+    rejectValue: T;
+    extra: ThunkExtraArg;
+  }
+
+  export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
+    reducerManager: CreateReducerManager;
+  }
+
+  export type ReducerKey = keyof StateSchema;
+
+  export interface ThunkExtraArg {
+    api: AxiosInstance;
   }
 }
+
 export interface CreateReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: ReducerKey, reducer: Reducer) => void;
   remove: (key: ReducerKey) => void;
-}
-
-export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-  reducerManager: CreateReducerManager;
-}
-
-export type ReducerKey = keyof StateSchema;
-
-export interface ThunkExtraArg {
-  api: AxiosInstance;
-}
-export interface ThunkOptions<T> {
-  state: StateSchema;
-  rejectValue: T;
-  extra: ThunkExtraArg;
 }

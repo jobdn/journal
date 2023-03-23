@@ -4,5 +4,7 @@
     "network": "Something went wrong on the server",
     "comments": "Error while comments loading"
   },
-  "comments-title": "Comments"
+  "comments-title": "Comments",
+  "enter_comment": "Enter new comment here...",
+  "add_comment": "Add comment"
 }

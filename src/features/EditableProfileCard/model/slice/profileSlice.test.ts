@@ -1,7 +1,7 @@
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import { ProfileSchema } from "entities/Profile";
-import { fetchProfileData } from "../service/fetchProfileData/fetchProfileData";
+import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
 import { profileReducer, profileActions } from "./profileSlice";
 
 describe("authSlice.test", () => {
@@ -14,6 +14,7 @@ describe("authSlice.test", () => {
   };
 
   const profileData = {
+    id: "1",
     name: "Danya",
     lastname: "Peace",
     age: 213,
@@ -82,7 +83,10 @@ describe("authSlice.test", () => {
 
   it("fulfilled fetchProfileData reducer", () => {
     expect(
-      profileReducer(initialState, fetchProfileData.fulfilled(profileData, ""))
+      profileReducer(
+        initialState,
+        fetchProfileData.fulfilled(profileData, "", "")
+      )
     ).toEqual({ ...profileState, form: profileData, profileData });
   });
 });

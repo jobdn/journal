@@ -69,7 +69,7 @@ const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
           value={username}
           onChange={handleUsernameChange}
           id="login"
-          placeholder={t("username")}
+          label={t("username")}
           className={classes.input}
           autoFocused
           variant="fullWidth"
@@ -79,7 +79,7 @@ const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
           value={password}
           onChange={handlePasswordChange}
           id="password"
-          placeholder={t("password")}
+          label={t("password")}
           className={classes.input}
           type="password"
           variant="fullWidth"

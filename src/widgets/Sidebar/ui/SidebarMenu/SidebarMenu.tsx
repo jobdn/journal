@@ -9,7 +9,8 @@ import CollapseIcon from "../../assets/collapse.svg";
 
 import classes from "./SidebarMenu.module.scss";
 import { SidebarMenuItem } from "../SidebarMenuItem/SidebarMenuItem";
-import { sidebarItemList } from "widgets/Sidebar/constants/sidebarItemList";
+import { useSelector } from "react-redux";
+import { selectSidebarItems } from "../../model/selectSidebarItems/selectSidebarItems";
 
 interface SidebarMenuProps {
   className?: string;
@@ -20,6 +21,7 @@ interface SidebarMenuProps {
 export const SidebarMenu: React.FC<SidebarMenuProps> = React.memo(
   function SidebarMenu({ className, onToggle, collapsed }) {
     const { t } = useTranslation();
+    const sidebarItemList = useSelector(selectSidebarItems);
 
     const menuList = React.useMemo(
       () =>
@@ -32,7 +34,7 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = React.memo(
             item={item}
           />
         )),
-      []
+      [sidebarItemList]
     );
 
     return (

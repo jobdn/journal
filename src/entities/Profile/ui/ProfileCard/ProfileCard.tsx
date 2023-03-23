@@ -80,7 +80,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <Input
         value={data?.name || ""}
         className={classes.input}
-        placeholder={t("name")}
+        label={t("name")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onNameChange}
@@ -89,7 +89,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <Input
         value={data?.lastname || ""}
         className={classes.input}
-        placeholder={t("lastname")}
+        label={t("lastname")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onLastnameChange}
@@ -99,7 +99,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         value={data?.age || 0}
         className={classes.input}
         type="number"
-        placeholder={t("age")}
+        label={t("age")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onAgeChange}
@@ -108,7 +108,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <Input
         value={data?.city || ""}
         className={classes.input}
-        placeholder={t("city")}
+        label={t("city")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onCityChange}
@@ -117,7 +117,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <Input
         value={data?.avatar || ""}
         className={classes.input}
-        placeholder={t("avatar")}
+        label={t("avatar")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onAvatarChange}
@@ -126,7 +126,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       <Input
         value={data?.username || ""}
         className={classes.input}
-        placeholder={t("username")}
+        label={t("username")}
         variant="fullWidth"
         disabled={readonly}
         onChange={onUsernameChange}

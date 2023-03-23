@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
 
-export type InputVariants = "fullWidth" | "default";
+export type InputVariants = "fullWidth" | "default" | "inline";
 
 export interface InputProps
   extends Omit<
@@ -12,5 +12,6 @@ export interface InputProps
   onChange?: (value: string) => void;
   autoFocused?: boolean;
   variant?: InputVariants;
+  label?: string;
   readonly?: boolean;
 }

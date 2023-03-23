@@ -10,8 +10,8 @@ export enum AvailableRoutes {
 export const RoutePaths: Record<AvailableRoutes, string> = {
   [AvailableRoutes.HOME]: "/",
   [AvailableRoutes.ABOUT]: "/about",
-  [AvailableRoutes.PROFILE]: "/profile",
+  [AvailableRoutes.PROFILE]: "/profile/:id", // + :id
   [AvailableRoutes.ARTICLES]: "/articles",
-  [AvailableRoutes.DETAILED_ARTICLE]: "/articles/:id",
+  [AvailableRoutes.DETAILED_ARTICLE]: "/articles/:id", // + :id
   [AvailableRoutes.NOT_FOUND]: "*",
 };

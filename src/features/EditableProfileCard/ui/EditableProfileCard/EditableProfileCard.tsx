@@ -11,12 +11,14 @@ import { selectProfileIsLoading } from "../../model/selectors/selectProfileIsLoa
 import { selectProfileError } from "../../model/selectors/selectProfileError/selectProfileError";
 import { selectReadonly } from "../../model/selectors/selectReadonly/selectReadonly";
 import { profileActions } from "../../model/slice/profileSlice";
-import { saveProfile } from "../../model/service/saveProfile/saveProfile";
+import { saveProfile } from "../../model/services/saveProfile/saveProfile";
 import { selectProfileForm } from "../../model/selectors/selectProfileForm/selectProfileForm";
 
 import classes from "./EditableProfileCard.module.scss";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
+import { selectProfileData } from "../../model/selectors/selectProfileData/selectProfileData";
+import { selectUserData } from "entities/User";
 
 interface EditableProfileCardProps {
   className?: string;
@@ -31,8 +33,14 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
   const isLoading = useSelector(selectProfileIsLoading);
   const error = useSelector(selectProfileError);
   const readonly = useSelector(selectReadonly);
+  const profileData = useSelector(selectProfileData);
+  const currentUserData = useSelector(selectUserData);
 
-  // todo: сделать редьюсер, который сразу изменяет весь объект
+  const userCanEditProfile = React.useMemo(
+    () => profileData?.id === currentUserData?.id,
+    [currentUserData?.id, profileData?.id]
+  );
+
   const handleEditClick = React.useCallback(() => {
     dispatch(profileActions.setReadonly(false));
   }, [dispatch]);
@@ -43,9 +51,9 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
   }, [dispatch]);
 
   const handleSave = React.useCallback(() => {
-    dispatch(saveProfile());
+    dispatch(saveProfile(form?.id));
     dispatch(profileActions.setReadonly(true));
-  }, [dispatch]);
+  }, [dispatch, form]);
 
   const handleNameChange = React.useCallback(
     (value: string) => {
@@ -108,13 +116,15 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
       <div className={classes.header}>
         <Text title={t("title")} />
         {readonly ? (
-          <Button
-            variant={ButtonVariant.FILLED_INVERTED}
-            onClick={handleEditClick}
-            className={classes.editBtn}
-          >
-            {t("edit")}
-          </Button>
+          userCanEditProfile && (
+            <Button
+              variant={ButtonVariant.FILLED_INVERTED}
+              onClick={handleEditClick}
+              className={classes.editBtn}
+            >
+              {t("edit")}
+            </Button>
+          )
         ) : (
           <>
             <Button

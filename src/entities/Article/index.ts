@@ -6,3 +6,5 @@ export {
   selectDetailedArticleError,
   selectDetailedArticleIsLoading,
 } from "./model/selectors/detailedArticleSelectors/detailedArticleSelectors";
+
+export { article } from "./constants/article";

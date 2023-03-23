@@ -1,0 +1,15 @@
+.AddComment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.btn {
+  margin-right: auto;
+}

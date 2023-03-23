@@ -11,7 +11,7 @@ import {
 } from "shared/lib";
 import { Text } from "shared/ui/Text";
 
-import classes from "./DetailedArticle.module.scss";
+import classes from "./DetailedArticlePage.module.scss";
 import { CommentList } from "entities/Comment";
 import { DetailedArticle, selectDetailedArticleData } from "entities/Article";
 
@@ -23,17 +23,22 @@ import {
   selectArticleCommentsError,
   selectArticleCommentsIsLoading,
 } from "../model/selectors/articleCommentsSelectors/selectArticleComments";
-import { fetchArticleComments } from "../model/service/fetchArticleComments";
+import { AddComment, addCommentReducer } from "features/AddComment";
+import { addArticleComment } from "../model/services/addArticleComment/addArticleComment";
+import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
 
-interface DetailedArticleProps {
+interface DetailedArticlePageProps {
   className?: string;
 }
 
 const commentListReducer: AsyncReducers = {
   articleComments: articleCommentsReducer,
+  addComment: addCommentReducer,
 };
 
-const DetailedArticlePage: React.FC<DetailedArticleProps> = ({ className }) => {
+const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
+  className,
+}) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("detailed-article");
   const dispatch = useAppDispatch();
@@ -65,10 +70,17 @@ const DetailedArticlePage: React.FC<DetailedArticleProps> = ({ className }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [article]);
 
+  const handleArticleCommentSend = React.useCallback(
+    (comment: string) => {
+      dispatch(addArticleComment(comment));
+    },
+    [dispatch]
+  );
+
   if (!id) {
     return (
       <Text
-        title={t("error.page-error", { ns: "translations" })}
+        title={t("error.page-error", { ns: "translation" })}
         variant="error"
         align="center"
       />
@@ -85,11 +97,11 @@ const DetailedArticlePage: React.FC<DetailedArticleProps> = ({ className }) => {
             className={classes.title}
             ref={commentsTitleRef}
           />
+          <AddComment onSendComment={handleArticleCommentSend} />
           <CommentList
             commentList={comments}
             isLoading={commentsIsLoading}
             error={commentsRequestError}
-            itemClassName={classes.comment}
           />
         </DynamicLoadingReducer>
       ) : null}

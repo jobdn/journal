@@ -19,7 +19,7 @@ import {
   selectDetailedArticleError,
   selectDetailedArticleIsLoading,
 } from "../../model/selectors/detailedArticleSelectors/detailedArticleSelectors";
-import { fetchArticleById } from "../../model/service/fetchArticleById";
+import { fetchArticleById } from "../../model/services/fetchArticleById";
 import { detailedArticleReducer } from "../../model/slice/detailedArticleSlice";
 import { mapArticleBlockObjToJsx } from "../../model/mappers/mapArticleBlockObjToJsx";
 

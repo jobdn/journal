@@ -1,5 +1,5 @@
 import { DetailedArticleSchema } from "../../types/DetailedArticleSchema";
-import { fetchArticleById } from "../service/fetchArticleById";
+import { fetchArticleById } from "../services/fetchArticleById";
 import { detailedArticleReducer } from "./detailedArticleSlice";
 import { article } from "../../constants/article";
 

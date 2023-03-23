@@ -8,6 +8,8 @@ import classes from "./CommentRow.module.scss";
 import { Comment } from "../../types/Comment";
 import { Text } from "shared/ui/Text";
 import { Skeleton } from "shared/ui/Skeleton";
+import { AppLink } from "shared/ui/AppLink";
+import { AvailableRoutes } from "shared/config/router";
 
 interface CommentRowProps {
   className?: string;
@@ -32,7 +34,10 @@ export const CommentRow: React.FC<CommentRowProps> = (props) => {
 
   return (
     <div className={cn(classes.CommentRow, {}, [className])}>
-      <div className={classes.header}>
+      <AppLink
+        to={`/${AvailableRoutes.PROFILE}/${comment?.user?.id}`}
+        className={classes.header}
+      >
         <Avatar
           size={40}
           src={comment?.user?.avatar || ""}
@@ -40,7 +45,7 @@ export const CommentRow: React.FC<CommentRowProps> = (props) => {
           variant="circle"
         />
         <Text title={comment?.user?.username} />
-      </div>
+      </AppLink>
       <Text text={comment?.text} />
     </div>
   );

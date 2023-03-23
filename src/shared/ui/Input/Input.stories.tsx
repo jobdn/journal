@@ -15,14 +15,14 @@ const InputTemplate: ComponentStory<typeof Input> = (args) => (
 
 export const Usual = InputTemplate.bind({});
 Usual.args = {
-  placeholder: "Username: ",
+  label: "Username: ",
   value: "Name",
   autoFocused: true,
 };
 
 export const Password = InputTemplate.bind({});
 Password.args = {
-  placeholder: "Password: ",
+  label: "Password: ",
   value: "Password",
   autoFocused: true,
   type: "password",

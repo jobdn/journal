@@ -22,6 +22,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Light = SidebarTemplate.bind({});
 
 export const Auth = SidebarTemplate.bind({});
-Auth.decorators = [StoreDecorator({ user: { userData: {} } })];
+Auth.decorators = [StoreDecorator({ user: { userData: {}, isAuth: true } })];
 
 export const NoAuth = SidebarTemplate.bind({});

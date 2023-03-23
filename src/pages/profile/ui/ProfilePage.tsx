@@ -1,4 +1,4 @@
-import React from "react";
+import { useParams } from "react-router-dom";
 
 import {
   DynamicLoadingReducer,
@@ -16,9 +16,10 @@ const lazyReducers: AsyncReducers = { profile: profileReducer };
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    dispatch(fetchProfileData(id));
   });
 
   return (
