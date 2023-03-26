@@ -8,3 +8,5 @@ export {
 } from "./model/selectors/detailedArticleSelectors/detailedArticleSelectors";
 
 export { article } from "./constants/article";
+
+export { ArticleList } from "./ui/ArticleList/ArticleList";

@@ -1,0 +1,132 @@
+.ArticleListItem {
+  display: block;
+}
+
+.createdAt {
+  color: var(--inverted-bg-color);
+}
+
+.tile {
+  .mainInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--inverted-bg-color);
+  }
+
+  .snippet {
+    margin-bottom: 16px;
+  }
+
+  .articleTypes {
+    display: flex;
+    overflow: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+
+    // articleTypesWrapper
+
+    /* Для Chrome, Safari и Opera */
+    &::-webkit-scrollbar {
+      background-color: var(--bg-color);
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--inverted-bg-color);
+      height: 5px;
+      border-radius: 5px;
+    }
+
+    /* Для Firefox */
+    scrollbar-color: #f5f5f5 #000;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.list {
+  max-width: 260px;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+
+  .createdAt {
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+
+    .createdAt {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .articleTypes {
+    display: flex;
+    max-width: 200px;
+    overflow: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+
+    /* Для Chrome, Safari и Opera */
+    &::-webkit-scrollbar {
+      background-color: var(--bg-color);
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--inverted-bg-color);
+      height: 5px;
+      border-radius: 5px;
+    }
+
+    /* Для Firefox */
+    scrollbar-color: #f5f5f5 #000;
+  }
+}
+
+.hero {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.img {
+  object-fit: contain;
+  height: 100%;
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.views {
+  color: var(--inverted-bg-color);
+}

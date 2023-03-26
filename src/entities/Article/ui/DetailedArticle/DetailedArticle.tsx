@@ -24,7 +24,7 @@ import { detailedArticleReducer } from "../../model/slice/detailedArticleSlice";
 import { mapArticleBlockObjToJsx } from "../../model/mappers/mapArticleBlockObjToJsx";
 
 import CalendarIcon from "../../assets/calendar.svg";
-import EyeIcon from "../../assets/eye.svg";
+import EyeIcon from "shared/assets/svg/eye.svg";
 
 interface DetailedArticleProps {
   className?: string;

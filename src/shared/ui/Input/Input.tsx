@@ -3,7 +3,7 @@ import { cn } from "shared/lib";
 import { Mods } from "shared/lib/classNames/classNames";
 
 import classes from "./Input.module.scss";
-import EyeIcon from "./assets/eye.svg";
+import EyeIcon from "shared/assets/svg/eye.svg";
 import { Button, ButtonVariant } from "../Button";
 import { InputProps } from "./types";
 

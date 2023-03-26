@@ -1,12 +1,11 @@
 import { NavLinkProps } from "react-router-dom";
 
-export enum AppLinkThemes {
+export enum AppLinkVariants {
   PRIMARY = "primary",
   SECONDARY = "secondary",
-  OUTLINED = "outlined",
 }
 
 export interface AppLinkProps extends NavLinkProps {
-  theme?: AppLinkThemes;
+  variant?: AppLinkVariants;
   className?: string;
 }

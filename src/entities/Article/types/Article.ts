@@ -1,8 +1,12 @@
+import { User } from "entities/User";
+
 export enum ArticleBlockType {
   IMAGE = "IMAGE",
   TEXT = "TEXT",
   CODE = "CODE",
 }
+
+export type ArticleListView = "list" | "tile";
 
 export interface BaseArticleBlock {
   id: string;
@@ -26,7 +30,7 @@ export interface ArticleImageBlock extends BaseArticleBlock {
   title: string;
 }
 
-export type ArticleType = "IT" | "SCIENCE" | "HEALTH";
+export type ArticleType = "IT" | "SCIENCE" | "HEALTH" | "MUSIC" | "MEAL";
 
 export type ArticleBlock =
   | ArticleTextBlock
@@ -42,4 +46,5 @@ export interface Article {
   createdAt: string;
   type: ArticleType[]; // ! Unique values
   blocks: ArticleBlock[];
+  user: User;
 }

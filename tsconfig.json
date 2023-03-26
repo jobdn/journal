@@ -24,7 +24,8 @@
     "webpack.config.ts",
     "config/**/*",
     "scripts/**/*",
-    "json-server/**/*"
+    "json-server/**/*",
+    "src/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton/.tsx"
   ],
   "ts-node": {
     "compilerOptions": {

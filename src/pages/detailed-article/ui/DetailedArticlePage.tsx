@@ -12,8 +12,13 @@ import {
 import { Text } from "shared/ui/Text";
 
 import classes from "./DetailedArticlePage.module.scss";
+
+import { AddComment, addCommentReducer } from "features/AddComment";
 import { CommentList } from "entities/Comment";
 import { DetailedArticle, selectDetailedArticleData } from "entities/Article";
+import { AvailableRoutes } from "shared/config/router";
+import { AppLink } from "shared/ui/AppLink";
+import { AppLinkVariants } from "shared/ui/AppLink";
 
 import {
   articleCommentsReducer,
@@ -23,9 +28,9 @@ import {
   selectArticleCommentsError,
   selectArticleCommentsIsLoading,
 } from "../model/selectors/articleCommentsSelectors/selectArticleComments";
-import { AddComment, addCommentReducer } from "features/AddComment";
 import { addArticleComment } from "../model/services/addArticleComment/addArticleComment";
 import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
+import { Button, ButtonVariant } from "shared/ui/Button";
 
 interface DetailedArticlePageProps {
   className?: string;
@@ -89,6 +94,9 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
 
   return (
     <div className={cn("", {}, [className])}>
+      <AppLink to={`/${AvailableRoutes.ARTICLES}`}>
+        <Button variant={ButtonVariant.OUTLINED}>{t("go_back")}</Button>
+      </AppLink>
       <DetailedArticle id={id} />
       {article ? (
         <DynamicLoadingReducer reducers={commentListReducer}>

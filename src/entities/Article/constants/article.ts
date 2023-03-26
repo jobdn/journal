@@ -6,8 +6,14 @@ export const article: Article = {
   subtitle: "Что нового в JS за 2022 год?",
   img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   views: 1022,
+  user: {
+    id: "1",
+    username: "Dan",
+    avatar:
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+  },
   createdAt: "26.02.2022",
-  type: ["IT"],
+  type: ["IT", "HEALTH", "SCIENCE", "MUSIC", "MEAL", "HEALTH", "IT", "MUSIC"],
   blocks: [
     {
       id: "1",
