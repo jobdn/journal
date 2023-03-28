@@ -10,3 +10,5 @@ export {
 export { article } from "./constants/article";
 
 export { ArticleList } from "./ui/ArticleList/ArticleList";
+
+export { Article, ArticleListView } from "./types/Article";

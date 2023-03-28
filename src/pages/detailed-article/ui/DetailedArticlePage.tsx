@@ -36,7 +36,7 @@ interface DetailedArticlePageProps {
   className?: string;
 }
 
-const commentListReducer: AsyncReducers = {
+const lazyReducers: AsyncReducers = {
   articleComments: articleCommentsReducer,
   addComment: addCommentReducer,
 };
@@ -99,7 +99,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
       </AppLink>
       <DetailedArticle id={id} />
       {article ? (
-        <DynamicLoadingReducer reducers={commentListReducer}>
+        <DynamicLoadingReducer reducers={lazyReducers}>
           <Text
             title={t("comments-title")}
             className={classes.title}

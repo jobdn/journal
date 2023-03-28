@@ -24,7 +24,7 @@ export const ArticleListItemSkeleton: React.FC<{ view: ArticleListView }> =
         ));
     }, []);
 
-    if (view === "tile") {
+    if (view === "list") {
       return (
         <div className={classes[view]}>
           <Card>

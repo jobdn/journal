@@ -11,7 +11,7 @@ export const addArticleComment = createAsyncThunk<
   Comment,
   string,
   ThunkOptions<string>
->("profile/saveProfile", async (comment, thunkApi) => {
+>("detailed-article/addArticleComment", async (comment, thunkApi) => {
   const { rejectWithValue, extra, getState, dispatch } = thunkApi;
   const userData = selectUserData(getState());
   const article = selectDetailedArticleData(getState());
@@ -26,12 +26,12 @@ export const addArticleComment = createAsyncThunk<
       articleId: article.id,
       userId: userData.id,
     });
+    dispatch(fetchArticleComments(article.id));
 
     if (!response.data) {
       throw new Error();
     }
 
-    dispatch(fetchArticleComments(article.id));
     dispatch(addCommentActions.setComment(""));
 
     return response.data;

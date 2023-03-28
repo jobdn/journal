@@ -14,6 +14,7 @@ import { ProfileSchema } from "entities/Profile";
 import { DetailedArticleSchema } from "entities/Article";
 import { ArticleCommentsSchema } from "pages/detailed-article";
 import { AddCommentSchema } from "features/AddComment";
+import { ArticlesPageSchema } from "pages/articles/model/types/ArticlesPageSchema";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
@@ -27,6 +28,7 @@ declare global {
     detailedArticle?: DetailedArticleSchema;
     articleComments?: ArticleCommentsSchema;
     addComment?: AddCommentSchema;
+    articlesPage?: ArticlesPageSchema;
   }
 
   export interface ThunkOptions<T> {

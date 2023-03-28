@@ -30,7 +30,13 @@ export interface ArticleImageBlock extends BaseArticleBlock {
   title: string;
 }
 
-export type ArticleType = "IT" | "SCIENCE" | "HEALTH" | "MUSIC" | "MEAL";
+export type ArticleType =
+  | "IT"
+  | "SCIENCE"
+  | "HEALTH"
+  | "MUSIC"
+  | "MEAL"
+  | "JOKE";
 
 export type ArticleBlock =
   | ArticleTextBlock

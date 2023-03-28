@@ -4,10 +4,10 @@
   gap: 24px;
 
   &.list {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   &.tile {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 }

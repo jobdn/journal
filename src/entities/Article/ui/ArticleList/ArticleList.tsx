@@ -14,6 +14,7 @@ interface ArticleListProps {
   articleList?: Article[];
   view: ArticleListView;
   isLoading?: boolean;
+  error?: string;
 }
 
 const renderListSkeleton = (view: ArticleListView) =>
@@ -23,7 +24,7 @@ const renderListSkeleton = (view: ArticleListView) =>
 
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
   const { t } = useTranslation();
-  const { className, articleList, view = "list", isLoading } = props;
+  const { className, articleList, view = "list", isLoading, error } = props;
 
   const renderArticleList = React.useCallback(
     (article: Article) => (
@@ -31,6 +32,8 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
     ),
     [view]
   );
+
+  if (error) return <Text title={error} variant="error" align="center" />;
 
   if (isLoading) {
     return (

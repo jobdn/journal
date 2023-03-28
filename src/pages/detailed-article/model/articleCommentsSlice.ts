@@ -1,7 +1,7 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import { Comment } from "entities/Comment/types/Comment";
 
-import { ArticleCommentsSchema } from "../types/ArticleCommentsSchema";
+import { ArticleCommentsSchema } from "./types/ArticleCommentsSchema";
 import { fetchArticleComments } from "./services/fetchArticleComments/fetchArticleComments";
 
 const initialState: ArticleCommentsSchema = {

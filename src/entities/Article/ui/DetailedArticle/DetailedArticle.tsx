@@ -31,7 +31,7 @@ interface DetailedArticleProps {
   id: string;
 }
 
-const asyncReducer: AsyncReducers = { detailedArticle: detailedArticleReducer };
+const lazyReducers: AsyncReducers = { detailedArticle: detailedArticleReducer };
 
 export const DetailedArticle: React.FC<DetailedArticleProps> = ({
   className,
@@ -102,7 +102,7 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
   }
 
   return (
-    <DynamicLoadingReducer reducers={asyncReducer}>
+    <DynamicLoadingReducer reducers={lazyReducers}>
       <div className={cn(classes.DetailedArticle, {}, [className])}>
         {content}
       </div>

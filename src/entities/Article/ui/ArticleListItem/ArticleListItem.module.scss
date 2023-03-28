@@ -6,7 +6,7 @@
   color: var(--inverted-bg-color);
 }
 
-.tile {
+.list {
   .mainInfo {
     display: flex;
     align-items: center;
@@ -56,8 +56,8 @@
   }
 }
 
-.list {
-  max-width: 260px;
+.tile {
+  width: 260px;
   cursor: pointer;
   transition: 0.1s all ease-in-out;
 

@@ -23,7 +23,7 @@ export interface AuthFormProps {
   closeModal: () => void;
 }
 
-const asyncAuthReducer: AsyncReducers = { auth: authReducer };
+const lazyReducers: AsyncReducers = { auth: authReducer };
 
 const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
   const { className, closeModal } = props;
@@ -62,7 +62,7 @@ const AuthForm: React.FC<AuthFormProps> = React.memo(function AuthForm(props) {
   );
 
   return (
-    <DynamicLoadingReducer reducers={asyncAuthReducer}>
+    <DynamicLoadingReducer reducers={lazyReducers}>
       <form className={cn(classes.AuthForm, {}, [className])}>
         <Text title={t("login_form_title")} className={classes.title} />
         <Input

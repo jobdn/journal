@@ -44,7 +44,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
       return article.type.map(renderArticleTopic);
     }, [article.type, renderArticleTopic]);
 
-    if (view === "tile") {
+    if (view === "list") {
       const firstTextBlock: ArticleTextBlock | undefined = article.blocks.find(
         (block) => block.type === ArticleBlockType.TEXT
       ) as ArticleTextBlock;
