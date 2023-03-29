@@ -24,10 +24,8 @@ export const AppRouter = () => {
   }, []);
 
   return (
-    <div className="page-wrapper">
-      <React.Suspense fallback={<AppLoader />}>
-        <Routes>{Object.values(routes).map(authWrapper)}</Routes>
-      </React.Suspense>
-    </div>
+    <React.Suspense fallback={<AppLoader />}>
+      <Routes>{Object.values(routes).map(authWrapper)}</Routes>
+    </React.Suspense>
   );
 };

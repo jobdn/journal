@@ -17,14 +17,6 @@ body {
   display: flex;
 }
 
-.page-wrapper {
-  // Нужно в совершенстве понимать как расположить элементы на странице и сделать любое расположение элементов.
-  padding: 20px;
-  width: 100%;
-  overflow-y: auto;
-  height: calc(100vh - var(--navbar-height));
-}
-
 .inverted-icon {
   fill: var(--inverted-primary-color);
 }
@@ -35,8 +27,4 @@ body {
 
 .secondary-icon {
   fill: var(--secondary-color);
-}
-
-h2 {
-  color: var(--primary-color-gold);
 }

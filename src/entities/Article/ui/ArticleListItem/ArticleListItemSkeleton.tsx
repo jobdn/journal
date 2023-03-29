@@ -42,9 +42,6 @@ export const ArticleListItemSkeleton: React.FC<{ view: ArticleListView }> =
             <div className={classes.articleTypes}>{articleTopics}</div>
 
             <Skeleton height={24} style={{ marginBottom: 8 }} />
-            <Skeleton height={24} style={{ marginBottom: 8 }} />
-            <Skeleton height={24} style={{ marginBottom: 8 }} />
-            <Skeleton height={24} style={{ marginBottom: 16 }} />
 
             <div className={classes.footer}>
               <Skeleton height={44} width={180} borderRadius={8} />

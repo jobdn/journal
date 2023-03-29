@@ -3,14 +3,11 @@ import { useSelector } from "react-redux";
 
 import {
   AsyncReducers,
-  cn,
   DynamicLoadingReducer,
   useAppDispatch,
   useInitialEffect,
 } from "shared/lib";
 
-import classes from "./ArticlesPage.module.scss";
-import { fetchArticles } from "../model/services/fetchArticles";
 import {
   articlesPageReducer,
   articlesPageSelectors,
@@ -23,23 +20,29 @@ import {
 } from "../model/selectors/articlesSelectors";
 import { ToggleArticleListView } from "features/ToggleArticleListView";
 import { ArticleList, ArticleListView } from "entities/Article";
-
-interface ArticlesPageProps {
-  className?: string;
-}
+import { PageWrapper } from "shared/ui/PageWrapper";
+import { fetchArticlesPart } from "../model/services/fetchArticlesPart/fetchArticlesPart";
+import { fetchArticlesOnInit } from "../model/services/fetchArticlesOnInit/fetchArticlesOnInit";
 
 const lazyReducers: AsyncReducers = { articlesPage: articlesPageReducer };
 
-const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
+const ArticlesPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const isLoading = useSelector(selectArticlesIsLoading);
   const error = useSelector(selectArticlesError);
   const articles = useSelector(articlesPageSelectors.selectAll);
   const view = useSelector(selectView);
+  const rootRef = React.useRef<HTMLDivElement>(
+    null
+  ) as React.MutableRefObject<HTMLDivElement>;
 
   useInitialEffect(() => {
-    dispatch(fetchArticles());
+    dispatch(fetchArticlesOnInit());
   });
+
+  const loadNextArticles = () => {
+    dispatch(fetchArticlesPart());
+  };
 
   const handleToggleArticleListView = React.useCallback(
     (view: ArticleListView) => {
@@ -49,8 +52,8 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
   );
 
   return (
-    <div className={cn(classes.ArticlesPage, {}, [className])}>
-      <DynamicLoadingReducer reducers={lazyReducers}>
+    <DynamicLoadingReducer reducers={lazyReducers} removeAfterUnmount={false}>
+      <PageWrapper rootRef={rootRef} intersectionCallback={loadNextArticles}>
         <ToggleArticleListView
           onToggleArticleListView={handleToggleArticleListView}
           currentView={view}
@@ -61,8 +64,8 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
           isLoading={isLoading}
           error={error}
         />
-      </DynamicLoadingReducer>
-    </div>
+      </PageWrapper>
+    </DynamicLoadingReducer>
   );
 };
 

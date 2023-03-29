@@ -35,19 +35,19 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
 
   if (error) return <Text title={error} variant="error" align="center" />;
 
-  if (isLoading) {
+  if (isLoading && !articleList?.length)
     return (
       <div className={cn(classes.ArticleList, {}, [className, classes[view]])}>
         {renderListSkeleton(view)}
       </div>
     );
-  }
 
   if (!articleList?.length) return <Text text="Empty article list" />;
 
   return (
     <div className={cn(classes.ArticleList, {}, [className, classes[view]])}>
       {articleList.map(renderArticleList)}
+      {isLoading && renderListSkeleton(view)}
     </div>
   );
 };

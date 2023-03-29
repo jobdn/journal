@@ -31,6 +31,7 @@ import {
 import { addArticleComment } from "../model/services/addArticleComment/addArticleComment";
 import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
 import { Button, ButtonVariant } from "shared/ui/Button";
+import { PageWrapper } from "shared/ui/PageWrapper";
 
 interface DetailedArticlePageProps {
   className?: string;
@@ -41,9 +42,7 @@ const lazyReducers: AsyncReducers = {
   addComment: addCommentReducer,
 };
 
-const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
-  className,
-}) => {
+const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("detailed-article");
   const dispatch = useAppDispatch();
@@ -93,13 +92,16 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
   }
 
   return (
-    <div className={cn("", {}, [className])}>
+    <PageWrapper>
       <AppLink to={`/${AvailableRoutes.ARTICLES}`}>
         <Button variant={ButtonVariant.OUTLINED}>{t("go_back")}</Button>
       </AppLink>
       <DetailedArticle id={id} />
       {article ? (
-        <DynamicLoadingReducer reducers={lazyReducers}>
+        <DynamicLoadingReducer
+          reducers={lazyReducers}
+          removeAfterUnmount={false}
+        >
           <Text
             title={t("comments-title")}
             className={classes.title}
@@ -113,7 +115,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = ({
           />
         </DynamicLoadingReducer>
       ) : null}
-    </div>
+    </PageWrapper>
   );
 };
 

@@ -5,18 +5,18 @@ import AboutIcon from "../../assets/about.svg";
 import HomeIcon from "../../assets/home.svg";
 import ProfileIcon from "../../assets/profile.svg";
 import ArticlesIcon from "../../assets/articles.svg";
-import { AvailableRoutes } from "shared/config/router";
+import { AvailableRoutes, RoutePaths } from "shared/config/router";
 
 export const selectSidebarItems = createSelector(selectUserState, (user) => {
   const sidebarItemList: SidebarItemType[] = [
     {
       Icon: HomeIcon,
-      path: AvailableRoutes.HOME,
+      path: RoutePaths[AvailableRoutes.HOME],
       translation: "sidebar.home",
     },
     {
       Icon: AboutIcon,
-      path: AvailableRoutes.ABOUT,
+      path: RoutePaths[AvailableRoutes.ABOUT],
       translation: "sidebar.about",
     },
   ];
@@ -31,7 +31,7 @@ export const selectSidebarItems = createSelector(selectUserState, (user) => {
       },
       {
         Icon: ArticlesIcon,
-        path: AvailableRoutes.ARTICLES,
+        path: RoutePaths[AvailableRoutes.ARTICLES],
         translation: "sidebar.articles",
         authOnly: true,
       }

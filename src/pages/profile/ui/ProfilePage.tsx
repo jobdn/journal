@@ -11,6 +11,7 @@ import {
   fetchProfileData,
   EditableProfileCard,
 } from "features/EditableProfileCard";
+import { PageWrapper } from "shared/ui/PageWrapper";
 
 const lazyReducers: AsyncReducers = { profile: profileReducer };
 
@@ -23,9 +24,11 @@ const ProfilePage = () => {
   });
 
   return (
-    <DynamicLoadingReducer reducers={lazyReducers}>
-      <EditableProfileCard />
-    </DynamicLoadingReducer>
+    <PageWrapper>
+      <DynamicLoadingReducer reducers={lazyReducers}>
+        <EditableProfileCard />
+      </DynamicLoadingReducer>
+    </PageWrapper>
   );
 };
 

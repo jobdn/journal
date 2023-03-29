@@ -50,7 +50,7 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
 
   if (error) {
     content = <Text title={error} variant="error" align="center" />;
-  } else if (isLoading) {
+  } else if (isLoading || !article) {
     content = (
       <>
         <Skeleton
@@ -102,7 +102,7 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
   }
 
   return (
-    <DynamicLoadingReducer reducers={lazyReducers}>
+    <DynamicLoadingReducer reducers={lazyReducers} removeAfterUnmount={false}>
       <div className={cn(classes.DetailedArticle, {}, [className])}>
         {content}
       </div>

@@ -61,6 +61,18 @@
   cursor: pointer;
   transition: 0.1s all ease-in-out;
 
+  .card {
+    height: 360px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .createdAt {
     display: none;
   }

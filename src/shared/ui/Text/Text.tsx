@@ -8,6 +8,8 @@ export const Text = React.memo(
   React.forwardRef<HTMLDivElement, TextProps>(function Text(props, ref) {
     const {
       className,
+      titleClassName,
+      textClassName,
       text,
       title,
       variant = "primary",
@@ -24,8 +26,12 @@ export const Text = React.memo(
         ])}
         ref={ref}
       >
-        {title && <p className={classes.title}>{title}</p>}
-        {text && <p className={classes.text}>{text}</p>}
+        {title && (
+          <p className={cn(classes.title, {}, [titleClassName])}>{title}</p>
+        )}
+        {text && (
+          <p className={cn(classes.text, {}, [textClassName])}>{text}</p>
+        )}
       </div>
     );
   })

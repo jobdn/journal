@@ -104,7 +104,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
         to={`/${AvailableRoutes.ARTICLES}/${article.id}`}
         className={cn(classes.ArticleListItem, {}, [className, classes[view]])}
       >
-        <Card>
+        <Card className={classes.card}>
           <div className={classes.hero}>
             <img src={article.img} alt="Article hero" className={classes.img} />
             <span className={classes.createdAt}>{article.createdAt}</span>
@@ -118,7 +118,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
               <div className={classes.views}>{article.views}</div>
             </div>
           </div>
-          <Text title={article.title} />
+          <Text title={article.title} titleClassName={classes.title} />
         </Card>
       </AppLink>
     );

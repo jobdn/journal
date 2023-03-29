@@ -5,6 +5,7 @@ import classes from "./NotFound.module.scss";
 
 import NotFoundGif from "../assets/not-found.gif";
 import { useTranslation } from "react-i18next";
+import { PageWrapper } from "shared/ui/PageWrapper";
 
 interface NotFoundProps {
   className?: string;
@@ -13,14 +14,16 @@ interface NotFoundProps {
 const NotFoundPage: React.FC<NotFoundProps> = ({ className }) => {
   const { t } = useTranslation();
   return (
-    <div className={cn(classes.NotFoundPage, {}, [className])}>
-      <h1 className={classes.title}>{t("error.not_found")}</h1>
-      <img
-        src={NotFoundGif}
-        className={classes.notFoundImg}
-        alt="There is not page"
-      />
-    </div>
+    <PageWrapper>
+      <div className={cn(classes.NotFoundPage, {}, [className])}>
+        <h1 className={classes.title}>{t("error.not_found")}</h1>
+        <img
+          src={NotFoundGif}
+          className={classes.notFoundImg}
+          alt="There is not page"
+        />
+      </div>
+    </PageWrapper>
   );
 };
 

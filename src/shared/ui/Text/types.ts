@@ -4,6 +4,8 @@ export type TextSize = "m" | "l";
 
 export interface TextProps {
   className?: string;
+  titleClassName?: string;
+  textClassName?: string;
   title?: string;
   text?: string;
   variant?: TextVariant;
