@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { PageWrapper } from "shared/ui/PageWrapper";
+import { PageWrapper } from "widgets/PageWrapper";
 
 const HomePage = () => {
   const { t } = useTranslation("home");

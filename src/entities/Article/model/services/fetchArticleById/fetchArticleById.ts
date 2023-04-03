@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 
-import { Article } from "../../types/Article";
+import { Article } from "../../../types/Article";
 
 import i18next from "i18next";
 

@@ -1,0 +1,11 @@
+.Tabs {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.tab {
+  cursor: pointer;
+}

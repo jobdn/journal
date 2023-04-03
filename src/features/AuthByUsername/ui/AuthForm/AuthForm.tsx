@@ -9,7 +9,7 @@ import { Button, ButtonVariant } from "shared/ui/Button";
 import { Input } from "shared/ui/Input";
 import { Text } from "shared/ui/Text";
 
-import { authActions, authReducer } from "../../model/slice/authSlice";
+import { authActions, authReducer } from "../../model/slices/authSlice";
 import { selectError } from "../../model/selectors/selectError/selectError";
 import { selectIsLoading } from "../../model/selectors/selectIsLoading/selectIsLoading";
 import { selectPassword } from "../../model/selectors/selectPassword/selectPassword";

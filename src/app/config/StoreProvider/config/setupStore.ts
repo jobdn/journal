@@ -2,6 +2,7 @@ import { configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 
 import { userReducer } from "entities/User";
 import { api } from "shared/api/api";
+import { rememberScrollReducer } from "widgets/PageWrapper";
 import { createReducerManager } from "./createReducerManager";
 
 export const setupStore = (
@@ -11,6 +12,7 @@ export const setupStore = (
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
+    scroll: rememberScrollReducer,
   };
   const reducerManager = createReducerManager(rootReducer);
   const store = configureStore({

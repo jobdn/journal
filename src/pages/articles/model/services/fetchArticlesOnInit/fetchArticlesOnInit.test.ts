@@ -6,6 +6,7 @@ import { fetchArticles } from "../fetchArticles/fetchArticles";
 jest.mock("../fetchArticles/fetchArticles");
 
 describe("fetchArticlesOnInit.test", () => {
+  const fakeParams = new URLSearchParams();
   it("Should fetch articles when reducer was not init", async () => {
     const thunk = new TestAsyncThunk(fetchArticlesOnInit, {
       articlesPage: {
@@ -16,7 +17,8 @@ describe("fetchArticlesOnInit.test", () => {
         _wasInit: false, // 👈
       },
     });
-    const result = await thunk.callThunk();
+
+    const result = await thunk.callThunk(fakeParams);
 
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(fetchArticles).toBeCalledTimes(1);
@@ -32,7 +34,7 @@ describe("fetchArticlesOnInit.test", () => {
         _wasInit: true, // 👈
       },
     });
-    await thunk.callThunk();
+    await thunk.callThunk(fakeParams);
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticles).toBeCalledTimes(0);

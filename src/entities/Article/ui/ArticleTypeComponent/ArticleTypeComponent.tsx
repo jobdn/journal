@@ -2,11 +2,11 @@ import React from "react";
 import { cn } from "shared/lib";
 
 import classes from "./ArticleTypeComponent.module.scss";
-import { ArticleType } from "../../types/Article";
+import { ArticleTopic } from "../../types/Article";
 
 interface ArticleTypeComponentProps {
   className?: string;
-  articleType: ArticleType;
+  articleType: ArticleTopic;
 }
 
 export const ArticleTypeComponent: React.FC<ArticleTypeComponentProps> = ({

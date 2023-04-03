@@ -1,29 +1,54 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Article } from "entities/Article";
 import i18next from "i18next";
+
+import { Article } from "entities/Article";
+import {
+  selectArticleTopic,
+  selectOrder,
+  selectSearchText,
+  selectSort,
+} from "widgets/ArticlesFilter";
+
 import {
   selectArticlesLimit,
   selectArticlesPageNum,
 } from "../../selectors/articlesSelectors";
 import { articlesPageActions } from "../../slices/articlesPageSlice";
+import { addQueryParams } from "shared/lib/url/addQueryParams";
 
 export const fetchArticles = createAsyncThunk<
   Article[],
-  void,
+  { replacePage: boolean } | undefined,
   ThunkOptions<string>
->("articlesPageSlice/fetchArticles", async (_, thunkApi) => {
+>("articlesPageSlice/fetchArticles", async (args, thunkApi) => {
   const { rejectWithValue, extra, getState, dispatch } = thunkApi;
   try {
-    const page = selectArticlesPageNum(getState());
+    const page = args?.replacePage ? 1 : selectArticlesPageNum(getState());
     const limit = selectArticlesLimit(getState());
+    const search = selectSearchText(getState());
+    const sort = selectSort(getState());
+    const order = selectOrder(getState());
+    const topic = selectArticleTopic(getState());
+
     const response = await extra.api<Article[]>("/articles", {
       params: {
         _expand: "user",
         _page: page,
         _limit: limit,
+        _sort: sort,
+        _order: order,
+        type: topic === "ALL" ? undefined : topic,
+        q: search,
       },
     });
-    dispatch(articlesPageActions.setPage(page + 1));
+
+    if (args?.replacePage) {
+      dispatch(articlesPageActions.setPage(1));
+    } else {
+      dispatch(articlesPageActions.setPage(page + 1));
+    }
+    addQueryParams({ sort, order, search, type: topic });
+
     if (!response.data) {
       throw new Error();
     }

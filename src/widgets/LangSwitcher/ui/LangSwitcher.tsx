@@ -27,7 +27,6 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = React.memo(
     );
 
     return (
-      // TODO: Почему кнопка черна в темной теме сторибука?
       <Button
         variant={buttonVariant}
         className={cn(classes.LangSwitcher, {}, [className])}

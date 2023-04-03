@@ -1,5 +1,14 @@
 .Card {
-  background-color: var(--card-bg);
   border-radius: 8px;
-  padding: 20px;
+  padding: 10px 20px;
+}
+
+.default {
+  background-color: var(--card-bg);
+  color: var(--inverted-secondary-color);
+}
+
+.outlined {
+  border: 2px solid var(--active-color);
+  transform: scale(1.02);
 }

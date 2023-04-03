@@ -5,7 +5,7 @@ import classes from "./NotFound.module.scss";
 
 import NotFoundGif from "../assets/not-found.gif";
 import { useTranslation } from "react-i18next";
-import { PageWrapper } from "shared/ui/PageWrapper";
+import { PageWrapper } from "widgets/PageWrapper";
 
 interface NotFoundProps {
   className?: string;

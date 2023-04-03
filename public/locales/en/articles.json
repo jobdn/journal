@@ -1,0 +1,16 @@
+{
+  "ALL": "All",
+  "IT": "It",
+  "SCIENCE": "Science",
+  "MEAL": "Meal",
+  "POLICY": "Policy",
+
+  "sort_by": "Sort by",
+  "title": "title",
+  "createAt": "date 📆",
+  "view": "views 👀",
+  "sort_order": "Sort order",
+  "asc_order": "ascending ⬆️",
+  "desc_order": "descending ⬇️",
+  "title_search": "Search by article title 🧲"
+}

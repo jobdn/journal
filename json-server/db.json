@@ -29,7 +29,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 1,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -95,18 +95,18 @@
     },
     {
       "id": "2",
-      "userId": "1",
-      "title": "1 Javascript news. Js",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "userId": "2",
+      "title": "Bio news.",
+      "subtitle": "Что нового в Биологии за 2022 год?",
       "img": "https://www.verywellhealth.com/thmb/V4VdxdpWe0V1KY871SPrfw6kRqo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/514240-article-img-malignant-vs-benign-tumor2111891f-54cc-47aa-8967-4cd5411fdb2f-5a2848f122fa3a0037c544be.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
+      "views": 69453,
+      "createdAt": "29.12.2022",
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Заголовок этого блока",
+          "title": "Биология - это круто",
           "paragraphs": [
             "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
@@ -123,42 +123,26 @@
           ]
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
+          "src": "https://www.profguide.io/images/article/a/4/NbHbjQExhg.jpg",
+          "title": "Рисунок 1 - биология"
         },
         {
           "id": "7",
           "type": "TEXT",
-          "title": "What news in node",
+          "title": "What news in Био",
           "paragraphs": [
             "node — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
         },
         {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
           "id": "9",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+            "Биология — это круто, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
           ]
         }
       ]
@@ -166,12 +150,12 @@
     {
       "id": "3",
       "userId": "1",
-      "title": "1 Javascript news. Js",
+      "title": "Кушац",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
+      "img": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/11/2602810-13-Best-Prepared-Meal-Delivery-Services-of-2022-Header-81b9bf.jpg?w=1155&h=1528",
+      "views": 22222,
+      "createdAt": "22.2.2022",
+      "type": ["MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -236,12 +220,12 @@
     {
       "id": "4",
       "userId": "1",
-      "title": "1 Javascript news. Js",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
+      "title": "POLICY",
+      "subtitle": "Что нового в политике?",
+      "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
+      "views": 99922,
+      "createdAt": "12.12.2021",
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -309,7 +293,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
+      "views": 10,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -379,7 +363,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 20,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -449,7 +433,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 30,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -519,7 +503,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 40,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -589,7 +573,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://media.istockphoto.com/id/1315904960/photo/taking-notes-on-a-ring-binded-notepad-inf.jpg?s=170667a&w=0&k=20&c=cs5xxIUlItIksEnQMOvTqgJeME9D2VMjNdK7Y0_NtAQ=",
-      "views": 1022,
+      "views": 50,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -659,7 +643,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 60,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -729,8 +713,8 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 70,
+      "createdAt": "26.01.2002",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
@@ -799,7 +783,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
+      "views": 80,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -869,7 +853,7 @@
       "title": "1 Javascript news. Js",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
+      "views": 90,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -936,10 +920,10 @@
     {
       "id": "14",
       "userId": "1",
-      "title": "1 Javascript news. Js",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
+      "title": "Python news",
+      "subtitle": "Что нового в python за 2022 год?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+      "views": 90,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -1006,10 +990,10 @@
     {
       "id": "15",
       "userId": "1",
-      "title": "1 Javascript news. Js",
+      "title": "a",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
-      "views": 1022,
+      "views": 90,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -1076,10 +1060,10 @@
     {
       "id": "16",
       "userId": "1",
-      "title": "1 Javascript news. Js",
+      "title": "Most popular article",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
+      "views": 102100000,
       "createdAt": "26.02.2022",
       "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
@@ -1146,12 +1130,12 @@
     {
       "id": "17",
       "userId": "1",
-      "title": "1 Javascript news. Js",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
+      "title": "POLICY",
+      "subtitle": "Что нового в политике?",
+      "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
+      "views": 99922,
+      "createdAt": "12.12.2021",
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -1219,9 +1203,9 @@
       "title": "Node is cool",
       "subtitle": "Что нового в node за 2023 год?",
       "img": "https://webingo.in/images/image2/node_bred.png",
-      "views": 9022,
-      "createdAt": "26.11.2013",
-      "type": ["IT", "JOKE"],
+      "views": 8022,
+      "createdAt": "26.11.2014",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1275,7 +1259,7 @@
     {
       "id": "19",
       "userId": "3",
-      "title": "Angular",
+      "title": "Angular1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://images.unsplash.com/photo-1522777183857-cb4be6839fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80",
       "views": 2222,
@@ -1345,7 +1329,7 @@
     {
       "id": "20",
       "userId": "3",
-      "title": "Angular",
+      "title": "Articles",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.shutterstock.com/image-illustration/articles-complex-like-puzzle-pictured-260nw-1666818295.jpg",
       "views": 2222,
@@ -1413,84 +1397,14 @@
       ]
     },
     {
-      "id": "21",
-      "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "What news in node",
-          "paragraphs": [
-            "node — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
-          ]
-        }
-      ]
-    },
-    {
       "id": "22",
       "userId": "2",
-      "title": "Node is cool",
-      "subtitle": "Что нового в node за 2023 год?",
+      "title": "1Node is cool",
+      "subtitle": "Хочешь выучить ноду?",
       "img": "https://webingo.in/images/image2/node_bred.png",
       "views": 9022,
-      "createdAt": "26.11.2013",
-      "type": ["IT", "JOKE"],
+      "createdAt": "26.01.2013",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1542,84 +1456,14 @@
       ]
     },
     {
-      "id": "23",
-      "userId": "3",
-      "title": "Angular",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1522777183857-cb4be6839fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80",
-      "views": 2222,
-      "createdAt": "01.12.2023",
-      "type": ["IT", "WORK", "MEAL"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "What news in node",
-          "paragraphs": [
-            "node — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
-          ]
-        }
-      ]
-    },
-    {
       "id": "24",
       "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "type": ["IT", "SCIENCE", "MEAL"],
+      "title": "POLICY",
+      "subtitle": "Что нового в политике?",
+      "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
+      "views": 99922,
+      "createdAt": "12.12.2002",
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -1684,12 +1528,12 @@
     {
       "id": "25",
       "userId": "2",
-      "title": "Node is cool",
+      "title": "Нода это классно, у тебя получится!",
       "subtitle": "Что нового в node за 2023 год?",
       "img": "https://webingo.in/images/image2/node_bred.png",
-      "views": 9022,
-      "createdAt": "26.11.2013",
-      "type": ["IT", "JOKE"],
+      "views": 12055,
+      "createdAt": "26.11.2012",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1743,10 +1587,10 @@
     {
       "id": "26",
       "userId": "3",
-      "title": "Angular",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "article with two views",
+      "subtitle": "NOt",
       "img": "https://images.unsplash.com/photo-1522777183857-cb4be6839fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80",
-      "views": 2222,
+      "views": 2,
       "createdAt": "01.12.2023",
       "type": ["IT", "WORK", "MEAL"],
       "blocks": [
@@ -1900,6 +1744,36 @@
       "id": "6b62461a-b438-4c51-a939-3a881c7f15f3",
       "text": "asdfasdf",
       "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "d1e1d112-4bd8-41c3-b44a-1856f2a78b87",
+      "text": "awesome!!!!!",
+      "articleId": "4",
+      "userId": "1"
+    },
+    {
+      "id": "1d9ae495-3045-44f7-a027-c4ea691bfe28",
+      "text": "123",
+      "articleId": "4",
+      "userId": "1"
+    },
+    {
+      "id": "6ee8bc45-73a5-4143-b48f-c0b727db1ed4",
+      "text": "321",
+      "articleId": "4",
+      "userId": "1"
+    },
+    {
+      "id": "eaf3bacf-4986-4de3-8bcb-228d719bd8a3",
+      "text": "123",
+      "articleId": "4",
+      "userId": "1"
+    },
+    {
+      "id": "469b0b83-ff8a-4a0c-bb7c-f462a862f76a",
+      "text": "Thank you so much!!!",
+      "articleId": "16",
       "userId": "1"
     }
   ],

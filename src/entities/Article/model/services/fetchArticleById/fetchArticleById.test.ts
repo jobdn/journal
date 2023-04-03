@@ -3,8 +3,8 @@ import i18next from "i18next";
 
 import { TestAsyncThunk } from "shared/lib/tests";
 
-import { Article } from "../../types/Article";
-import { article } from "../../constants/article";
+import { Article } from "../../../types/Article";
+import { article } from "../../../constants/article";
 
 import { fetchArticleById } from "./fetchArticleById";
 

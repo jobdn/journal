@@ -22,3 +22,9 @@ export const Light = CardTemplate.bind({});
 Light.args = {
   children: "Card content",
 };
+
+export const Outlined = CardTemplate.bind({});
+Outlined.args = {
+  children: "Card content",
+  variant: "outlined",
+};

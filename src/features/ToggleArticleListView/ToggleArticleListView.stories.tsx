@@ -6,7 +6,7 @@ import { Theme } from "shared/config/theme";
 import { ToggleArticleListView } from "./ToggleArticleListView";
 
 export default {
-  title: "/ToggleArticleListView",
+  title: "features/ToggleArticleListView",
   component: ToggleArticleListView,
 } as ComponentMeta<typeof ToggleArticleListView>;
 

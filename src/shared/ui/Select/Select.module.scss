@@ -3,9 +3,12 @@
   outline: none;
   border: none;
   margin-left: 16px;
+  border-radius: 8px;
 
   option {
     background-color: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
+    padding: 8px 16px;
+    display: inline-block;
   }
 }

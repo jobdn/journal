@@ -19,12 +19,12 @@ import {
   selectDetailedArticleError,
   selectDetailedArticleIsLoading,
 } from "../../model/selectors/detailedArticleSelectors/detailedArticleSelectors";
-import { fetchArticleById } from "../../model/services/fetchArticleById";
 import { detailedArticleReducer } from "../../model/slice/detailedArticleSlice";
 import { mapArticleBlockObjToJsx } from "../../model/mappers/mapArticleBlockObjToJsx";
 
 import CalendarIcon from "../../assets/calendar.svg";
 import EyeIcon from "shared/assets/svg/eye.svg";
+import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
 
 interface DetailedArticleProps {
   className?: string;

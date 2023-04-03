@@ -12,7 +12,7 @@ import {
   ArticleBlockType,
   ArticleListView,
   ArticleTextBlock,
-  ArticleType,
+  ArticleTopic,
 } from "../../types/Article";
 import { ArticleTypeComponent } from "../ArticleTypeComponent/ArticleTypeComponent";
 import { Text } from "shared/ui/Text";
@@ -21,6 +21,7 @@ import { AvailableRoutes } from "shared/config/router";
 import { Card } from "shared/ui/Card";
 import { Button, ButtonVariant } from "shared/ui/Button";
 import { Avatar } from "shared/ui/Avatar";
+import i18next from "i18next";
 
 interface ArticleListItemProps {
   className?: string;
@@ -34,10 +35,14 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
     const { t } = useTranslation("detailed-article");
 
     const renderArticleTopic = React.useCallback(
-      (type: ArticleType) => (
-        <ArticleTypeComponent key={uuidv4()} articleType={type} />
+      (type: ArticleTopic) => (
+        <ArticleTypeComponent
+          key={uuidv4()}
+          articleType={t(type, { ns: "articles" })}
+        />
       ),
-      []
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [i18next.language]
     );
 
     const articleTopics = React.useMemo(() => {
@@ -78,6 +83,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
             </div>
 
             <div className={classes.articleTypes}>{articleTopics}</div>
+            <Text title={article.title} titleClassName={classes.title} />
             {firstTextBlock && (
               <Text
                 className={classes.snippet}

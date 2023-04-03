@@ -1,14 +1,17 @@
 import { SelectHTMLAttributes } from "react";
 
-export interface Option {
-  value: string;
+export interface Option<T> {
+  value: T;
   text: string;
 }
 
-export interface SelectProps
+export type SelectOptions<T> = Option<T>[];
+
+export interface SelectProps<T extends string>
   extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange"> {
   className?: string;
   label?: string;
-  options: Option[];
-  onChange?: (value: string) => void;
+  options: SelectOptions<T>;
+  value: T;
+  onChange?: (value: T) => void;
 }

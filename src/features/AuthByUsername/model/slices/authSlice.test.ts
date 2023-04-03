@@ -1,4 +1,4 @@
-import { AuthSchema } from "../../types/AuthSchema";
+import { AuthSchema } from "../types/AuthSchema";
 import { authByUsername } from "../thunks/authByUsername/authByUsername";
 import { authActions, authReducer } from "./authSlice";
 

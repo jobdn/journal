@@ -4,7 +4,7 @@ import { User, userActions } from "entities/User";
 import i18next from "i18next";
 import { USER_DATA } from "shared/constants";
 
-import { AuthByUsernameArgs } from "../../../types/AuthByUsernameArgs";
+import { AuthByUsernameArgs } from "../../types/AuthByUsernameArgs";
 
 export const authByUsername = createAsyncThunk<
   User,

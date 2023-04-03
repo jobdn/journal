@@ -30,13 +30,15 @@ export interface ArticleImageBlock extends BaseArticleBlock {
   title: string;
 }
 
-export type ArticleType =
-  | "IT"
-  | "SCIENCE"
-  | "HEALTH"
-  | "MUSIC"
-  | "MEAL"
-  | "JOKE";
+export const articleTopics = [
+  "ALL",
+  "IT",
+  "SCIENCE",
+  "MEAL",
+  "POLICY",
+] as const;
+
+export type ArticleTopic = (typeof articleTopics)[number];
 
 export type ArticleBlock =
   | ArticleTextBlock
@@ -50,7 +52,7 @@ export interface Article {
   img: string;
   views: number;
   createdAt: string;
-  type: ArticleType[]; // ! Unique values
+  type: ArticleTopic[]; // ! Unique values
   blocks: ArticleBlock[];
   user: User;
 }

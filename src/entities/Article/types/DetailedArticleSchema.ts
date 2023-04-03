@@ -4,4 +4,5 @@ export interface DetailedArticleSchema {
   isLoading: boolean;
   error?: string;
   data: Article | null;
+  _wasInited: boolean;
 }

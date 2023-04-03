@@ -31,7 +31,6 @@ const togglers: TogglerItem[] = [
 export const ToggleArticleListView: React.FC<ToggleArticleListViewProps> = (
   props
 ) => {
-  const { t } = useTranslation();
   const { className, onToggleArticleListView, currentView } = props;
 
   const handleToggleView = (newView: ArticleListView) => () => {

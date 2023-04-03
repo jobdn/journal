@@ -29,6 +29,7 @@
     }
   },
   "empty": {
-    "comments": "This article doesn't have comments yet, but you can be first 😊"
+    "comments": "This article doesn't have comments yet, but you can be first 😊",
+    "articles": "There is not articles with with such type"
   }
 }

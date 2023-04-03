@@ -15,12 +15,15 @@ import { DetailedArticleSchema } from "entities/Article";
 import { ArticleCommentsSchema } from "pages/detailed-article";
 import { AddCommentSchema } from "features/AddComment";
 import { ArticlesPageSchema } from "pages/articles/model/types/ArticlesPageSchema";
+import { RememberScrollSchema } from "widgets/PageWrapper";
+import { ArticlesFilterSchema } from "widgets/ArticlesFilter";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
   export type AppDispatch = AppStore["dispatch"];
   interface StateSchema {
     user: UserSchema;
+    scroll: RememberScrollSchema;
 
     // 👇 async reducers
     auth?: AuthSchema;
@@ -29,6 +32,7 @@ declare global {
     articleComments?: ArticleCommentsSchema;
     addComment?: AddCommentSchema;
     articlesPage?: ArticlesPageSchema;
+    articlesFilter?: ArticlesFilterSchema;
   }
 
   export interface ThunkOptions<T> {

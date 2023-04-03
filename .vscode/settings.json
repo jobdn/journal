@@ -1,7 +1,7 @@
 {
   "folderTemplates.structures": [
     {
-      "name": "fsd-slice",
+      "name": "ui-segment",
       "structure": [
         {
           "fileName": "[FTName%capitalize].tsx",
@@ -14,6 +14,35 @@
         {
           "fileName": "[FTName%capitalize].stories.tsx",
           "template": "story"
+        }
+      ]
+    },
+    {
+      "name": "fsd-slice",
+      "structure": [
+        {
+          "fileName": "ui/[FTName%capitalize].tsx",
+          "template": "comp"
+        },
+        {
+          "fileName": "ui/[FTName%capitalize].module.scss",
+          "template": "scss"
+        },
+        {
+          "fileName": "ui/[FTName%capitalize].stories.tsx",
+          "template": "story"
+        },
+        {
+          "fileName": "model/types/<FTName|capitalize>Schema.ts",
+          "template": "schema"
+        },
+        {
+          "fileName": "model/slices/<FTName|camelcase>Slice.ts",
+          "template": "slice"
+        },
+        {
+          "fileName": "index.ts",
+          "template": "public-api"
         }
       ]
     }
@@ -59,6 +88,28 @@
       "Dark.decorators = [ThemeDecorator(Theme.DARK)];",
 
       "export const Light = [FTName%capitalize]Template.bind({});"
+    ],
+    "public-api": [
+      "export { [FTName%capitalize] } from \"./ui/[FTName%capitalize]\";"
+    ],
+    "schema": ["export interface [FTName%capitalize]Schema {}"],
+    "slice": [
+      "import { createSlice, PayloadAction } from \"@reduxjs/toolkit\";",
+      "",
+      "import { [FTName%capitalize]Schema } from \"../types/[FTName%capitalize]Schema\";",
+      "",
+      "const initialState: [FTName%capitalize]Schema = {};",
+      "",
+      "export const <FTName|camelcase>Slice = createSlice({",
+      "name: \"<FTName|camelcase>\",",
+      "initialState,",
+      "reducers: {},",
+      "extraReducers: (builder) => {",
+      "builder.addCase();",
+      "}",
+      "});",
+
+      "export const { actions: <FTName|camelcase>Actions, reducer: <FTName|camelcase>Reducer } = <FTName|camelcase>Slice;"
     ]
   }
 }

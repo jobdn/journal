@@ -18,10 +18,12 @@ export const Modal: React.FC<ModalProps> = (props) => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [isOpening, setIsOpening] = React.useState(false);
   const [isClosing, setClosing] = React.useState(false);
-  const closingTimeoutRef =
-    React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const openingTimeoutRef =
-    React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closingTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+  const openingTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
   const handleClose = React.useCallback(() => {
     setClosing(true);

@@ -11,7 +11,7 @@ import {
   fetchProfileData,
   EditableProfileCard,
 } from "features/EditableProfileCard";
-import { PageWrapper } from "shared/ui/PageWrapper";
+import { PageWrapper } from "widgets/PageWrapper";
 
 const lazyReducers: AsyncReducers = { profile: profileReducer };
 

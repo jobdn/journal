@@ -11,19 +11,20 @@ interface ArticleCodeBlockComponentProps extends Partial<ArticleCodeBlock> {
   className?: string;
 }
 
-export const ArticleCodeBlockComponent: React.FC<ArticleCodeBlockComponentProps> =
-  (props) => {
-    const { className, code } = props;
-    const handleCopy = React.useCallback(() => {
-      navigator.clipboard.writeText(code || "");
-    }, [code]);
+export const ArticleCodeBlockComponent: React.FC<
+  ArticleCodeBlockComponentProps
+> = (props) => {
+  const { className, code } = props;
+  const handleCopy = React.useCallback(() => {
+    navigator.clipboard.writeText(code || "");
+  }, [code]);
 
-    return (
-      <pre className={cn(classes.ArticleCodeBlockComponent, {}, [className])}>
-        <Button className={classes.copyBtn} onClick={handleCopy}>
-          <ClipboardIcon className="secondary-icon" />
-        </Button>
-        <code>{code}</code>
-      </pre>
-    );
-  };
+  return (
+    <pre className={cn(classes.ArticleCodeBlockComponent, {}, [className])}>
+      <Button className={classes.copyBtn} onClick={handleCopy}>
+        <ClipboardIcon className="secondary-icon" />
+      </Button>
+      <code>{code}</code>
+    </pre>
+  );
+};

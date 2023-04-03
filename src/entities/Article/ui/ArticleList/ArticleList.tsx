@@ -18,7 +18,7 @@ interface ArticleListProps {
 }
 
 const renderListSkeleton = (view: ArticleListView) =>
-  Array(view === "list" ? 9 : 3)
+  Array(view === "list" ? 3 : 6)
     .fill(1)
     .map((_, i) => <ArticleListItemSkeleton key={i} view={view} />);
 
@@ -35,18 +35,19 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
 
   if (error) return <Text title={error} variant="error" align="center" />;
 
-  if (isLoading && !articleList?.length)
+  if (isLoading)
     return (
       <div className={cn(classes.ArticleList, {}, [className, classes[view]])}>
         {renderListSkeleton(view)}
       </div>
     );
 
-  if (!articleList?.length) return <Text text="Empty article list" />;
+  if (!articleList?.length && !isLoading)
+    return <Text title={t("empty.articles")} align="center" />;
 
   return (
     <div className={cn(classes.ArticleList, {}, [className, classes[view]])}>
-      {articleList.map(renderArticleList)}
+      {articleList?.map(renderArticleList)}
       {isLoading && renderListSkeleton(view)}
     </div>
   );

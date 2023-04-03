@@ -9,9 +9,13 @@ import { useTranslation } from "react-i18next";
 
 interface PageErrorProps {
   className?: string;
+  errorMessage?: string;
 }
 
-export const PageError: React.FC<PageErrorProps> = ({ className }) => {
+export const PageError: React.FC<PageErrorProps> = ({
+  className,
+  errorMessage,
+}) => {
   const { t } = useTranslation();
   const handleReload: React.MouseEventHandler<HTMLButtonElement> = () => {
     location.reload();
@@ -21,7 +25,7 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
     <div className={cn(classes.PageError, {}, [className])}>
       <img src={ErrorBoundaryGif} alt="Error placeholder" />
       <Button onClick={handleReload} variant={ButtonVariant.FILLED_INVERTED}>
-        {t("error.page-error")}
+        {errorMessage || t("error.page-error")}
       </Button>
     </div>
   );

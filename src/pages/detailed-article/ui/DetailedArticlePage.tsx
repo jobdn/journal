@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import {
-  cn,
   DynamicLoadingReducer,
   useAppDispatch,
   AsyncReducers,
@@ -18,7 +17,6 @@ import { CommentList } from "entities/Comment";
 import { DetailedArticle, selectDetailedArticleData } from "entities/Article";
 import { AvailableRoutes } from "shared/config/router";
 import { AppLink } from "shared/ui/AppLink";
-import { AppLinkVariants } from "shared/ui/AppLink";
 
 import {
   articleCommentsReducer,
@@ -31,7 +29,7 @@ import {
 import { addArticleComment } from "../model/services/addArticleComment/addArticleComment";
 import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
 import { Button, ButtonVariant } from "shared/ui/Button";
-import { PageWrapper } from "shared/ui/PageWrapper";
+import { PageWrapper } from "widgets/PageWrapper";
 
 interface DetailedArticlePageProps {
   className?: string;
@@ -58,6 +56,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
 
     const commentObserver = new IntersectionObserver(
       ([entry], observer) => {
+        // TODO: this logic a bit like in PageWrapper
         if (entry.isIntersecting) {
           if (__PROJECT__ !== "storybook") {
             dispatch(fetchArticleComments(id));

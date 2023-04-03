@@ -3,12 +3,12 @@ import { cn } from "shared/lib";
 import classes from "./Select.module.scss";
 import { SelectProps } from "./types";
 
-export const Select: React.FC<SelectProps> = (props) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, label, name, id, options, value, onChange, disabled } =
     props;
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   };
 
   return (
