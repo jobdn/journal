@@ -24,7 +24,8 @@ import { mapArticleBlockObjToJsx } from "../../model/mappers/mapArticleBlockObjT
 
 import CalendarIcon from "../../assets/calendar.svg";
 import EyeIcon from "shared/assets/svg/eye.svg";
-import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
+
+import { fetchDetailedArticleOnInit } from "../../model/services/fetchDetailedArticleOnInit/fetchDetailedArticleOnInit";
 
 interface DetailedArticleProps {
   className?: string;
@@ -43,7 +44,7 @@ export const DetailedArticle: React.FC<DetailedArticleProps> = ({
   const article = useSelector(selectDetailedArticleData);
 
   useInitialEffect(() => {
-    dispatch(fetchArticleById(id));
+    dispatch(fetchDetailedArticleOnInit(id));
   });
 
   let content;
