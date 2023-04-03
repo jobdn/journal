@@ -28,3 +28,20 @@ body {
 .secondary-icon {
   fill: var(--secondary-color);
 }
+
+* {
+  /* Для Firefox */
+  scrollbar-color: #f5f5f5 #000;
+}
+
+/* Для Chrome, Safari и Opera */
+*::-webkit-scrollbar {
+  background-color: var(--bg-color);
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-bg-color);
+  height: 5px;
+  border-radius: 5px;
+}

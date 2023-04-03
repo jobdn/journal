@@ -37,7 +37,7 @@ export const fetchArticles = createAsyncThunk<
         _limit: limit,
         _sort: sort,
         _order: order,
-        type: topic === "ALL" ? undefined : topic,
+        type_like: topic === "ALL" ? undefined : topic,
         q: search,
       },
     });
