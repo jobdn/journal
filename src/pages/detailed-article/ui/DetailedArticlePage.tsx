@@ -14,14 +14,15 @@ import classes from "./DetailedArticlePage.module.scss";
 
 import { AddComment, addCommentReducer } from "features/AddComment";
 import { CommentList } from "entities/Comment";
-import { DetailedArticle, selectDetailedArticleData } from "entities/Article";
+import {
+  ArticleList,
+  DetailedArticle,
+  selectDetailedArticleData,
+} from "entities/Article";
 import { AvailableRoutes } from "shared/config/router";
 import { AppLink } from "shared/ui/AppLink";
 
-import {
-  articleCommentsReducer,
-  articleCommentsSelectors,
-} from "../model/articleCommentsSlice";
+import { articleCommentsSelectors } from "../model/slices/articleCommentsSlice";
 import {
   selectArticleCommentsError,
   selectArticleCommentsIsLoading,
@@ -30,24 +31,41 @@ import { addArticleComment } from "../model/services/addArticleComment/addArticl
 import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
 import { Button, ButtonVariant } from "shared/ui/Button";
 import { PageWrapper } from "widgets/PageWrapper";
+import { fetchArticleRecommendations } from "../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { articleRecommendationsSelectors } from "../model/slices/articleRecommendationsSlice";
+import {
+  selectArticleRecommendationsError,
+  selectArticleRecommendationsIsLoading,
+} from "../model/selectors/articleRecommendationsSelectors/selectArticleRecommendations";
+import { detailedArticlePageReducer } from "../model/slices";
 
 interface DetailedArticlePageProps {
   className?: string;
 }
 
 const lazyReducers: AsyncReducers = {
-  articleComments: articleCommentsReducer,
   addComment: addCommentReducer,
+  detailedArticlePage: detailedArticlePageReducer,
 };
 
 const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("detailed-article");
   const dispatch = useAppDispatch();
-  const comments = useSelector(articleCommentsSelectors.selectAll);
   const article = useSelector(selectDetailedArticleData);
+
+  const recommendations = useSelector(
+    articleRecommendationsSelectors.selectAll
+  );
+  const recommendationsIsLoading = useSelector(
+    selectArticleRecommendationsIsLoading
+  );
+  const recommendationsError = useSelector(selectArticleRecommendationsError);
+  const recommendationsTitleRef = React.useRef<HTMLDivElement | null>(null);
+
+  const comments = useSelector(articleCommentsSelectors.selectAll);
   const commentsIsLoading = useSelector(selectArticleCommentsIsLoading);
-  const commentsRequestError = useSelector(selectArticleCommentsError);
+  const commentsError = useSelector(selectArticleCommentsError);
   const commentsTitleRef = React.useRef<HTMLDivElement>(null);
   const commentsIsVisible = React.useRef(false);
 
@@ -70,6 +88,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
     );
 
     commentObserver.observe(commentsTitleRef.current);
+    dispatch(fetchArticleRecommendations());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [article]);
 
@@ -102,6 +121,19 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
           removeAfterUnmount={false}
         >
           <Text
+            title={t("recommendations-title")}
+            className={classes.title}
+            ref={recommendationsTitleRef}
+          />
+          <ArticleList
+            className={classes.recommendations}
+            isLoading={recommendationsIsLoading}
+            error={recommendationsError}
+            articleList={recommendations}
+            view="tile"
+            target="_blank"
+          />
+          <Text
             title={t("comments-title")}
             className={classes.title}
             ref={commentsTitleRef}
@@ -110,7 +142,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
           <CommentList
             commentList={comments}
             isLoading={commentsIsLoading}
-            error={commentsRequestError}
+            error={commentsError}
           />
         </DynamicLoadingReducer>
       ) : null}

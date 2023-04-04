@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributeAnchorTarget } from "react";
 import { useTranslation } from "react-i18next";
 import { cn } from "shared/lib";
 import { Text } from "shared/ui/Text";
@@ -15,22 +15,38 @@ interface ArticleListProps {
   view: ArticleListView;
   isLoading?: boolean;
   error?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const renderListSkeleton = (view: ArticleListView) =>
   Array(view === "list" ? 3 : 6)
     .fill(1)
-    .map((_, i) => <ArticleListItemSkeleton key={i} view={view} />);
+    .map((_, i) => (
+      <ArticleListItemSkeleton key={i} view={view} className={classes.item} />
+    ));
 
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
   const { t } = useTranslation();
-  const { className, articleList, view = "list", isLoading, error } = props;
+  const {
+    className,
+    articleList,
+    view = "list",
+    isLoading,
+    error,
+    target,
+  } = props;
 
   const renderArticleList = React.useCallback(
     (article: Article) => (
-      <ArticleListItem key={article.id} article={article} view={view} />
+      <ArticleListItem
+        key={article.id}
+        article={article}
+        view={view}
+        className={classes.item}
+        target={target}
+      />
     ),
-    [view]
+    [view, target]
   );
 
   if (error) return <Text title={error} variant="error" align="center" />;

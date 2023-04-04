@@ -36,6 +36,6 @@ export const addArticleComment = createAsyncThunk<
 
     return response.data;
   } catch (error) {
-    return rejectWithValue(i18next.t("error.profile_loading"));
+    return rejectWithValue(i18next.t("error.addComment_loading"));
   }
 });

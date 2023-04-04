@@ -12,9 +12,9 @@ import { UserSchema } from "entities/User";
 import { AuthSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "entities/Profile";
 import { DetailedArticleSchema } from "entities/Article";
-import { ArticleCommentsSchema } from "pages/detailed-article";
+import { DetailedArticlePageSchema } from "pages/detailed-article";
 import { AddCommentSchema } from "features/AddComment";
-import { ArticlesPageSchema } from "pages/articles/model/types/ArticlesPageSchema";
+import { ArticlesPageSchema } from "pages/articles";
 import { RememberScrollSchema } from "widgets/PageWrapper";
 import { ArticlesFilterSchema } from "widgets/ArticlesFilter";
 
@@ -29,8 +29,8 @@ declare global {
     auth?: AuthSchema;
     profile?: ProfileSchema;
     detailedArticle?: DetailedArticleSchema;
-    articleComments?: ArticleCommentsSchema;
     addComment?: AddCommentSchema;
+    detailedArticlePage?: DetailedArticlePageSchema;
     articlesPage?: ArticlesPageSchema;
     articlesFilter?: ArticlesFilterSchema;
   }

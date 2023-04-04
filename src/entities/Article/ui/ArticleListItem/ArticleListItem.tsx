@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributeAnchorTarget } from "react";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
@@ -27,11 +27,12 @@ interface ArticleListItemProps {
   className?: string;
   view: ArticleListView;
   article: Article;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
   function ArticleListItem(props) {
-    const { className, article, view } = props;
+    const { className, article, view, target } = props;
     const { t } = useTranslation("detailed-article");
 
     const renderArticleTopic = React.useCallback(
@@ -46,7 +47,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
     );
 
     const articleTopics = React.useMemo(() => {
-      return article.type.map(renderArticleTopic);
+      return article?.type?.map(renderArticleTopic);
     }, [article.type, renderArticleTopic]);
 
     if (view === "list") {
@@ -109,6 +110,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
       <AppLink
         to={`/${AvailableRoutes.ARTICLES}/${article.id}`}
         className={cn(classes.ArticleListItem, {}, [className, classes[view]])}
+        target={target}
       >
         <Card className={classes.card}>
           <div className={classes.hero}>

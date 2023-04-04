@@ -2,11 +2,14 @@
   "error": {
     "id": "There is not such article",
     "network": "Something went wrong on the server",
-    "comments": "Error while comments loading"
+    "comments": "Error while comments loading",
+    "recommendations": "Error while recommendations loading"
   },
   "comments-title": "Comments",
   "enter_comment": "Enter new comment here...",
   "add_comment": "Add comment",
   "read_more": "React more",
-  "go_back": "👈 To articles"
+  "go_back": "👈 To articles",
+
+  "recommendations-title": "Recommendations"
 }

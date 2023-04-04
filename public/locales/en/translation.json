@@ -6,6 +6,7 @@
     "incorrect_login": "Incorrect login or password",
     "server_down": "Server didn't start or down",
     "profile_loading": "Error was happened while profile loading",
+    "addComment_loading": "Error was happened while add comment",
     "profile_id": "This profile doesn't exist",
     "invalid_data": "Invalid data in request",
     "articles_page": "Error was happened when articles loading"

@@ -1,13 +1,16 @@
-.ArticleList {
+.item {
+  flex-shrink: 0;
+}
+
+.list {
+  .item {
+    margin-bottom: 24px;
+  }
+}
+
+.tile {
+  gap: 24px;
   display: flex;
   justify-content: center;
-  gap: 24px;
-
-  &.list {
-    flex-direction: column;
-  }
-
-  &.tile {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
 }
