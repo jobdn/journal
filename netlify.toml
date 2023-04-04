@@ -1,5 +1,5 @@
 [[redirects]]
-  for = "/*"
+  from = "/*"
   to = "./dist/index.html"
   status = 301
   force = true
