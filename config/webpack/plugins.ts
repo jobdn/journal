@@ -8,7 +8,7 @@ import { WebpackConfigOptions } from "./types/config";
 export function webpackPlugins(
   options: WebpackConfigOptions
 ): webpack.WebpackPluginInstance[] {
-  return [
+  const basePlugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: options.paths.html,
@@ -23,13 +23,17 @@ export function webpackPlugins(
       __PROJECT__: JSON.stringify(options.project),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: true,
-    }),
+
     new CopyPlugin({
       patterns: [
         { from: options.paths.locales, to: options.paths.buildLocales },
       ],
     }),
   ];
+
+  if (options.isDev) {
+    basePlugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }));
+  }
+
+  return basePlugins;
 }
