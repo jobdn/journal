@@ -32,5 +32,10 @@
   "empty": {
     "comments": "This article doesn't have comments yet, but you can be first 😊",
     "articles": "There is not articles with with such type"
-  }
+  },
+  "edit": "Edit",
+  "go_back": "👈 To articles",
+  "edit_page": "Page to edit page",
+  "create_page": "Page to create page",
+  "new": "New article"
 }

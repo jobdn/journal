@@ -19,25 +19,24 @@ import {
   DetailedArticle,
   selectDetailedArticleData,
 } from "entities/Article";
-import { AvailableRoutes } from "shared/config/router";
-import { AppLink } from "shared/ui/AppLink";
+import { PageWrapper } from "widgets/PageWrapper";
 
-import { articleCommentsSelectors } from "../model/slices/articleCommentsSlice";
+import { articleCommentsSelectors } from "../../model/slices/articleCommentsSlice";
 import {
   selectArticleCommentsError,
   selectArticleCommentsIsLoading,
-} from "../model/selectors/articleCommentsSelectors/selectArticleComments";
-import { addArticleComment } from "../model/services/addArticleComment/addArticleComment";
-import { fetchArticleComments } from "../model/services/fetchArticleComments/fetchArticleComments";
-import { Button, ButtonVariant } from "shared/ui/Button";
-import { PageWrapper } from "widgets/PageWrapper";
-import { fetchArticleRecommendations } from "../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
-import { articleRecommendationsSelectors } from "../model/slices/articleRecommendationsSlice";
+} from "../../model/selectors/articleCommentsSelectors/selectArticleComments";
+import { addArticleComment } from "../../model/services/addArticleComment/addArticleComment";
+import { fetchArticleComments } from "../../model/services/fetchArticleComments/fetchArticleComments";
+
+import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { articleRecommendationsSelectors } from "../../model/slices/articleRecommendationsSlice";
 import {
   selectArticleRecommendationsError,
   selectArticleRecommendationsIsLoading,
-} from "../model/selectors/articleRecommendationsSelectors/selectArticleRecommendations";
-import { detailedArticlePageReducer } from "../model/slices";
+} from "../../model/selectors/articleRecommendationsSelectors/selectArticleRecommendations";
+import { detailedArticlePageReducer } from "../../model/slices";
+import { DetailedArticlePageHeader } from "../DetailedArticlePageHeader/DetailedArticlePageHeader";
 
 interface DetailedArticlePageProps {
   className?: string;
@@ -111,9 +110,7 @@ const DetailedArticlePage: React.FC<DetailedArticlePageProps> = () => {
 
   return (
     <PageWrapper>
-      <AppLink to={`/${AvailableRoutes.ARTICLES}`}>
-        <Button variant={ButtonVariant.OUTLINED}>{t("go_back")}</Button>
-      </AppLink>
+      <DetailedArticlePageHeader />
       <DetailedArticle id={id} />
       {article ? (
         <DynamicLoadingReducer

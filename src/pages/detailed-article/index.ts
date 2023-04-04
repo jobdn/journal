@@ -1,2 +1,2 @@
-export { DetailedArticlePage } from "./ui/DetailedArticlePage.async";
+export { DetailedArticlePage } from "./ui/DetailedArticlePage/DetailedArticlePage.async";
 export { DetailedArticlePageSchema } from "./model/types";

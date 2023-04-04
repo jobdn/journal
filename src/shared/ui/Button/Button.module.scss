@@ -1,6 +1,9 @@
 .Button {
   cursor: pointer;
   padding: 10px 15px;
+  height: auto;
+  display: flex;
+  align-items: center;
 
   &[disabled] {
     opacity: 0.5;

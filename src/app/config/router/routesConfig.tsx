@@ -8,6 +8,8 @@ import { NotFoundPage } from "pages/not-found";
 import { ProfilePage } from "pages/profile";
 import { DetailedArticlePage } from "pages/detailed-article";
 import { ArticlesPage } from "pages/articles";
+import { ArticleEditPage } from "pages/article-edit";
+import { ArticleNewPage } from "pages/article-new";
 
 export type CustomRouteProps = RouteProps & {
   authOnly?: boolean;
@@ -27,6 +29,16 @@ export const routes: RoutesMapElement = {
   [AvailableRoutes.PROFILE]: {
     path: RoutePaths[AvailableRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AvailableRoutes.NEW_ARTICLE]: {
+    path: RoutePaths[AvailableRoutes.NEW_ARTICLE],
+    element: <ArticleNewPage />,
+    authOnly: true,
+  },
+  [AvailableRoutes.EDIT_ARTICLE]: {
+    path: RoutePaths[AvailableRoutes.EDIT_ARTICLE],
+    element: <ArticleEditPage />,
     authOnly: true,
   },
   [AvailableRoutes.ARTICLES]: {

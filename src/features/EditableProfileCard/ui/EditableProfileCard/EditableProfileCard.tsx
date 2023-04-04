@@ -122,7 +122,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
               onClick={handleEditClick}
               className={classes.editBtn}
             >
-              {t("edit")}
+              {t("edit", { ns: "translation" })}
             </Button>
           )
         ) : (
