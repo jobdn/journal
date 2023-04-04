@@ -15,6 +15,8 @@ export default (env: WebpackEnv) => {
       build: path.join(__dirname, "dist"),
       html: path.join(__dirname, "public", "index.html"),
       src: path.join(__dirname, "src"),
+      locales: path.join(__dirname, "public", "locales"),
+      buildLocales: path.join(__dirname, "dist", "locales"),
     },
     isDev,
     port,

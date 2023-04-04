@@ -2,7 +2,7 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-
+import CopyPlugin from "copy-webpack-plugin";
 import { WebpackConfigOptions } from "./types/config";
 
 export function webpackPlugins(
@@ -25,6 +25,11 @@ export function webpackPlugins(
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
       openAnalyzer: true,
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: options.paths.locales, to: options.paths.buildLocales },
+      ],
     }),
   ];
 }
