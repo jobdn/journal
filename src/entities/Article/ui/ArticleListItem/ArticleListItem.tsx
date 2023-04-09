@@ -1,4 +1,4 @@
-import React, { HTMLAttributeAnchorTarget } from "react";
+import React, { HTMLAttributeAnchorTarget, HTMLAttributes } from "react";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
@@ -23,7 +23,7 @@ import { Button, ButtonVariant } from "shared/ui/Button";
 import { Avatar } from "shared/ui/Avatar";
 import i18next from "i18next";
 
-interface ArticleListItemProps {
+interface ArticleListItemProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   view: ArticleListView;
   article: Article;
@@ -32,7 +32,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
   function ArticleListItem(props) {
-    const { className, article, view, target } = props;
+    const { className, article, view, target, ...otherProps } = props;
     const { t } = useTranslation("detailed-article");
 
     const renderArticleTopic = React.useCallback(
@@ -61,6 +61,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
             className,
             classes[view],
           ])}
+          {...otherProps}
         >
           <Card>
             <div className={classes.mainInfo}>
@@ -111,6 +112,7 @@ export const ArticleListItem: React.FC<ArticleListItemProps> = React.memo(
         to={`/${AvailableRoutes.ARTICLES}/${article.id}`}
         className={cn(classes.ArticleListItem, {}, [className, classes[view]])}
         target={target}
+        // {...otherProps}
       >
         <Card className={classes.card}>
           <div className={classes.hero}>
