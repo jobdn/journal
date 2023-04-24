@@ -6,15 +6,11 @@
 .ProfileCard {
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
+  width: 100%;
 
   &.readonly {
     .input {
       margin-bottom: 0;
     }
   }
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
 }

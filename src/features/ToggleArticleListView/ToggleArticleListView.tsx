@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { cn } from "shared/lib";
 
 import classes from "./ToggleArticleListView.module.scss";

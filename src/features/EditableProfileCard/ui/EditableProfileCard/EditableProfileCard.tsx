@@ -19,6 +19,7 @@ import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import { selectProfileData } from "../../model/selectors/selectProfileData/selectProfileData";
 import { selectUserData } from "entities/User";
+import { HStack, VStack } from "shared/ui/Stack";
 
 interface EditableProfileCardProps {
   className?: string;
@@ -112,8 +113,8 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
   );
 
   return (
-    <div className={cn(classes.EditableProfileCard, {}, [className])}>
-      <div className={classes.header}>
+    <VStack gap="16" full>
+      <HStack justify="between" className={classes.header} full>
         <Text title={t("title")} />
         {readonly ? (
           userCanEditProfile && (
@@ -126,24 +127,19 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
             </Button>
           )
         ) : (
-          <>
+          <HStack gap="16">
             <Button
               variant={ButtonVariant.FILLED_DANGER}
               onClick={handleCancelEditClick}
-              className={classes.cleanBtn}
             >
               {t("clean")}
             </Button>
-            <Button
-              variant={ButtonVariant.FILLED_SUCCESS}
-              onClick={handleSave}
-              className={classes.saveBtn}
-            >
+            <Button variant={ButtonVariant.FILLED_SUCCESS} onClick={handleSave}>
               {t("save")}
             </Button>
-          </>
+          </HStack>
         )}
-      </div>
+      </HStack>
       <ProfileCard
         data={form}
         isLoading={isLoading}
@@ -158,6 +154,6 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = ({
         onCountryChange={handleCountryChange}
         onCurrencyChange={handleCurrencyChange}
       />
-    </div>
+    </VStack>
   );
 };

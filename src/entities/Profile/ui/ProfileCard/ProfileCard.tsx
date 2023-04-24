@@ -12,6 +12,7 @@ import { CircleLoader } from "shared/ui/CircleLoader";
 import { Avatar } from "shared/ui/Avatar";
 import { Country, CountrySelect } from "entities/Country";
 import { Currency, CurrencySelect } from "entities/Currency";
+import { HStack, VStack } from "shared/ui/Stack";
 
 interface ProfileCardProps {
   className?: string;
@@ -64,19 +65,21 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
   }
 
   return (
-    <div
+    <VStack
+      full
+      align="stretch"
       className={cn(classes.ProfileCard, { [classes["readonly"]]: readonly }, [
         className,
       ])}
     >
-      <div className={classes.avatarWrapper}>
+      <HStack full justify="center">
         <Avatar
           src={data?.avatar || ""}
           alt="User avatar"
           size={100}
           variant="circle"
         />
-      </div>
+      </HStack>
       <Input
         value={data?.name || ""}
         className={classes.input}
@@ -145,6 +148,6 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         onChange={onCurrencyChange}
         readonly={readonly}
       />
-    </div>
+    </VStack>
   );
 };
