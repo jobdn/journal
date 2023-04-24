@@ -1,5 +1,5 @@
 export type FlexJustify = "start" | "center" | "end" | "between";
-export type FlexAlign = "start" | "center" | "end";
+export type FlexAlign = "start" | "center" | "end" | "stretch";
 export type FlexGap = "4" | "8" | "16" | "32";
 export type FlexDirection = "row" | "column";
 

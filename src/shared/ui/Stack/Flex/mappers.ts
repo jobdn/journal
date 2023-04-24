@@ -12,6 +12,7 @@ export const alignMap: Record<FlexAlign, string> = {
   start: classes.alignStart,
   center: classes.alignCenter,
   end: classes.alignEnd,
+  stretch: classes.alignStretch,
 };
 
 export const directionMap: Record<FlexDirection, string> = {

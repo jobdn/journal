@@ -31,6 +31,10 @@
   align-items: end;
 }
 
+.alignStretch {
+  align-items: stretch;
+}
+
 // ---
 .flexRow {
   flex-direction: row;
@@ -38,7 +42,6 @@
 
 .flexColumn {
   flex-direction: column;
-  align-items: start;
 }
 
 // ---
