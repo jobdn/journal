@@ -72,6 +72,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-awesome-fsd-imports": "^0.1.4",
     "eslint-plugin-i18next": "^6.0.0-2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-no-comments": "^1.1.10",

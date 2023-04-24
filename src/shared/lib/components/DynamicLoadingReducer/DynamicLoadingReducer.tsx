@@ -3,7 +3,7 @@ import { useStore } from "react-redux";
 
 import { Reducer } from "@reduxjs/toolkit";
 
-import { useAppDispatch } from "shared/lib";
+import { useAppDispatch } from "../../hooks/useAppDispatch/useAppDispatch";
 
 export type AsyncReducers = {
   [key in ReducerKey]?: Reducer;

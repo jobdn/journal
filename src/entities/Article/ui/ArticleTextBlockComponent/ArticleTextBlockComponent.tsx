@@ -1,4 +1,4 @@
-import { ArticleTextBlock } from "entities/Article/types/Article";
+import { ArticleTextBlock } from "../../types/Article";
 import React from "react";
 import { cn } from "shared/lib";
 import { Text } from "shared/ui/Text";

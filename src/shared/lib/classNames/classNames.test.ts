@@ -1,4 +1,4 @@
-import { cn } from "shared/lib";
+import { cn } from "../classNames/classNames";
 
 describe("classNames tests", () => {
   it("should return base class", () => {

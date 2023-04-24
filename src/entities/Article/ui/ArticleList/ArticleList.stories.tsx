@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { article } from "entities/Article";
+import { article } from "../../constants/article";
 
 import { RouterDecorator, ThemeDecorator } from "shared/config/storybook";
 import { Theme } from "shared/config/theme";

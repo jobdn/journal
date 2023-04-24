@@ -24,7 +24,13 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint", "i18next", "jsx-a11y"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "jsx-a11y",
+    "awesome-fsd-imports",
+  ],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
@@ -40,6 +46,7 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "awesome-fsd-imports/relative-imports": 2,
   },
   overrides: [
     {
