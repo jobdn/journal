@@ -1,0 +1,39 @@
+.ListBoxWrapper {
+  position: relative;
+  display: inline-block !important;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.options {
+  position: absolute;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  min-width: 100%;
+  outline: none;
+}
+
+.top {
+  bottom: 100%;
+}
+
+.optionItem {
+  padding: 10px;
+  color: var(--inverted-bg-color);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.active {
+  font-size: var(--font-m);
+  color: var(--primary-color);
+  background-color: var(--active-color);
+}
+
+.selected {
+  border: 2px solid var(--primary-color);
+}
