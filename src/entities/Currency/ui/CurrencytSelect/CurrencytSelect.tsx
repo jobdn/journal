@@ -1,10 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { SelectOptions } from "shared/ui/Select";
-import { Select } from "shared/ui/Select/Select";
-
 import { Currency } from "../../types/Currency";
+import { ListBox, Option } from "shared/ui/ListBox";
 
 interface CurrencySelectProps {
   className?: string;
@@ -13,28 +11,29 @@ interface CurrencySelectProps {
   readonly?: boolean;
 }
 
-const currencyOptions: SelectOptions<Currency> = [
-  { value: Currency.EUR, text: Currency.EUR },
-  { value: Currency.RUB, text: Currency.RUB },
-  { value: Currency.USD, text: Currency.USD },
+const currencyOptions: Option<Currency>[] = [
+  { value: Currency.EUR, content: Currency.EUR },
+  { value: Currency.RUB, content: Currency.RUB },
+  { value: Currency.USD, content: Currency.USD },
 ];
 
 export const CurrencySelect: React.FC<CurrencySelectProps> = (props) => {
   const { t } = useTranslation("profile");
   const { className, onChange, value = Currency.RUB, readonly } = props;
 
-  const handleCurrencyChange = (value: Currency) => {
+  const handleCurrencyChange = (value: string) => {
     onChange?.(value as Currency);
   };
 
   return (
-    <Select
-      label={t("choose_currency")}
+    <ListBox
       className={className}
-      options={currencyOptions}
-      onChange={handleCurrencyChange}
       value={value}
-      disabled={readonly}
+      onChange={handleCurrencyChange}
+      options={currencyOptions}
+      readonly={readonly}
+      label={t("choose_currency")}
+      direction="top"
     />
   );
 };
