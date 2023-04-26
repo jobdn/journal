@@ -1,0 +1,28 @@
+// Animation
+.enter,
+.leave {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.enterFrom,
+.leaveTo {
+  opacity: 0;
+}
+
+.enterTo,
+.leaveFrom {
+  opacity: 1;
+}
+
+// Icons
+.inverted-icon {
+  fill: var(--inverted-primary-color);
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.secondary-icon {
+  fill: var(--secondary-color);
+}
