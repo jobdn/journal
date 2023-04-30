@@ -6,10 +6,10 @@
   align-items: center;
 
   &[disabled] {
-    opacity: 0.5;
+    cursor: default;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     opacity: 0.7;
   }
 }
