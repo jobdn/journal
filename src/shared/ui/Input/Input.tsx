@@ -82,7 +82,7 @@ export const Input: React.FC<InputProps> = React.memo(function Input(props) {
             onMouseLeave={toggleFieldToPassword}
             onMouseUp={toggleFieldToPassword}
           >
-            <EyeIcon />
+            <EyeIcon className="icon" />
           </Button>
         )}
         <input
