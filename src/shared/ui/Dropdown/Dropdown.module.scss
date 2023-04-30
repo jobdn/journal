@@ -1,0 +1,39 @@
+.Dropdown {
+  position: relative;
+}
+
+.itemList {
+  position: absolute;
+  z-index: 10000;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+
+.item,
+.btnItem {
+  padding: 4px 8px;
+  background-color: transparent;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #000;
+}
+
+.btnItem,
+.trigger {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--active-color);
+  border-radius: 8px;
+  color: #fff;
+}
