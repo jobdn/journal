@@ -1,14 +1,7 @@
 .Navbar {
   height: var(--navbar-height);
-  display: flex;
-  align-items: center;
   padding: 0 20px;
   background-color: var(--inverted-bg-color);
-}
-
-.new {
-  margin-left: auto;
-  margin-right: 8px;
 }
 
 .logo {

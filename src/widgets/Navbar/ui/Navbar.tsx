@@ -11,10 +11,12 @@ import { Button, ButtonVariant } from "shared/ui/Button";
 import { AppLink } from "shared/ui/AppLink";
 import { AvailableRoutes, RoutePaths } from "shared/config/router";
 import { Text } from "shared/ui/Text";
+import { Dropdown } from "shared/ui/Dropdown";
 
 import classes from "./Navbar.module.scss";
 
-import LogoutIcon from "../assets/logout.svg";
+import { Avatar } from "shared/ui/Avatar";
+import { HStack } from "shared/ui/Stack";
 
 interface NavbarProps {
   className?: string;
@@ -42,20 +44,36 @@ export const Navbar: React.FC<NavbarProps> = () => {
   }, [dispatch, navigate]);
 
   return (
-    <nav className={classes.Navbar}>
+    <HStack justify="between" align="center" className={classes.Navbar}>
       <AppLink to={`${RoutePaths.home}`}>
         <Text title="Journal" titleClassName={classes.logo} />
       </AppLink>
-      <AppLink
-        to={`/${AvailableRoutes.ARTICLES}/${AvailableRoutes.NEW_ARTICLE}`}
-        className={classes.new}
-      >
-        <Button variant={ButtonVariant.OUTLINED}>{t("new")}</Button>
-      </AppLink>
+
       {userData ? (
-        <Button variant={ButtonVariant.CLEAR} onClick={handleLogout}>
-          <LogoutIcon className="inverted-icon" />
-        </Button>
+        <Dropdown
+          trigger={
+            <Avatar
+              src={userData?.avatar ?? ""}
+              size={30}
+              variant="circle"
+              alt="User avatar"
+            />
+          }
+          options={[
+            {
+              content: t("new"),
+              href: `/${AvailableRoutes.ARTICLES}/${AvailableRoutes.NEW_ARTICLE}`,
+            },
+            {
+              content: t("sidebar.profile"),
+              href: `/${AvailableRoutes.PROFILE}/${userData.id}`,
+            },
+            {
+              content: t("sign_out"),
+              action: handleLogout,
+            },
+          ]}
+        />
       ) : (
         <Button
           variant={ButtonVariant.CLEAR_INVERTED}
@@ -64,8 +82,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {t("sign_in")}
         </Button>
       )}
-
       <AuthModal onClose={handleCloseModal} isOpen={modalIsOpen} />
-    </nav>
+    </HStack>
   );
 };
