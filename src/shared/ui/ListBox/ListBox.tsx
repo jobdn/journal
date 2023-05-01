@@ -1,5 +1,4 @@
 import React, { Fragment, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
 import { Listbox as HeadlessListBox, Transition } from "@headlessui/react";
 
 import { cn } from "shared/lib";
@@ -38,7 +37,6 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     label,
     direction = "bottom",
   } = props;
-  const { t } = useTranslation();
 
   return (
     <HeadlessListBox value={value} onChange={onChange}>

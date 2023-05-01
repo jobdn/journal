@@ -10,5 +10,6 @@
   "add_comment": "Оставить комментарий",
   "read_more": "Читать далее",
 
-  "recommendations-title": "Рекомендации"
+  "recommendations_title": "Рекомендации",
+  "recommendations_error": "Произошла ошибка во время загрузки рекомендаций"
 }

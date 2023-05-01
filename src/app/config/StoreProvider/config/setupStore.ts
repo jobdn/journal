@@ -4,6 +4,7 @@ import { userReducer } from "entities/User";
 import { api } from "shared/api/api";
 import { rememberScrollReducer } from "widgets/PageWrapper";
 import { createReducerManager } from "./createReducerManager";
+import { rtkApi } from "shared/api/rtkApi";
 
 export const setupStore = (
   initialState?: StateSchema,
@@ -13,6 +14,7 @@ export const setupStore = (
     ...asyncReducers,
     user: userReducer,
     scroll: rememberScrollReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
   const reducerManager = createReducerManager(rootReducer);
   const store = configureStore({
@@ -26,7 +28,7 @@ export const setupStore = (
             api,
           },
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // @ts-ignore

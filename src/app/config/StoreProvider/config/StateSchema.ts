@@ -17,6 +17,7 @@ import { AddCommentSchema } from "features/AddComment";
 import { ArticlesPageSchema } from "pages/articles";
 import { RememberScrollSchema } from "widgets/PageWrapper";
 import { ArticlesFilterSchema } from "widgets/ArticlesFilter";
+import { rtkApi } from "shared/api/rtkApi";
 
 declare global {
   export type AppStore = ReturnType<typeof setupStore>;
@@ -24,6 +25,7 @@ declare global {
   interface StateSchema {
     user: UserSchema;
     scroll: RememberScrollSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // 👇 async reducers
     auth?: AuthSchema;

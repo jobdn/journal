@@ -10,5 +10,6 @@
   "add_comment": "Add comment",
   "read_more": "React more",
 
-  "recommendations-title": "Recommendations"
+  "recommendations_title": "Recommendations",
+  "recommendations_error": "An error occurred while loading recommendations"
 }
