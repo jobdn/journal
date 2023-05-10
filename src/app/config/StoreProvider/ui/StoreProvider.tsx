@@ -12,7 +12,8 @@ export const StoreProvider: React.FC<StoreProviderProps> = (props) => {
   const { children, initialState, asyncReducers } = props;
   const store = setupStore(
     initialState as StateSchema,
-    asyncReducers as ReducersMapObject<StateSchema>
+    // TODO: WTF is this? 👇
+    asyncReducers as unknown as ReducersMapObject<StateSchema>
   );
 
   return <Provider store={store}>{children}</Provider>;

@@ -10,7 +10,7 @@ import { CommentRow } from "../CommentRow/CommentRow";
 
 interface CommentListProps {
   className?: string;
-  commentList: Comment[];
+  commentList?: Comment[];
   isLoading?: boolean;
   error?: string;
 }

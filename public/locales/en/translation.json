@@ -37,5 +37,7 @@
   "go_back": "👈 To articles",
   "edit_page": "Page to edit page",
   "create_page": "Page to create articles",
-  "new": "New article"
+  "new": "New article",
+  "comment_success_add": "Comment was successfully added",
+  "comment_failed_add": "Couldn't add comment"
 }
