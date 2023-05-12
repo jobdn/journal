@@ -20,5 +20,17 @@ export default {
     __API__: "http://localhost:8000",
     __PROJECT__: "jest",
   },
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "<rootDir>/reports/unit/",
+        filename: "report.html",
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
   transformIgnorePatterns: ["node_modules/(?!axios)"],
 };
