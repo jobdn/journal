@@ -92,6 +92,7 @@
     "lint-staged": "^13.1.2",
     "looks-same": "^8.1.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "msw": "^1.2.1",
     "prettier": "2.8.7",
     "reg-cli": "^0.17.7",
     "sass": "^1.49.9",
@@ -105,7 +106,8 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "lint-staged": {
     "src/**/*.{tsx,ts}": [

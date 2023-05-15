@@ -48,9 +48,12 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
   } = props;
   const { t } = useTranslation("profile");
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return (
-      <div className={cn(classes.ProfileCard, {}, [className])}>
+      <div
+        className={cn(classes.ProfileCard, {}, [className])}
+        data-testid="profile-loader"
+      >
         <CircleLoader align="center" text={t("profile_loading_text")} />
       </div>
     );
@@ -88,6 +91,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         disabled={readonly}
         onChange={onNameChange}
         readonly={readonly}
+        data-testid="name"
       />
       <Input
         value={data?.lastname || ""}
@@ -97,6 +101,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
         disabled={readonly}
         onChange={onLastnameChange}
         readonly={readonly}
+        data-testid="lastname"
       />
       <Input
         value={data?.age || 0}

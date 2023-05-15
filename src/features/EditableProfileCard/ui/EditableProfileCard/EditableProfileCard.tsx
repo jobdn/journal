@@ -139,6 +139,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = (
                 variant={ButtonVariant.FILLED_INVERTED}
                 onClick={handleEditClick}
                 className={classes.editBtn}
+                data-testid="Button edit"
               >
                 {t("edit", { ns: "translation" })}
               </Button>
@@ -148,12 +149,14 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = (
               <Button
                 variant={ButtonVariant.FILLED_DANGER}
                 onClick={handleCancelEditClick}
+                data-testid="Button clear"
               >
                 {t("clean")}
               </Button>
               <Button
                 variant={ButtonVariant.FILLED_SUCCESS}
                 onClick={handleSave}
+                data-testid="Button save"
               >
                 {t("save")}
               </Button>

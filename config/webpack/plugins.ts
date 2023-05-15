@@ -32,7 +32,7 @@ export function webpackPlugins(
   ];
 
   if (options.isDev) {
-    basePlugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }));
+    // basePlugins.push(new BundleAnalyzerPlugin({ openAnalyzer: true }));
   }
 
   return basePlugins;

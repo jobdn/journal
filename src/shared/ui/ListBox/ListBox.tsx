@@ -43,7 +43,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       <div className={cn(classes.ListBoxWrapper, {}, [className])}>
         <HStack gap="8">
           {label && <label>{label}</label>}
-          <HeadlessListBox.Button className={classes.trigger}>
+          <HeadlessListBox.Button as="div" className={classes.trigger}>
             <Button variant={ButtonVariant.OUTLINED} disabled={readonly}>
               {value || defaultValue}
             </Button>
