@@ -41,7 +41,11 @@ const renderOption = (option: DropdownOption) => {
   }
 
   return (
-    <Menu.Item as={Fragment} disabled={option.disabled}>
+    <Menu.Item
+      as={Fragment}
+      disabled={option.disabled}
+      key={option.content?.toString()}
+    >
       {({ active }) => (
         <button
           className={cn(classes.btnItem, { [classes.active]: active }, [])}
