@@ -10,9 +10,13 @@ import { DetailedArticlePage } from "pages/detailed-article";
 import { ArticlesPage } from "pages/articles";
 import { ArticleEditPage } from "pages/article-edit";
 import { ArticleNewPage } from "pages/article-new";
+import { AdminPage } from "pages/admin";
+import { UserRole } from "entities/User";
+import { ForbiddenPage } from "pages/forbidden";
 
 export type CustomRouteProps = RouteProps & {
   authOnly?: boolean;
+  roles?: UserRole[];
 };
 
 export type RoutesMapElement = Record<AvailableRoutes, CustomRouteProps>;
@@ -45,6 +49,16 @@ export const routes: RoutesMapElement = {
     path: RoutePaths[AvailableRoutes.ARTICLES],
     element: <ArticlesPage />,
     authOnly: true,
+  },
+  [AvailableRoutes.ADMIN]: {
+    path: RoutePaths[AvailableRoutes.ADMIN],
+    element: <AdminPage />,
+    authOnly: true,
+    roles: [UserRole.ADMIN],
+  },
+  [AvailableRoutes.FORBIDDEN]: {
+    path: RoutePaths[AvailableRoutes.FORBIDDEN],
+    element: <ForbiddenPage />,
   },
   [AvailableRoutes.DETAILED_ARTICLE]: {
     path: RoutePaths[AvailableRoutes.DETAILED_ARTICLE],

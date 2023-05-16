@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { selectUserData, userActions } from "entities/User";
+import { isAdmin, selectUserData, userActions } from "entities/User";
 import { AuthModal } from "features/AuthByUsername";
 import { useAppDispatch } from "shared/lib";
 import { USER_DATA } from "shared/constants";
@@ -60,6 +60,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
             />
           }
           options={[
+            ...(isAdmin(userData?.roles)
+              ? [
+                  {
+                    content: t("admin"),
+                    href: RoutePaths.admin,
+                  },
+                ]
+              : []),
             {
               content: t("new"),
               href: `/${AvailableRoutes.ARTICLES}/${AvailableRoutes.NEW_ARTICLE}`,

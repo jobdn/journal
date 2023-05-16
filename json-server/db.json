@@ -4,28 +4,28 @@
       "id": "1",
       "username": "Dan",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN", "MANAGER"],
       "avatar": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
     },
     {
       "id": "2",
       "username": "Anton",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://images.unsplash.com/photo-1569683236049-bc137196a02a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
     },
     {
       "id": "4",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "3",
       "username": "John",
       "password": "222",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
     }
   ],
@@ -38,11 +38,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 1,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -112,9 +108,7 @@
       "img": "https://www.verywellhealth.com/thmb/V4VdxdpWe0V1KY871SPrfw6kRqo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/514240-article-img-malignant-vs-benign-tumor2111891f-54cc-47aa-8967-4cd5411fdb2f-5a2848f122fa3a0037c544be.png",
       "views": 69453,
       "createdAt": "29.12.2022",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -168,9 +162,7 @@
       "img": "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/11/2602810-13-Best-Prepared-Meal-Delivery-Services-of-2022-Header-81b9bf.jpg?w=1155&h=1528",
       "views": 22222,
       "createdAt": "22.2.2022",
-      "type": [
-        "MEAL"
-      ],
+      "type": ["MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -240,9 +232,7 @@
       "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
       "views": 99922,
       "createdAt": "12.12.2021",
-      "type": [
-        "POLICY"
-      ],
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -312,11 +302,7 @@
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
       "views": 10,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -386,11 +372,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 20,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -460,11 +442,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 30,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -534,11 +512,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 40,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -608,11 +582,7 @@
       "img": "https://media.istockphoto.com/id/1315904960/photo/taking-notes-on-a-ring-binded-notepad-inf.jpg?s=170667a&w=0&k=20&c=cs5xxIUlItIksEnQMOvTqgJeME9D2VMjNdK7Y0_NtAQ=",
       "views": 50,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -682,11 +652,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 60,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -756,11 +722,7 @@
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
       "views": 70,
       "createdAt": "26.01.2002",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -830,11 +792,7 @@
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
       "views": 80,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -904,11 +862,7 @@
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
       "views": 90,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -978,11 +932,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
       "views": 90,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -1052,11 +1002,7 @@
       "img": "https://www.binotel.ua/images/blog/preview/5-1589463946.jpeg",
       "views": 90,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -1126,11 +1072,7 @@
       "img": "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80",
       "views": 102100000,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "MEAL"
-      ],
+      "type": ["IT", "SCIENCE", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -1200,9 +1142,7 @@
       "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
       "views": 99922,
       "createdAt": "12.12.2021",
-      "type": [
-        "POLICY"
-      ],
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -1272,9 +1212,7 @@
       "img": "https://webingo.in/images/image2/node_bred.png",
       "views": 8022,
       "createdAt": "26.11.2014",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1333,11 +1271,7 @@
       "img": "https://images.unsplash.com/photo-1522777183857-cb4be6839fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80",
       "views": 2222,
       "createdAt": "01.12.2023",
-      "type": [
-        "IT",
-        "WORK",
-        "MEAL"
-      ],
+      "type": ["IT", "WORK", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -1407,11 +1341,7 @@
       "img": "https://www.shutterstock.com/image-illustration/articles-complex-like-puzzle-pictured-260nw-1666818295.jpg",
       "views": 2222,
       "createdAt": "01.12.2023",
-      "type": [
-        "IT",
-        "WORK",
-        "MEAL"
-      ],
+      "type": ["IT", "WORK", "MEAL"],
       "blocks": [
         {
           "id": "1",
@@ -1481,9 +1411,7 @@
       "img": "https://webingo.in/images/image2/node_bred.png",
       "views": 9022,
       "createdAt": "26.01.2013",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1542,9 +1470,7 @@
       "img": "https://www.alert-software.com/hs-fs/hubfs/company_policy.png?width=1280&name=company_policy.png",
       "views": 99922,
       "createdAt": "12.12.2002",
-      "type": [
-        "POLICY"
-      ],
+      "type": ["POLICY"],
       "blocks": [
         {
           "id": "1",
@@ -1614,9 +1540,7 @@
       "img": "https://webingo.in/images/image2/node_bred.png",
       "views": 12055,
       "createdAt": "26.11.2012",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1675,11 +1599,7 @@
       "img": "https://images.unsplash.com/photo-1522777183857-cb4be6839fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80",
       "views": 2,
       "createdAt": "01.12.2023",
-      "type": [
-        "IT",
-        "WORK",
-        "MEAL"
-      ],
+      "type": ["IT", "WORK", "MEAL"],
       "blocks": [
         {
           "id": "1",

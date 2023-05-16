@@ -4,11 +4,13 @@ import { UserSchema } from "../../types/UserSchema";
 import { User } from "../../types/User";
 import { USER_DATA } from "shared/constants";
 
-const userIsAuth = localStorage.getItem(USER_DATA) ? true : false;
+const storedUserData = JSON.parse(
+  JSON.stringify(localStorage.getItem(USER_DATA))
+);
 
 const initialState: UserSchema = {
-  userData: null,
-  isAuth: userIsAuth,
+  userData: storedUserData,
+  isAuth: storedUserData ? true : false,
 };
 
 export const userSlice = createSlice({

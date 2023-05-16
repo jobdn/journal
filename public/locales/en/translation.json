@@ -39,5 +39,7 @@
   "create_page": "Page to create articles",
   "new": "New article",
   "comment_success_add": "Comment was successfully added",
-  "comment_failed_add": "Couldn't add comment"
+  "comment_failed_add": "Couldn't add comment",
+  "admin": "Admin panel",
+  "forbidden": "Уou don't have enough access rights for this page"
 }
